@@ -1,0 +1,426 @@
+- generic [ref=f3e3]:
+  - generic:
+    - generic:
+      - banner:
+        - navigation "Navigation Bar" [ref=f3e5]:
+          - generic [ref=f3e7]:
+            - link "Home" [ref=f3e8] [cursor=pointer]:
+              - /url: /storefront?ref_=atv_dp_tv_c_9zZ8D2_hom
+            - generic [ref=f3e10]:
+              - link "Home" [ref=f3e11] [cursor=pointer]:
+                - /url: /storefront?ref_=atv_dp_tv_c_9zZ8D2_hom
+              - link "Free to me" [ref=f3e975] [cursor=pointer]:
+                - /url: /collection/streamfree?ref_=atv_dp_tv_c_9zZ8D2_hom
+              - link "Movies" [ref=f3e16] [cursor=pointer]:
+                - /url: /movie?ref_=atv_dp_tv_c_9zZ8D2_hom
+              - link "TV shows" [ref=f3e18] [cursor=pointer]:
+                - /url: /tv?ref_=atv_dp_tv_c_9zZ8D2_hom
+              - link "Live TV" [ref=f3e20] [cursor=pointer]:
+                - /url: /livetv?ref_=atv_dp_tv_c_9zZ8D2_live
+              - link "Subscriptions" [ref=f3e26] [cursor=pointer]:
+                - /url: /addons?ref_=atv_dp_tv_c_9zZ8D2_hom
+            - generic [ref=f3e28]:
+              - button "Search Prime Video" [ref=f3e30] [cursor=pointer]
+              - button "EN" [ref=f3e33] [cursor=pointer]
+              - link "Categories" [ref=f3e36] [cursor=pointer]:
+                - /url: /categories?ref_=atv_dp_tv_c_9zZ8D2_cat
+              - button "Profile, Settings, and Account" [ref=f3e39] [cursor=pointer]
+              - link "Join Prime" [ref=f3e42] [cursor=pointer]:
+                - /url: /signup?ref_=atv_nb_join_prime
+  - main [ref=f3e977]:
+    - generic [ref=f3e981]:
+      - img "Adarsh Baal Vidyalaya" [ref=f3e985]
+      - generic [ref=f3e991]:
+        - generic [ref=f3e992]:
+          - heading "Adarsh Baal Vidyalaya" [level=1] [ref=f3e994]
+          - generic [ref=f3e996]:
+            - generic [ref=f3e1003]:
+              - generic [ref=f3e1004]:
+                - generic [ref=f3e1006]:
+                  - button "Watch trailer" [ref=f3e1010] [cursor=pointer]
+                  - button "Add to Watchlist" [ref=f3e1015] [cursor=pointer]
+                  - button "Like" [ref=f3e1020] [cursor=pointer]
+                  - button "Not for me" [ref=f3e1025] [cursor=pointer]
+                  - button "Share" [ref=f3e1029] [cursor=pointer]
+                  - link "Download Episode 1" [ref=f3e1032] [cursor=pointer]:
+                    - /url: web+primevideo://app.primevideo.com/detail?gti=amzn1.dv.gti.5b245730-7579-4735-8a73-8df036b7a71f&action=download&contentType=TV&territory=IN&ref_=atv_dp_atf_free_uhd_tv_dwld_t1QDAAAAAA0wg0_atv_dwld_web_pvwa_dp
+                - generic [ref=f3e1035]:
+                  - generic [ref=f3e1036]:
+                    - button "Watch now" [disabled]
+                  - link "Join Prime" [ref=f3e1040] [cursor=pointer]:
+                    - /url: /auth-redirect?signin=1&returnUrl=%2Foffers%3Fforce_return_url%3D1%26cGTI%3Damzn1.dv.gti.5b245730-7579-4735-8a73-8df036b7a71f%26return_url%3D%252Fdetail%252F0KJUXHYFVP5YH9H3MPAHTTH8NZ%253Fref_%253Datv_dp_sign_suc%26ref_%3Datv_dp_atf_tv_signup_prime_bb_t1QDAAAAAA0wg0&ref_=atv_dp_atf_tv_signup_prime_bb_t1QDAAAAAA0wg0
+                    - generic [ref=f3e1041]: Subscribe
+              - generic [ref=f3e1048]:
+                - generic [ref=f3e1049]: First episode free
+                - paragraph [ref=f3e1052]: Terms apply
+            - generic [ref=f3e1055]:
+              - generic [ref=f3e1056]:
+                - img "NEW SERIES"
+                - generic [ref=f3e1057]: All episodes available
+              - generic [ref=f3e1061]: In a dysfunctional Delhi Government School, a laidback headmaster's attempt at a fully paid Cambridge trip sparks a chaotic makeover attempt - forcing a ragtag team of teachers to fix the broken system, one blackboard lesson at a time.
+            - generic [ref=f3e1066]:
+              - generic [ref=f3e1067]:
+                - link "Comedy" [ref=f3e1069] [cursor=pointer]:
+                  - /url: /search?phrase=Comedy&ie=UTF8&ref_=atv_dp_pd_gen
+                - generic [ref=f3e1070]: •
+                - link "Drama" [ref=f3e1072] [cursor=pointer]:
+                  - /url: /search?phrase=Drama&ie=UTF8&ref_=atv_dp_pd_gen
+                - generic [ref=f3e1073]: •
+                - generic [ref=f3e1074]: Heartwarming
+              - img "Released 2026" [ref=f3e1075]: "2026"
+              - img "1 season" [ref=f3e1076]
+            - generic [ref=f3e1078]:
+              - generic [ref=f3e1079]:
+                - generic [ref=f3e1080]: "Cast:"
+                - generic [ref=f3e1081]:
+                  - link "Kay Kay Menon" [ref=f3e1083] [cursor=pointer]:
+                    - /url: /search?phrase=Kay%20Kay%20Menon&ie=UTF8&ref_=atv_dp_pd_actors
+                  - generic [ref=f3e1084]: ","
+                - generic [ref=f3e1085]:
+                  - link "Archana Puran Singh" [ref=f3e1087] [cursor=pointer]:
+                    - /url: /search?phrase=Archana%20Puran%20Singh&ie=UTF8&ref_=atv_dp_pd_actors
+                  - generic [ref=f3e1088]: ","
+                - link "Naveen Kasturia" [ref=f3e1090] [cursor=pointer]:
+                  - /url: /search?phrase=Naveen%20Kasturia&ie=UTF8&ref_=atv_dp_pd_actors
+              - generic [ref=f3e1091]:
+                - img "Suitable for ages 13+" [ref=f3e1092]: U/A 13+
+                - img "Subtitles" [ref=f3e1093]
+                - img "Audio Description" [ref=f3e1094]
+        - generic [ref=f3e1098]: Season 1
+    - generic [ref=f3e1103]:
+      - tablist [ref=f3e1105]:
+        - tab "Episodes" [selected] [ref=f3e1106] [cursor=pointer]
+        - tab "Related" [ref=f3e1108] [cursor=pointer]
+        - tab "Details" [ref=f3e1110] [cursor=pointer]
+      - generic [ref=f3e1112]:
+        - generic [ref=f3e1115]:
+          - generic [ref=f3e1116]: 7 episodes
+          - generic [ref=f3e1118]:
+            - listitem [ref=f3e1120]:
+              - generic [ref=f3e1121]:
+                - generic [ref=f3e1122]:
+                  - generic [ref=f3e1127]:
+                    - button "Watch now" [disabled]
+                  - heading "1. Gawaar Goldy" [level=3] [ref=f3e1130]
+                - generic [ref=f3e1131]: Headmaster Gyaneshwar Tripathi can go to the UK if the Class 10 students ace the board exams. The only problem is that the students don't attend school. Meanwhile, the idealistic Kanchan arrives to fix a system that resists change.
+                - generic [ref=f3e1134]:
+                  - img "Suitable for ages 13+" [ref=f3e1135]: U/A 13+
+                  - img "Subtitles" [ref=f3e1136]
+                  - generic [ref=f3e1137]: 37min
+                  - generic [ref=f3e1138]: Jul 23, 2026
+                - generic:
+                  - generic:
+                    - generic:
+                      - button "More ways to watch"
+            - listitem [ref=f3e1140]:
+              - generic [ref=f3e1141]:
+                - heading "2. Adarsh ka Adarsh" [level=3] [ref=f3e1152]
+                - generic [ref=f3e1153]: As Gyaneshwar searches for the perfect role model to motivate clueless students, Kanchan plays detective over a missing confiscated watch.
+                - generic [ref=f3e1156]:
+                  - img "Suitable for ages 13+" [ref=f3e1157]: U/A 13+
+                  - img "Subtitles" [ref=f3e1158]
+                  - generic [ref=f3e1159]: 33min
+                  - generic [ref=f3e1160]: Jul 23, 2026
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - link "Join Prime":
+                          - /url: /auth-redirect?signin=1&returnUrl=%2Foffers%3Fforce_return_url%3D1%26cGTI%3Damzn1.dv.gti.b195e726-aa6f-4e66-a0d6-3ecc4ce20ba9%26return_url%3D%252Fdetail%252F0PO3FJ7ZXITYPPQUMIIJYOYE21%253Fref_%253Datv_dp_sign_suc%26ref_%3Datv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0&ref_=atv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0
+                          - generic: Subscribe
+            - listitem [ref=f3e1162]:
+              - generic [ref=f3e1163]:
+                - heading "3. Guru Dakshina" [level=3] [ref=f3e1174]
+                - generic [ref=f3e1175]: When teachers demand a water filter, cash-strapped Gyaneshwar must choose between basic facilities and the students' beloved kheer.
+                - generic [ref=f3e1178]:
+                  - img "Suitable for ages 7+" [ref=f3e1179]: U/A 7+
+                  - img "Subtitles" [ref=f3e1180]
+                  - generic [ref=f3e1181]: 34min
+                  - generic [ref=f3e1182]: Jul 23, 2026
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - link "Join Prime":
+                          - /url: /auth-redirect?signin=1&returnUrl=%2Foffers%3Fforce_return_url%3D1%26cGTI%3Damzn1.dv.gti.72e879ed-46bd-4b30-8b3c-d118f8cf3518%26return_url%3D%252Fdetail%252F0LYIF50GTY2MKNT1NSYIT6TTLK%253Fref_%253Datv_dp_sign_suc%26ref_%3Datv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0&ref_=atv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0
+                          - generic: Subscribe
+            - listitem [ref=f3e1184]:
+              - generic [ref=f3e1185]:
+                - heading "4. Laadli Bitiya" [level=3] [ref=f3e1196]
+                - generic [ref=f3e1197]: A spelling error gives Purva's award to Purav, sparking a gender revolt that Mukul must handle. Meanwhile, Gyaneshwar chases funds, and Kanchan and Hansraj try to stop a student's marriage.
+                - generic [ref=f3e1200]:
+                  - img "Suitable for ages 13+" [ref=f3e1201]: U/A 13+
+                  - img "Subtitles" [ref=f3e1202]
+                  - generic [ref=f3e1203]: 32min
+                  - generic [ref=f3e1204]: Jul 23, 2026
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - link "Join Prime":
+                          - /url: /auth-redirect?signin=1&returnUrl=%2Foffers%3Fforce_return_url%3D1%26cGTI%3Damzn1.dv.gti.50b632b7-23df-4737-9b64-d18cca6c6c9c%26return_url%3D%252Fdetail%252F0JXMNMBATSMDWZE9PYW6955TB0%253Fref_%253Datv_dp_sign_suc%26ref_%3Datv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0&ref_=atv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0
+                          - generic: Subscribe
+            - listitem [ref=f3e1206]:
+              - generic [ref=f3e1207]:
+                - heading "5. Baal Suraksha" [level=3] [ref=f3e1218]
+                - generic [ref=f3e1219]: Under Urmila's pressure, Gyaneshwar teaches fake history to influence votes, triggering chaos in class. Meanwhile, Kanchan pushes for Ramesh Kaka's retirement.
+                - generic [ref=f3e1222]:
+                  - img "Suitable for ages 13+" [ref=f3e1223]: U/A 13+
+                  - img "Subtitles" [ref=f3e1224]
+                  - generic [ref=f3e1225]: 33min
+                  - generic [ref=f3e1226]: Jul 23, 2026
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - link "Join Prime":
+                          - /url: /auth-redirect?signin=1&returnUrl=%2Foffers%3Fforce_return_url%3D1%26cGTI%3Damzn1.dv.gti.07c0e4c5-d285-4ec1-b1ae-69bb64aece24%26return_url%3D%252Fdetail%252F0FM4U7HUKD8LPTAUYRSHJ1Z19G%253Fref_%253Datv_dp_sign_suc%26ref_%3Datv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0&ref_=atv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0
+                          - generic: Subscribe
+            - listitem [ref=f3e1228]:
+              - generic [ref=f3e1229]:
+                - heading "6. Aandhi mein Deepak" [level=3] [ref=f3e1240]
+                - generic [ref=f3e1241]: As Gyaneshwar's UK plan gets revealed to the staff, alumnus Deepak's Olympic gold suddenly puts the school under an unforgiving media spotlight.
+                - generic [ref=f3e1244]:
+                  - img "Suitable for ages 13+" [ref=f3e1245]: U/A 13+
+                  - img "Subtitles" [ref=f3e1246]
+                  - generic [ref=f3e1247]: 37min
+                  - generic [ref=f3e1248]: Jul 23, 2026
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - link "Join Prime":
+                          - /url: /auth-redirect?signin=1&returnUrl=%2Foffers%3Fforce_return_url%3D1%26cGTI%3Damzn1.dv.gti.185bbb1e-8f6f-4017-83d0-01edf7becb5e%26return_url%3D%252Fdetail%252F0GLIV7T40ZU0V3P5HWZOYSA1R2%253Fref_%253Datv_dp_sign_suc%26ref_%3Datv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0&ref_=atv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0
+                          - generic: Subscribe
+            - listitem [ref=f3e1250]:
+              - generic [ref=f3e1251]:
+                - heading "7. Agni Pariksha" [level=3] [ref=f3e1262]
+                - generic [ref=f3e1263]: To boost results, Gyaneshwar considers withholding hall tickets of the weak students, risking their future for his dream. Meanwhile, Kanchan refuses to give up on them.
+                - generic [ref=f3e1266]:
+                  - img "Suitable for ages 13+" [ref=f3e1267]: U/A 13+
+                  - img "Subtitles" [ref=f3e1268]
+                  - generic [ref=f3e1269]: 42min
+                  - generic [ref=f3e1270]: Jul 23, 2026
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - link "Join Prime":
+                          - /url: /auth-redirect?signin=1&returnUrl=%2Foffers%3Fforce_return_url%3D1%26cGTI%3Damzn1.dv.gti.5530538c-8649-48d4-8340-accd24a52ca2%26return_url%3D%252Fdetail%252F0K765XKBSDDYFNN1POB3ZWVVDU%253Fref_%253Datv_dp_sign_suc%26ref_%3Datv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0&ref_=atv_dp_btf_el_tv_signup_prime_bb_t1QAAAAAAA0wg0
+                          - generic: Subscribe
+        - generic [ref=f3e1277]:
+          - heading "Customers also watched" [level=2] [ref=f3e1280]
+          - list [ref=f3e1284]:
+            - listitem [ref=f3e1285]:
+              - article [ref=f3e1286]:
+                - generic [ref=f3e1288]:
+                  - button "Constable Girpade"
+                  - link "Constable Girpade" [ref=f3e1289] [cursor=pointer]:
+                    - /url: /detail/0TJLBOOJIXP7GHX3BSAPDFBMT1?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_1
+                  - img "TRENDING"
+            - listitem [ref=f3e1292]:
+              - article [ref=f3e1293]:
+                - generic [ref=f3e1295]:
+                  - button "Akkad Bakkad Rafu Chakkar"
+                  - link "Akkad Bakkad Rafu Chakkar" [ref=f3e1296] [cursor=pointer]:
+                    - /url: /detail/0O88XSW2L5T2JURUE4R4VJBT32?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_2
+            - listitem [ref=f3e1300]:
+              - article [ref=f3e1301]:
+                - generic [ref=f3e1303]:
+                  - button "Chaarfutiya Chhokare"
+                  - link "Chaarfutiya Chhokare" [ref=f3e1304] [cursor=pointer]:
+                    - /url: /detail/0P9FAC1ZEYHOZKDX2GV6TO2293?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_3
+            - listitem [ref=f3e1308]:
+              - article [ref=f3e1309]:
+                - generic [ref=f3e1311]:
+                  - button "Gangstars (Hindi)"
+                  - link "Gangstars (Hindi)" [ref=f3e1312] [cursor=pointer]:
+                    - /url: /detail/0N4OIYPYVYCWLA2WP61ORK3VJH?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_4
+            - listitem [ref=f3e1315]:
+              - article [ref=f3e1316]:
+                - generic [ref=f3e1318]:
+                  - button "Smartphone"
+                  - link "Smartphone" [ref=f3e1319] [cursor=pointer]:
+                    - /url: /detail/0OPFS3Z4W1OVZNGB2XACY939JZ?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_5
+            - listitem [ref=f3e1322]:
+              - article [ref=f3e1323]:
+                - generic [ref=f3e1325]:
+                  - button "Suranga"
+                  - link "Suranga" [ref=f3e1326] [cursor=pointer]:
+                    - /url: /detail/0S4MWTAVZL0IP4XSKAR5KW91QK?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_6
+            - listitem [ref=f3e1329]:
+              - article [ref=f3e1330]:
+                - generic [ref=f3e1332]:
+                  - button "Koi Jaye Toh le Aaye"
+                  - link "Koi Jaye Toh le Aaye" [ref=f3e1333] [cursor=pointer]:
+                    - /url: /detail/0N5ET590M9KMM323AZGLGUO66K?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_7
+                  - img "RECENTLY ADDED"
+            - listitem [ref=f3e1336]:
+              - article [ref=f3e1337]:
+                - generic [ref=f3e1339]:
+                  - button "Pustak"
+                  - link "Pustak" [ref=f3e1340] [cursor=pointer]:
+                    - /url: /detail/0I5XHOCQ60X7VHNTI7PWAMWM25?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_8
+            - listitem [ref=f3e1343]:
+              - article [ref=f3e1344]:
+                - generic [ref=f3e1346]:
+                  - button "Shaadi Ke Side Effects"
+                  - link "Shaadi Ke Side Effects" [ref=f3e1347] [cursor=pointer]:
+                    - /url: /detail/0NXSG2YG7LEV8R4UYZVLT0P8XB?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_9
+            - listitem [ref=f3e1350]:
+              - article [ref=f3e1351]:
+                - generic [ref=f3e1353]:
+                  - button "Sabse Bada Rupaiya"
+                  - link "Sabse Bada Rupaiya" [ref=f3e1354] [cursor=pointer]:
+                    - /url: /detail/0OGWCJ5J799V8NFGQK5WRL8V4F?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_10
+            - listitem [ref=f3e1357]:
+              - article [ref=f3e1358]:
+                - generic [ref=f3e1360]:
+                  - button "Johri"
+                  - link "Johri" [ref=f3e1361] [cursor=pointer]:
+                    - /url: /detail/0OQFYQTU55S6GBNLPLTFHRSC8V?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_11
+            - listitem [ref=f3e1364]:
+              - article [ref=f3e1365]:
+                - generic [ref=f3e1367]:
+                  - button "Kadvi Hawa"
+                  - link "Kadvi Hawa" [ref=f3e1368] [cursor=pointer]:
+                    - /url: /detail/0PTKAKCLN3EPO04WRMKLU37ZKP?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_dp_amz_c_TS8274d9_1_12
+            - listitem [ref=f3e1371]
+            - listitem [ref=f3e1372]
+            - listitem [ref=f3e1373]
+            - listitem [ref=f3e1374]
+            - listitem [ref=f3e1375]
+            - listitem [ref=f3e1376]
+            - listitem [ref=f3e1377]
+            - listitem [ref=f3e1378]
+        - generic [ref=f3e1380]:
+          - generic [ref=f3e1381]:
+            - generic [ref=f3e1382]:
+              - generic [ref=f3e1383]:
+                - generic [ref=f3e1384]: Adarsh Baal Vidyalaya
+                - generic [ref=f3e1385]:
+                  - generic [ref=f3e1386]:
+                    - link "Comedy" [ref=f3e1388] [cursor=pointer]:
+                      - /url: /search?phrase=Comedy&ie=UTF8&ref_=atv_dp_pd_gen
+                    - generic [ref=f3e1389]: •
+                    - link "Drama" [ref=f3e1391] [cursor=pointer]:
+                      - /url: /search?phrase=Drama&ie=UTF8&ref_=atv_dp_pd_gen
+                    - generic [ref=f3e1392]: •
+                    - generic [ref=f3e1393]: Heartwarming
+                  - generic [ref=f3e1394]:
+                    - img "Released 2026" [ref=f3e1395]: "2026"
+                    - img "1 season" [ref=f3e1396]
+                    - img "HDR"
+                    - img "UHD"
+                  - generic [ref=f3e1397] [cursor=pointer]:
+                    - generic [ref=f3e1398]: In a dysfunctional Delhi Government School, a laidback headmaster's attempt at a fully paid Cambridge trip sparks a chaotic makeover attempt - forcing a ragtag team of teachers to fix the broken system, one blackboard lesson at a time.
+                    - text: More
+              - generic [ref=f3e1399]:
+                - generic [ref=f3e1400]: Creators and Cast
+                - generic [ref=f3e1402]:
+                  - generic [ref=f3e1403]:
+                    - term [ref=f3e1404]:
+                      - generic [ref=f3e1405]: Directors
+                    - definition [ref=f3e1406]:
+                      - link "Himank Gaur" [ref=f3e1409] [cursor=pointer]:
+                        - /url: /search?phrase=Himank%20Gaur&ie=UTF8&ref_=atv_dp_pd_dir
+                  - generic [ref=f3e1410]:
+                    - term [ref=f3e1411]:
+                      - generic [ref=f3e1412]: Producers
+                    - definition [ref=f3e1413]:
+                      - generic [ref=f3e1415]:
+                        - link "Sameer Saxena" [ref=f3e1416] [cursor=pointer]:
+                          - /url: /search?phrase=Sameer%20Saxena&ie=UTF8&ref_=atv_dp_pd_prod
+                        - generic [ref=f3e1417]: ","
+                        - link "Saurabh Khanna" [ref=f3e1418] [cursor=pointer]:
+                          - /url: /search?phrase=Saurabh%20Khanna&ie=UTF8&ref_=atv_dp_pd_prod
+                        - generic [ref=f3e1419]: ","
+                        - link "Amit Golani" [ref=f3e1420] [cursor=pointer]:
+                          - /url: /search?phrase=Amit%20Golani&ie=UTF8&ref_=atv_dp_pd_prod
+                        - generic [ref=f3e1421]: ","
+                        - link "Biswapati Sarkar" [ref=f3e1422] [cursor=pointer]:
+                          - /url: /search?phrase=Biswapati%20Sarkar&ie=UTF8&ref_=atv_dp_pd_prod
+                  - generic [ref=f3e1423]:
+                    - term [ref=f3e1424]:
+                      - generic [ref=f3e1425]: Cast
+                    - definition [ref=f3e1426]:
+                      - generic [ref=f3e1428]:
+                        - link "Kay Kay Menon" [ref=f3e1429] [cursor=pointer]:
+                          - /url: /search?phrase=Kay%20Kay%20Menon&ie=UTF8&ref_=atv_dp_pd_actors
+                        - generic [ref=f3e1430]: ","
+                        - link "Archana Puran Singh" [ref=f3e1431] [cursor=pointer]:
+                          - /url: /search?phrase=Archana%20Puran%20Singh&ie=UTF8&ref_=atv_dp_pd_actors
+                        - generic [ref=f3e1432]: ","
+                        - link "Naveen Kasturia" [ref=f3e1433] [cursor=pointer]:
+                          - /url: /search?phrase=Naveen%20Kasturia&ie=UTF8&ref_=atv_dp_pd_actors
+                        - generic [ref=f3e1434]: ","
+                        - link "Deven Bhojani" [ref=f3e1435] [cursor=pointer]:
+                          - /url: /search?phrase=Deven%20Bhojani&ie=UTF8&ref_=atv_dp_pd_actors
+                        - generic [ref=f3e1436]: ","
+                        - link "Abhimanyu Singh" [ref=f3e1437] [cursor=pointer]:
+                          - /url: /search?phrase=Abhimanyu%20Singh&ie=UTF8&ref_=atv_dp_pd_actors
+                        - generic [ref=f3e1438]: ","
+                        - link "Prasanna Bisht" [ref=f3e1439] [cursor=pointer]:
+                          - /url: /search?phrase=Prasanna%20Bisht&ie=UTF8&ref_=atv_dp_pd_actors
+                  - generic [ref=f3e1440]:
+                    - term [ref=f3e1441]:
+                      - generic [ref=f3e1442]: Studio
+                    - definition [ref=f3e1443]:
+                      - generic [ref=f3e1444]: Amazon Studios
+            - generic [ref=f3e1446]:
+              - generic [ref=f3e1447]:
+                - generic [ref=f3e1448]: Content advisory
+                - img "Suitable for ages 13+" [ref=f3e1450]: U/A 13+
+                - definition [ref=f3e1452]:
+                  - generic [ref=f3e1454]:
+                    - text: foul language
+                    - generic [ref=f3e1455]: ","
+                    - text: Flashing lights and strobing patterns might affect photosensitive viewers
+              - generic [ref=f3e1456]:
+                - generic [ref=f3e1457]: Audio languages
+                - generic [ref=f3e1458]:
+                  - img "dolby-51-badge" [ref=f3e1459]: "5.1"
+                  - img "Audio Description" [ref=f3e1460]
+                - definition [ref=f3e1465]:
+                  - generic [ref=f3e1467]:
+                    - text: हिन्दी
+                    - generic [ref=f3e1468]: ","
+                    - text: हिन्दी [ऑडियो विवरण]
+                    - generic [ref=f3e1469]: ","
+                    - text: "हिन्दी Dialogue Boost: Medium"
+                    - generic [ref=f3e1470]: ","
+                    - text: "हिन्दी Dialogue Boost: High"
+              - generic [ref=f3e1471]:
+                - generic [ref=f3e1472]: Subtitles
+                - img "Subtitles" [ref=f3e1474]
+                - definition [ref=f3e1476]:
+                  - generic [ref=f3e1478]:
+                    - text: English
+                    - generic [ref=f3e1479]: ","
+                    - text: हिन्दी [CC]
+          - generic [ref=f3e1482]:
+            - text: By clicking play, you agree to our
+            - link "Terms of Use" [ref=f3e1483] [cursor=pointer]:
+              - /url: /dv/tou?ref_=atv_dp_terms
+            - text: .
+          - generic [ref=f3e1484]:
+            - generic [ref=f3e1486]:
+              - heading "Feedback" [level=3] [ref=f3e1487]
+              - button "Feedback" [ref=f3e1488] [cursor=pointer]:
+                - generic [ref=f3e1489]: Send us feedback
+            - generic [ref=f3e1490]:
+              - heading "Support" [level=3] [ref=f3e1491]
+              - link "Get Help" [ref=f3e1494] [cursor=pointer]:
+                - /url: /help?ref_=atv_dp_fb_need_help
+  - contentinfo [ref=f3e1496]:
+    - list [ref=f3e1498]:
+      - listitem [ref=f3e1499]:
+        - link "Terms and Privacy Notice" [ref=f3e1500] [cursor=pointer]:
+          - /url: /ww-av-legal-home?ref_=atv_ftr_ter
+      - listitem [ref=f3e1501]:
+        - link "Send us feedback" [ref=f3e1502] [cursor=pointer]:
+          - /url: /contactus?ref_=atv_ftr_cu
+      - listitem [ref=f3e1503]:
+        - link "Help" [ref=f3e1504] [cursor=pointer]:
+          - /url: /help?ref_=atv_ftr_hp
+      - listitem [ref=f3e1505]: © 1996-2026, Amazon.com, Inc. or its affiliates

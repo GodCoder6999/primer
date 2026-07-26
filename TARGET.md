@@ -1,41 +1,53 @@
 # Target Website
 
 ## URL
-<!-- Replace with the URL of the website you're reverse-engineering -->
-https://example.com
+https://www.primevideo.com/
 
 ## Scope
 
 ### Pages to Replicate
-<!-- List every page you want to rebuild. Be specific. -->
-- [ ] Home page
-- [ ] (add more pages here)
+- [x] Home page (billboard hero + carousel rows)
+- [x] Browse / category grid
+- [x] Title detail page
+- [x] Signed-in app shell — profile switcher, My Stuff
+- [ ] Video player / playback UI (out of scope)
 
 ### Fidelity Level
-<!-- Choose one -->
-- [ ] **Pixel-perfect** — exact match in colors, spacing, typography, animations
+- [x] **Pixel-perfect** — exact match in colors, spacing, typography, animations
 - [ ] **High fidelity** — visually similar, same layout and feel, minor deviations OK
 - [ ] **Structural** — same layout and components, custom styling acceptable
 
 ### In Scope
-<!-- What you're building -->
 - Visual layout and styling
 - Component structure and interactions
 - Responsive design
 - Mock data for demo purposes
+- Locally mirrored assets (images, fonts, icons) in `public/`
 
 ### Out of Scope
-<!-- What you're NOT building -->
 - Real backend / database
-- Authentication
-- Real-time features
+- Real authentication (signed-in surfaces built from mock data)
+- Real-time features / video playback
 - SEO optimization
-- Accessibility audit (unless specifically needed)
+- Accessibility audit
 
 ## Why
-<!-- Brief explanation of why you're cloning this site -->
-(Fill in your reason — portfolio piece, learning exercise, demo, template for custom features, etc.)
+Portfolio piece / learning exercise — reverse-engineering a large-scale
+production streaming UI.
+
+## Decisions (2026-07-25)
+- **Assets:** mirror everything locally into `public/` (user decision).
+- **Auth:** no live login is performed — no credentials are handled. Signed-in
+  views (profile switcher, My Stuff, detail page) are reconstructed from
+  logged-out DOM structure, public markup, and mock data.
+- **Content volatility:** carousel rows are personalized and geo-gated, so
+  captured row content is a point-in-time snapshot frozen into mock data.
+
+## Observed Stack (target)
+- React SPA, CSS Modules with hashed class names (e.g. `Y7xAWu yeU6bH`)
+- Fonts: `Amazon Ember` (rg / sbd / bd woff2), fallback `Amazon Arabic Ember`, Arial
+- Base background: `rgb(0, 5, 13)`
+- Image CDN: `m.media-amazon.com`, `images-eu.ssl-images-amazon.com`
 
 ## Customization Plans
-<!-- After the base emulation, what changes do you want to make? -->
-- (List planned modifications or say "none — pure emulation")
+- none — pure emulation

@@ -1,0 +1,8 @@
+[    2265ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3948/browse/drama-tv?_rsc=1r34m:0
+[    2279ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3948/browse/top-tv?_rsc=1r34m:0
+[    2313ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3948/signup?_rsc=1r34m:0
+[    2357ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3948/addons?_rsc=1r34m:0
+[    2360ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3948/livetv?_rsc=1r34m:0
+[    2363ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3948/tv?_rsc=1r34m:0
+[    2364ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3948/movie?_rsc=1r34m:0
+[    2365ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3948/collection/streamfree?_rsc=1r34m:0

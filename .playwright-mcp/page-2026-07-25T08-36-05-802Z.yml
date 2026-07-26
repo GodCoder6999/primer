@@ -1,0 +1,675 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic:
+      - generic:
+        - banner:
+          - navigation "Navigation Bar" [ref=e5]:
+            - generic [ref=e7]:
+              - link "Home" [ref=e8] [cursor=pointer]:
+                - /url: /storefront?ref_=atv_hm_hom_c_9zZ8D2_hom
+              - generic [ref=e10]:
+                - link "Home" [ref=e11] [cursor=pointer]:
+                  - /url: /storefront?ref_=atv_hm_hom_c_9zZ8D2_hom
+                - link "Free to me" [ref=e14] [cursor=pointer]:
+                  - /url: /collection/streamfree?ref_=atv_hm_hom_c_9zZ8D2_hom
+                - link "Movies" [ref=e16] [cursor=pointer]:
+                  - /url: /movie?ref_=atv_hm_hom_c_9zZ8D2_hom
+                - link "TV shows" [ref=e18] [cursor=pointer]:
+                  - /url: /tv?ref_=atv_hm_hom_c_9zZ8D2_hom
+                - link "Live TV" [ref=e20] [cursor=pointer]:
+                  - /url: /livetv?ref_=atv_hm_hom_c_9zZ8D2_live
+                - link "Subscriptions" [ref=e26] [cursor=pointer]:
+                  - /url: /addons?ref_=atv_hm_hom_c_9zZ8D2_hom
+              - generic [ref=e28]:
+                - button "Search Prime Video" [ref=e30] [cursor=pointer]
+                - button "EN" [ref=e33] [cursor=pointer]
+                - link "Categories" [ref=e36] [cursor=pointer]:
+                  - /url: /categories?ref_=atv_hm_hom_c_9zZ8D2_cat
+                - button "Profile, Settings, and Account" [ref=e39] [cursor=pointer]
+                - link "Join Prime" [ref=e42] [cursor=pointer]:
+                  - /url: /signup?ref_=atv_nb_join_prime
+    - main [ref=e45]:
+      - generic [ref=e47]:
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - generic:
+              - button "Move back to title number 12"
+            - list [ref=e51]:
+              - listitem "Title number 11" [ref=e52]:
+                - article [ref=e53]:
+                  - generic [ref=e54]:
+                    - img "Raakh - Season 1" [ref=e57]
+                    - link "Raakh" [ref=e58] [cursor=pointer]:
+                      - /url: /detail/0FB3Z6GESMKM5UFHF6QNBGVVOU?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_qaS1p7_1_11
+                  - generic [ref=e59]:
+                    - heading "Raakh" [level=2] [ref=e60]:
+                      - link [ref=e61] [cursor=pointer]:
+                        - /url: /detail/0FB3Z6GESMKM5UFHF6QNBGVVOU?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_qaS1p7_1_11
+                    - generic [ref=e65]: "#9 in India"
+                    - generic: Season 1・Raakh traces the investigation into the kidnapping and murder of two teenagers in Delhi, as a determined officer launches a nationwide manhunt.
+                    - link "More details for Raakh" [ref=e71] [cursor=pointer]:
+                      - /url: /detail/0FB3Z6GESMKM5UFHF6QNBGVVOU?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_qaS1p7_1_11
+                      - generic [ref=e72]: More details
+                    - generic [ref=e73]: Watch with a Prime membership
+                  - img "This content is rated A" [ref=e78]: A
+              - listitem "Title number 12" [ref=e79]:
+                - article [ref=e80]:
+                  - generic [ref=e81]:
+                    - img "The Sheep Detectives" [ref=e84]
+                    - link "The Sheep Detectives" [ref=e85] [cursor=pointer]:
+                      - /url: /detail/0QYW7PZS87HQG6LRN4XMD1AJIH?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_Tss6Bz_1_12
+                  - generic [ref=e86]:
+                    - heading "The Sheep Detectives" [level=2] [ref=e87]:
+                      - link [ref=e88] [cursor=pointer]:
+                        - /url: /detail/0QYW7PZS87HQG6LRN4XMD1AJIH?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_Tss6Bz_1_12
+                    - generic [ref=e92]: "#1 in comedy movies"
+                    - generic: After their farmer dies under strange circumstances, a flock of sheep sets out to solve the mystery, leaving their meadow for the human world.
+                    - link "More details for The Sheep Detectives" [ref=e98] [cursor=pointer]:
+                      - /url: /detail/0QYW7PZS87HQG6LRN4XMD1AJIH?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_Tss6Bz_1_12
+                      - generic [ref=e99]: More details
+                    - generic [ref=e100]: Watch with a Prime membership
+                  - img "This content is rated U/A 13+" [ref=e105]: U/A 13+
+              - listitem "Title number 1" [ref=e106]:
+                - article [ref=e107]:
+                  - generic [ref=e108]:
+                    - img "Adarsh Baal Vidyalaya - Season 1" [ref=e111]
+                    - link "Adarsh Baal Vidyalaya" [ref=e112] [cursor=pointer]:
+                      - /url: /detail/0IR9VI8C4BBY3HMFMTDKFZ5RP5?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HS7abade_1_1
+                  - generic [ref=e113]:
+                    - heading "Adarsh Baal Vidyalaya" [level=2] [ref=e114]:
+                      - link [ref=e115] [cursor=pointer]:
+                        - /url: /detail/0IR9VI8C4BBY3HMFMTDKFZ5RP5?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HS7abade_1_1
+                    - generic [ref=e119]: All episodes available
+                    - generic [ref=e124]: Season 1・In a dysfunctional government school, a laidback headmaster's dream of a Cambridge trip sparks a chaotic mission to fix a broken system.
+                    - link "More details for Adarsh Baal Vidyalaya" [ref=e126] [cursor=pointer]:
+                      - /url: /detail/0IR9VI8C4BBY3HMFMTDKFZ5RP5?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HS7abade_1_1
+                      - generic [ref=e127]: More details
+                    - generic [ref=e128]: First episode free
+                  - img "This content is rated U/A 13+" [ref=e132]: U/A 13+
+              - listitem "Title number 2" [ref=e133]:
+                - article [ref=e134]:
+                  - generic [ref=e135]:
+                    - img "Masters of the Universe" [ref=e138]
+                    - link "Masters of the Universe" [ref=e139] [cursor=pointer]:
+                      - /url: /detail/0PN0QUSC4GJ66QGSQWBE70ERPU?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HSb6b5d2_1_2
+                  - generic [ref=e140]:
+                    - heading "Masters of the Universe" [level=2] [ref=e141]:
+                      - link [ref=e142] [cursor=pointer]:
+                        - /url: /detail/0PN0QUSC4GJ66QGSQWBE70ERPU?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HSb6b5d2_1_2
+                    - generic [ref=e146]: "#4 in India"
+                    - generic: After tracking down the Sword of Power, Prince Adam returns to Eternia to face Skeletor and embrace his destiny as He-Man.
+                    - link "More details for Masters of the Universe" [ref=e152] [cursor=pointer]:
+                      - /url: /detail/0PN0QUSC4GJ66QGSQWBE70ERPU?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HSb6b5d2_1_2
+                      - generic [ref=e153]: More details
+                    - generic [ref=e154]: Watch with a Prime membership
+                  - img "This content is rated U/A 16+" [ref=e159]: U/A 16+
+              - listitem "Title number 3" [ref=e160]:
+                - article [ref=e161]:
+                  - generic [ref=e162]:
+                    - img "Raktanchal - Season 3" [ref=e165]
+                    - link "Raktanchal" [ref=e166] [cursor=pointer]:
+                      - /url: /detail/0THBWJLHB1YBK0FMD8NM84IAKM?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HS5123b1_1_3
+                  - generic [ref=e167]:
+                    - heading "Raktanchal" [level=2] [ref=e168]:
+                      - link [ref=e169] [cursor=pointer]:
+                        - /url: /detail/0THBWJLHB1YBK0FMD8NM84IAKM?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HS5123b1_1_3
+                    - generic [ref=e173]: "#6 in India"
+                    - generic: Season 3・Vijay Singh faces betrayal political conspiracies and a final war that transforms him from strongman to kingmaker
+                    - link "More details for Raktanchal" [ref=e179] [cursor=pointer]:
+                      - /url: /detail/0THBWJLHB1YBK0FMD8NM84IAKM?jic=16%7CCgNhbGwSA2FsbA%3D%3D&ref_=atv_hm_hom_c_bCxerx_HS5123b1_1_3
+                      - generic [ref=e180]: More details
+                    - generic [ref=e181]: Watch for free
+                  - img "This content is rated A" [ref=e186]: A
+            - generic:
+              - button "Move forward to title number 2"
+          - list [ref=e188]:
+            - listitem [ref=e189]
+            - listitem [ref=e190]
+            - listitem [ref=e191]
+            - listitem [ref=e192]
+            - listitem [ref=e193]
+        - generic [ref=e196]:
+          - generic [ref=e198]:
+            - heading "Top TV" [level=2] [ref=e199]
+            - link "Top TV" [ref=e202] [cursor=pointer]:
+              - /url: /browse?serviceToken=v0_Cl0KJGMyYjYxZWRiLWY1NzctNGZlOC1hZWRhLTFmZWUyZDI3MjI2NRDAuavD-TMaLGpzRGowUWwwenJXQllEVHlIcThQbkRxbUc3ZnJKaTM1cnh6RXpERXppckk9IAESBXF1ZXJ5GAEqB2RlZmF1bHQyBmNlbnRlcjoGc2VhcmNoUglsQVB0Vm5zbXJ6AIIBpAQSKTE6MUlBWUcwQlVUMUVWTyMjTVpRV0daTFVNVlNFR1lMU041MlhHWkxNGugDcXMtb2ZmZXJfdHlwZT0xJnB2X29mZmVycz1JTjpJTjpzdm9kOnByaW1lOnZvZDotMTc4NDk2ODIwMDoxNzg0OTY4MjAwLSZxcy1jb3VudHJ5LWNvZGU9SU4maW5kZXg9ZXUtYW1hem9uLXZpZGVvLW90aGVyJnBfbl9lbnRpdHlfdHlwZT1UViBTaG93JmFkdWx0LXByb2R1Y3Q9MCZzZWFyY2gtYWxpYXM9aW5zdGFudC12aWRlbyZicT0oYW5kIChhbmQgc29ydDonZmVhdHVyZWQtcmFuaycgY29udGVudF90eXBlOid0dicgKG5vdCAob3IgKG9yIGF2X3NlY29uZGFyeV9nZW5yZTonYXZfc3ViZ2VucmVfaW50ZXJuYXRpb25hbF9pbmRpYScgYXZfcHJpbWFyeV9nZW5yZTonYXZfZ2VucmVfa2lkcycpIGF2X3ByaW1hcnlfZ2VucmU6J2F2X2dlbnJlX2FuaW1lJykpKSAobm90IGVudGl0eV90eXBlOidQcm9tb3Rpb258VHJhaWxlcnxCb251cyBDb250ZW50JykpJnB2X2Jyb3dzZV9pbnRlcm5hbF9vZmZlcj1zdm9kJnB2X2Jyb3dzZV9pbnRlcm5hbF9sYW5ndWFnZT1hbGwiBlRvcCBUVjAAUABwAA%3D%3D&jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_laptvn_2_smr
+              - generic [ref=e203]: See more
+          - list [ref=e205]:
+            - listitem [ref=e206]:
+              - article [ref=e207]:
+                - generic [ref=e209]:
+                  - button "Gram Chikitsalay"
+                  - link "Gram Chikitsalay" [ref=e210] [cursor=pointer]:
+                    - /url: /detail/0NRH5KEPWHFDRA9QZYEOV12X0W?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_1
+                  - img "NEW SEASON"
+            - listitem [ref=e214]:
+              - article [ref=e215]:
+                - generic [ref=e217]:
+                  - button "Raakh"
+                  - link "Raakh" [ref=e218] [cursor=pointer]:
+                    - /url: /detail/0FB3Z6GESMKM5UFHF6QNBGVVOU?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_2
+                  - img "NEW SERIES"
+            - listitem [ref=e222]:
+              - article [ref=e223]:
+                - generic [ref=e225]:
+                  - button "Off Campus"
+                  - link "Off Campus" [ref=e226] [cursor=pointer]:
+                    - /url: /detail/0I4OWKAPLUWIO5013W3F3ZN952?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_3
+                  - img "TOP 10"
+            - listitem [ref=e230]:
+              - article [ref=e231]:
+                - generic [ref=e233]:
+                  - button "Alliance"
+                  - link "Alliance" [ref=e234] [cursor=pointer]:
+                    - /url: /detail/0KC4UA7AEQAJ31QST1T3G235KD?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_4
+                  - img "NEW EPISODE"
+            - listitem [ref=e238]:
+              - article [ref=e239]:
+                - generic [ref=e241]:
+                  - button "From"
+                  - link "From" [ref=e242] [cursor=pointer]:
+                    - /url: /detail/0ORZ86EUXBQHD0TAPT7J4UNPQZ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_5
+            - listitem [ref=e246]:
+              - article [ref=e247]:
+                - generic [ref=e249]:
+                  - button "Panchayat"
+                  - link "Panchayat" [ref=e250] [cursor=pointer]:
+                    - /url: /detail/0S889MF6A5RLBABFIURRMZ51MJ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_6
+            - listitem [ref=e254]:
+              - article [ref=e255]:
+                - generic [ref=e257]:
+                  - button "Mirzapur"
+                  - link "Mirzapur" [ref=e258] [cursor=pointer]:
+                    - /url: /detail/0HV20AIVKWRM0Q9N6NCXO7DKD5?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_7
+            - listitem [ref=e261]:
+              - article [ref=e262]:
+                - generic [ref=e264]:
+                  - button "Matka King"
+                  - link "Matka King" [ref=e265] [cursor=pointer]:
+                    - /url: /detail/0NU8T0IBSKNM4URECC0CAKT8GZ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_8
+            - listitem [ref=e269]:
+              - article [ref=e270]:
+                - generic [ref=e272]:
+                  - button "The Family Man"
+                  - link "The Family Man" [ref=e273] [cursor=pointer]:
+                    - /url: /detail/0P3NCJMFKWU78I04U2IYOJUAF2?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_9
+            - listitem [ref=e277]:
+              - article [ref=e278]:
+                - generic [ref=e280]:
+                  - button "Farzi"
+                  - link "Farzi" [ref=e281] [cursor=pointer]:
+                    - /url: /detail/0HDHQAUF5LPWOJRCO025LFJSJI?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_10
+            - listitem [ref=e284]:
+              - article [ref=e285]:
+                - generic [ref=e287]:
+                  - button "The Boys"
+                  - link "The Boys" [ref=e288] [cursor=pointer]:
+                    - /url: /detail/0N9BB22P2FZ8UD2BBLNX07RP22?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lAPtVn_brws_2_11
+            - listitem [ref=e292]
+            - listitem [ref=e293]
+            - listitem [ref=e294]
+            - listitem [ref=e295]
+            - listitem [ref=e296]
+            - listitem [ref=e297]
+            - listitem [ref=e298]
+            - listitem [ref=e299]
+            - listitem [ref=e300]
+        - generic [ref=e303]:
+          - heading "Top 10 with Prime" [level=2] [ref=e306]
+          - list [ref=e310]:
+            - listitem [ref=e311]:
+              - article [ref=e316]:
+                - generic [ref=e318]:
+                  - button "Adarsh Baal Vidyalaya"
+                  - link "Adarsh Baal Vidyalaya" [ref=e319] [cursor=pointer]:
+                    - /url: /detail/0IR9VI8C4BBY3HMFMTDKFZ5RP5?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_1
+                  - img "NEW SERIES"
+            - listitem [ref=e322]:
+              - article [ref=e327]:
+                - generic [ref=e329]:
+                  - button "Alliance"
+                  - link "Alliance" [ref=e330] [cursor=pointer]:
+                    - /url: /detail/0KC4UA7AEQAJ31QST1T3G235KD?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_2
+                  - img "NEW EPISODE"
+            - listitem [ref=e334]:
+              - article [ref=e339]:
+                - generic [ref=e341]:
+                  - button "Nagabandham"
+                  - link "Nagabandham" [ref=e342] [cursor=pointer]:
+                    - /url: /detail/0HXUQ2PMBPJS8BW7MLR3PDWCU3?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_3
+                  - img "NEW MOVIE"
+            - listitem [ref=e346]:
+              - article [ref=e351]:
+                - generic [ref=e353]:
+                  - button "Masters of the Universe"
+                  - link "Masters of the Universe" [ref=e354] [cursor=pointer]:
+                    - /url: /detail/0PN0QUSC4GJ66QGSQWBE70ERPU?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_4
+                  - img "NEW MOVIE"
+            - listitem [ref=e358]:
+              - article [ref=e363]:
+                - generic [ref=e365]:
+                  - button "Ek Din"
+                  - link "Ek Din" [ref=e366] [cursor=pointer]:
+                    - /url: /detail/0TONNSRQ5P501SBECV86B0ENOP?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_5
+                  - img "NEW MOVIE"
+            - listitem [ref=e370]:
+              - article [ref=e375]:
+                - generic [ref=e377]:
+                  - button "Raktanchal"
+                  - link "Raktanchal" [ref=e378] [cursor=pointer]:
+                    - /url: /detail/0THBWJLHB1YBK0FMD8NM84IAKM?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_6
+                  - img "NEW SEASON"
+            - listitem [ref=e381]:
+              - article [ref=e386]:
+                - generic [ref=e388]:
+                  - button "Off Campus"
+                  - link "Off Campus" [ref=e389] [cursor=pointer]:
+                    - /url: /detail/0I4OWKAPLUWIO5013W3F3ZN952?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_7
+            - listitem [ref=e393]:
+              - article [ref=e398]:
+                - generic [ref=e400]:
+                  - button "Gram Chikitsalay"
+                  - link "Gram Chikitsalay" [ref=e401] [cursor=pointer]:
+                    - /url: /detail/0NRH5KEPWHFDRA9QZYEOV12X0W?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_8
+                  - img "NEW SEASON"
+            - listitem [ref=e405]:
+              - article [ref=e410]:
+                - generic [ref=e412]:
+                  - button "Raakh"
+                  - link "Raakh" [ref=e413] [cursor=pointer]:
+                    - /url: /detail/0FB3Z6GESMKM5UFHF6QNBGVVOU?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_9
+                  - img "NEW SERIES"
+            - listitem [ref=e417]:
+              - article [ref=e422]:
+                - generic [ref=e424]:
+                  - button "Troy"
+                  - link "Troy" [ref=e425] [cursor=pointer]:
+                    - /url: /detail/0N8VNX138FWG8S5AC7C58T1HY1?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zFDcCJ_brws_3_10
+                  - img "MOST LIKED"
+        - generic [ref=e431]:
+          - generic [ref=e433]:
+            - heading "Drama TV" [level=2] [ref=e434]
+            - link "Drama TV" [ref=e437] [cursor=pointer]:
+              - /url: /browse?serviceToken=v0_Cl0KJGMyYjYxZWRiLWY1NzctNGZlOC1hZWRhLTFmZWUyZDI3MjI2NRDAuavD-TMaLGpzRGowUWwwenJXQllEVHlIcThQbkRxbUc3ZnJKaTM1cnh6RXpERXppckk9IAESBXF1ZXJ5GAEqB2RlZmF1bHQyBmNlbnRlcjoGc2VhcmNoUglPQmIyNDc5MHN6AIIBsQUSKjI6T0I1NjlGODc2OUQ3QjcjI01aUVdHWkxVTVZTRUdZTFNONTJYR1pMTRryBHFzLW9mZmVyX3R5cGU9MSZwdl9vZmZlcnM9SU46SU46c3ZvZDpwcmltZTp2b2Q6LTE3ODQ5NjgyMDA6MTc4NDk2ODIwMC0mcXMtY291bnRyeS1jb2RlPUlOJmluZGV4PWV1LWFtYXpvbi12aWRlby1vdGhlciZwX25fZW50aXR5X3R5cGU9VFYgU2hvdyZhZHVsdC1wcm9kdWN0PTAmc2VhcmNoLWFsaWFzPWluc3RhbnQtdmlkZW8mYnE9KGFuZCAoYW5kIChhbmQgKGFuZCAobm90IChvciBnZW5yZTonYXZfZ2VucmVfZXJvdGljJyBhdl9wcmltYXJ5X2dlbnJlOidhdl9nZW5yZV9lcm90aWMnKSkgKG5vdCAob3IgZ2VucmU6J2F2X2dlbnJlX2tpZHMnIGF2X3ByaW1hcnlfZ2VucmU6J2F2X2dlbnJlX2tpZHMnKSkgKG5vdCAob3IgZ2VucmU6J2F2X2dlbnJlX2FuaW1lJyBhdl9wcmltYXJ5X2dlbnJlOidhdl9nZW5yZV9hbmltZScpKSkgKG9yIGdlbnJlLWJpbjonYXZfZ2VucmVfZHJhbWEnIGF2X3ByaW1hcnlfZ2VucmU6J2F2X2dlbnJlX2RyYW1hJykpIChub3QgYXZfa2lkX2luX3RlcnJpdG9yeTonSU4nKSkgKG5vdCBlbnRpdHlfdHlwZTonUHJvbW90aW9ufFRyYWlsZXJ8Qm9udXMgQ29udGVudCcpKSZwdl9icm93c2VfaW50ZXJuYWxfb2ZmZXI9c3ZvZCZwdl9icm93c2VfaW50ZXJuYWxfbGFuZ3VhZ2U9YWxsIghEcmFtYSBUVjAAUABwAA%3D%3D&jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_obb24790_4_smr
+              - generic [ref=e438]: See more
+          - list [ref=e440]:
+            - listitem [ref=e441]:
+              - article [ref=e442]:
+                - generic [ref=e444]:
+                  - button "Panchayat"
+                  - link "Panchayat" [ref=e445] [cursor=pointer]:
+                    - /url: /detail/0S889MF6A5RLBABFIURRMZ51MJ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_1
+            - listitem [ref=e449]:
+              - article [ref=e450]:
+                - generic [ref=e452]:
+                  - button "Mirzapur"
+                  - link "Mirzapur" [ref=e453] [cursor=pointer]:
+                    - /url: /detail/0HV20AIVKWRM0Q9N6NCXO7DKD5?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_2
+            - listitem [ref=e456]:
+              - article [ref=e457]:
+                - generic [ref=e459]:
+                  - button "Matka King"
+                  - link "Matka King" [ref=e460] [cursor=pointer]:
+                    - /url: /detail/0NU8T0IBSKNM4URECC0CAKT8GZ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_3
+            - listitem [ref=e464]:
+              - article [ref=e465]:
+                - generic [ref=e467]:
+                  - button "The Family Man"
+                  - link "The Family Man" [ref=e468] [cursor=pointer]:
+                    - /url: /detail/0OJWVYZPOMPNV2FYSII88X3KN6?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_4
+            - listitem [ref=e471]:
+              - article [ref=e472]:
+                - generic [ref=e474]:
+                  - button "Farzi"
+                  - link "Farzi" [ref=e475] [cursor=pointer]:
+                    - /url: /detail/0HDHQAUF5LPWOJRCO025LFJSJI?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_5
+            - listitem [ref=e478]:
+              - article [ref=e479]:
+                - generic [ref=e481]:
+                  - button "The Boys"
+                  - link "The Boys" [ref=e482] [cursor=pointer]:
+                    - /url: /detail/0N9BB22P2FZ8UD2BBLNX07RP22?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_6
+            - listitem [ref=e486]:
+              - article [ref=e487]:
+                - generic [ref=e489]:
+                  - button "The Summer I Turned Pretty"
+                  - link "The Summer I Turned Pretty" [ref=e490] [cursor=pointer]:
+                    - /url: /detail/0MYTJAQEW8HBSG39UONDSFMEM3?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_7
+            - listitem [ref=e494]:
+              - article [ref=e495]:
+                - generic [ref=e497]:
+                  - button "Dupahiya"
+                  - link "Dupahiya" [ref=e498] [cursor=pointer]:
+                    - /url: /detail/0TMZ739WDSSD02I8AFC7XQ105B?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_8
+            - listitem [ref=e502]:
+              - article [ref=e503]:
+                - generic [ref=e505]:
+                  - button "Sapne Vs Everyone"
+                  - link "Sapne Vs Everyone" [ref=e506] [cursor=pointer]:
+                    - /url: /detail/0TSV9Q9RAW4SNLXSZ7WKKJ1AEP?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_9
+            - listitem [ref=e510]:
+              - article [ref=e511]:
+                - generic [ref=e513]:
+                  - button "Reacher"
+                  - link "Reacher" [ref=e514] [cursor=pointer]:
+                    - /url: /detail/0RTZ57DQ6PBHH29UN5JS7U7CW4?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_10
+                  - img "TRENDING"
+            - listitem [ref=e518]:
+              - article [ref=e519]:
+                - generic [ref=e521]:
+                  - button "See You at Work Tomorrow!"
+                  - link "See You at Work Tomorrow!" [ref=e522] [cursor=pointer]:
+                    - /url: /detail/0NKUDJIM5VAE9079ZGUUVI3SS4?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_11
+                  - img "NEW EPISODE"
+            - listitem [ref=e526]:
+              - article [ref=e527]:
+                - generic [ref=e529]:
+                  - button "Paatal Lok"
+                  - link "Paatal Lok" [ref=e530] [cursor=pointer]:
+                    - /url: /detail/0G9IEOHCN8KMY6COD9ILGH7IY5?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_OBb24790_brws_4_12
+            - listitem [ref=e533]
+            - listitem [ref=e534]
+            - listitem [ref=e535]
+            - listitem [ref=e536]
+            - listitem [ref=e537]
+            - listitem [ref=e538]
+            - listitem [ref=e539]
+            - listitem [ref=e540]
+        - generic [ref=e543]:
+          - generic [ref=e545]:
+            - heading "Top movies" [level=2] [ref=e546]
+            - link "Top movies" [ref=e549] [cursor=pointer]:
+              - /url: /browse?serviceToken=v0_Cl0KJGMyYjYxZWRiLWY1NzctNGZlOC1hZWRhLTFmZWUyZDI3MjI2NRDAuavD-TMaLGpzRGowUWwwenJXQllEVHlIcThQbkRxbUc3ZnJKaTM1cnh6RXpERXppckk9IAESBXF1ZXJ5GAEqB2RlZmF1bHQyBmNlbnRlcjoGc2VhcmNoUgl6YmZjcXZzbXJ6AIIBqgQSKjE6MTM1VU1EOFM3RTBPNjMjI01aUVdHWkxVTVZTRUdZTFNONTJYR1pMTRrpA3FzLW9mZmVyX3R5cGU9MSZwdl9vZmZlcnM9SU46SU46c3ZvZDpwcmltZTp2b2Q6LTE3ODQ5NjgyMDA6MTc4NDk2ODIwMC0mcXMtY291bnRyeS1jb2RlPUlOJmluZGV4PWV1LWFtYXpvbi12aWRlby1vdGhlciZwX25fZW50aXR5X3R5cGU9TW92aWUmYWR1bHQtcHJvZHVjdD0wJnNlYXJjaC1hbGlhcz1pbnN0YW50LXZpZGVvJmJxPShhbmQgKGFuZCBzb3J0OidmZWF0dXJlZC1yYW5rJyBjb250ZW50X3R5cGU6J21vdmllJyAobm90IChvciAob3IgYXZfc2Vjb25kYXJ5X2dlbnJlOidhdl9zdWJnZW5yZV9pbnRlcm5hdGlvbmFsX2luZGlhJyBhdl9wcmltYXJ5X2dlbnJlOidhdl9nZW5yZV9raWRzJykgYXZfcHJpbWFyeV9nZW5yZTonYXZfZ2VucmVfYW5pbWUnKSkpIChub3QgZW50aXR5X3R5cGU6J1Byb21vdGlvbnxUcmFpbGVyfEJvbnVzIENvbnRlbnQnKSkmcHZfYnJvd3NlX2ludGVybmFsX29mZmVyPXN2b2QmcHZfYnJvd3NlX2ludGVybmFsX2xhbmd1YWdlPWFsbCIKVG9wIG1vdmllczAAUABwAA%3D%3D&jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_5_smr
+              - generic [ref=e550]: See more
+          - list [ref=e552]:
+            - listitem [ref=e553]:
+              - article [ref=e554]:
+                - generic [ref=e556]:
+                  - button "The Sheep Detectives"
+                  - link "The Sheep Detectives" [ref=e557] [cursor=pointer]:
+                    - /url: /detail/0QYW7PZS87HQG6LRN4XMD1AJIH?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_1
+                  - img "NEW MOVIE"
+            - listitem [ref=e561]:
+              - article [ref=e562]:
+                - generic [ref=e564]:
+                  - button "Drishyam 3"
+                  - link "Drishyam 3" [ref=e565] [cursor=pointer]:
+                    - /url: /detail/0R9LD1VHGWBGMWFEQ9TQAO1ESE?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_2
+                  - img "NEW MOVIE"
+            - listitem [ref=e569]:
+              - article [ref=e570]:
+                - generic [ref=e572]:
+                  - button "Karuppu"
+                  - link "Karuppu" [ref=e573] [cursor=pointer]:
+                    - /url: /detail/0IEWLNTKVQ78JHWWUUA701BFIF?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_3
+                  - img "NEW MOVIE"
+            - listitem [ref=e577]:
+              - article [ref=e578]:
+                - generic [ref=e580]:
+                  - button "Love Insurance Kompany"
+                  - link "Love Insurance Kompany" [ref=e581] [cursor=pointer]:
+                    - /url: /detail/0M2CBKJJ5UK17HCBJU5H84HTOV?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_4
+                  - img "MOST LIKED"
+            - listitem [ref=e585]:
+              - article [ref=e586]:
+                - generic [ref=e588]:
+                  - button "Mareechika"
+                  - link "Mareechika" [ref=e589] [cursor=pointer]:
+                    - /url: /detail/0M7A699MF6ONIDLXDNG9YNM21S?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_5
+                  - img "NEW MOVIE"
+            - listitem [ref=e593]:
+              - article [ref=e594]:
+                - generic [ref=e596]:
+                  - button "Ginny Wedss Sunny 2"
+                  - link "Ginny Wedss Sunny 2" [ref=e597] [cursor=pointer]:
+                    - /url: /detail/0I3VNB2TR36E5JWPUJ9DWH5H9L?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_6
+                  - img "MOST LIKED"
+            - listitem [ref=e601]:
+              - article [ref=e602]:
+                - generic [ref=e604]:
+                  - button "Second Case Of Seetharam"
+                  - link "Second Case Of Seetharam" [ref=e605] [cursor=pointer]:
+                    - /url: /detail/0FFRZS3KWYT2S7AJ24WI7JK0EN?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_7
+                  - img "MOST LIKED"
+            - listitem [ref=e609]:
+              - article [ref=e610]:
+                - generic [ref=e612]:
+                  - button "Veerabhadrudu"
+                  - link "Veerabhadrudu" [ref=e613] [cursor=pointer]:
+                    - /url: /detail/0TXZ54XWACFK4PXT60U3O8A2HL?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_8
+                  - img "NEW MOVIE"
+            - listitem [ref=e617]:
+              - article [ref=e618]:
+                - generic [ref=e620]:
+                  - button "Dacoit - Ek Prem Katha"
+                  - link "Dacoit - Ek Prem Katha" [ref=e621] [cursor=pointer]:
+                    - /url: /detail/0Q2L7UWHNNPOL8PALU5Y4HCS98?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_9
+                  - img "MOST LIKED"
+            - listitem [ref=e625]:
+              - article [ref=e626]:
+                - generic [ref=e628]:
+                  - 'button "Your Fault: London"'
+                  - 'link "Your Fault: London" [ref=e629] [cursor=pointer]':
+                    - /url: /detail/0T4QQ149SJ0V8W8MHKZUZZ70RP?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_10
+                  - img "NEW MOVIE"
+            - listitem [ref=e633]:
+              - article [ref=e634]:
+                - generic [ref=e636]:
+                  - button "Kantara A Legend Chapter - 1 (Hindi)"
+                  - link "Kantara A Legend Chapter - 1 (Hindi)" [ref=e637] [cursor=pointer]:
+                    - /url: /detail/0RGB4PQA5YLV6SITE3FTEYFV3U?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_11
+                  - img "MOST LIKED"
+            - listitem [ref=e641]:
+              - article [ref=e642]:
+                - generic [ref=e644]:
+                  - button "O'Romeo"
+                  - link "O'Romeo" [ref=e645] [cursor=pointer]:
+                    - /url: /detail/0OP5NE1GYFYZ6QMQKSLWP0C0SA?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_zbfcqv_brws_5_12
+                  - img "MOST LIKED"
+            - listitem [ref=e649]
+            - listitem [ref=e650]
+            - listitem [ref=e651]
+            - listitem [ref=e652]
+            - listitem [ref=e653]
+            - listitem [ref=e654]
+            - listitem [ref=e655]
+            - listitem [ref=e656]
+        - generic [ref=e659]:
+          - generic [ref=e661]:
+            - heading "Hard-hitting dramas" [level=2] [ref=e662]
+            - link "Hard-hitting dramas" [ref=e665] [cursor=pointer]:
+              - /url: /browse?serviceToken=v0_Cl0KJGMyYjYxZWRiLWY1NzctNGZlOC1hZWRhLTFmZWUyZDI3MjI2NRDAuavD-TMaLGpzRGowUWwwenJXQllEVHlIcThQbkRxbUc3ZnJKaTM1cnh6RXpERXppckk9IAESBXF1ZXJ5GAEqB2RlZmF1bHQyBmNlbnRlcjoGc2VhcmNoUglFZjkyQlBzbXJ6AIIB_wISKTE6MUlGMzRFSVgzUldHTCMjTVpRV0daTFVNVlNFR1lMU041MlhHWkxNGrYCcXMtb2ZmZXJfdHlwZT0xJnB2X29mZmVycz1JTjpJTjpzdm9kOnByaW1lOnZvZDotMTc4NDk2ODIwMDoxNzg0OTY4MjAwLSZxcy1jb3VudHJ5LWNvZGU9SU4maW5kZXg9ZXUtYW1hem9uLXZpZGVvLW90aGVyJmFkdWx0LXByb2R1Y3Q9MCZzZWFyY2gtYWxpYXM9aW5zdGFudC12aWRlbyZicT0oYW5kIChvciBwdl9tb29kOidtb29kX2dyaXR0eScpIChub3QgZW50aXR5X3R5cGU6J1Byb21vdGlvbnxUcmFpbGVyfEJvbnVzIENvbnRlbnQnKSkmcHZfYnJvd3NlX2ludGVybmFsX29mZmVyPXN2b2QmcHZfYnJvd3NlX2ludGVybmFsX2xhbmd1YWdlPWFsbCITSGFyZC1oaXR0aW5nIGRyYW1hczAAUABwAA%3D%3D&jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_ef92bp_6_smr
+              - generic [ref=e666]: See more
+          - list [ref=e668]:
+            - listitem [ref=e669]:
+              - article [ref=e670]:
+                - generic [ref=e672]:
+                  - button "SUBEDAAR"
+                  - link "SUBEDAAR" [ref=e673] [cursor=pointer]:
+                    - /url: /detail/0NN4216VIK9FYUUO2D54PZC1MO?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_1
+                  - img "TRENDING"
+            - listitem [ref=e677]:
+              - article [ref=e678]:
+                - generic [ref=e680]:
+                  - button "System"
+                  - link "System" [ref=e681] [cursor=pointer]:
+                    - /url: /detail/0U55OBF4TFZAEIX99KQO3ULIWS?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_2
+                  - img "MOST LIKED"
+            - listitem [ref=e685]:
+              - article [ref=e686]:
+                - generic [ref=e688]:
+                  - button "Spider-Noir"
+                  - link "Spider-Noir" [ref=e689] [cursor=pointer]:
+                    - /url: /detail/0TPA7F48GEJVGD8KKM1NC6QQ9Q?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_3
+            - listitem [ref=e693]:
+              - article [ref=e694]:
+                - generic [ref=e696]:
+                  - button "Girls to Buy"
+                  - link "Girls to Buy" [ref=e697] [cursor=pointer]:
+                    - /url: /detail/0FH5ZL4L86QIB2F0LN5YNWJRZN?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_4
+            - listitem [ref=e701]:
+              - article [ref=e702]:
+                - generic [ref=e704]:
+                  - button "Kalki 2898 AD"
+                  - link "Kalki 2898 AD" [ref=e705] [cursor=pointer]:
+                    - /url: /detail/0KQU5V0T0FGF8L5L368NKW6INT?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_5
+                  - img "MOST REWATCHED"
+            - listitem [ref=e709]:
+              - article [ref=e710]:
+                - generic [ref=e712]:
+                  - button "Coolie"
+                  - link "Coolie" [ref=e713] [cursor=pointer]:
+                    - /url: /detail/0NW5YC00YCE9TB4OZSAAJA3ZBU?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_6
+                  - img "MOST REWATCHED"
+            - listitem [ref=e717]:
+              - article [ref=e718]:
+                - generic [ref=e720]:
+                  - button "Four More Shots Please!"
+                  - link "Four More Shots Please!" [ref=e721] [cursor=pointer]:
+                    - /url: /detail/0GM5E1RA8Q2EDGTB5SC1UB76VY?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_7
+            - listitem [ref=e725]:
+              - article [ref=e726]:
+                - generic [ref=e728]:
+                  - 'button "Coolie: The Powerhouse"'
+                  - 'link "Coolie: The Powerhouse" [ref=e729] [cursor=pointer]':
+                    - /url: /detail/0U7J59EKB5346WDOPFT462U406?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_8
+                  - img "MOST REWATCHED"
+            - listitem [ref=e733]:
+              - article [ref=e734]:
+                - generic [ref=e736]:
+                  - button "Maalik"
+                  - link "Maalik" [ref=e737] [cursor=pointer]:
+                    - /url: /detail/0NVVEQ6PWNXHM3DBJQ5FOVD3OZ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_9
+                  - img "MOST REWATCHED"
+            - listitem [ref=e741]:
+              - article [ref=e742]:
+                - generic [ref=e744]:
+                  - button "Aavesham"
+                  - link "Aavesham" [ref=e745] [cursor=pointer]:
+                    - /url: /detail/0GJ790Y5AGTQU6J8OZR8KG4TOH?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_10
+            - listitem [ref=e749]:
+              - article [ref=e750]:
+                - generic [ref=e752]:
+                  - button "Veera Dheera Sooran - Part 2"
+                  - link "Veera Dheera Sooran - Part 2" [ref=e753] [cursor=pointer]:
+                    - /url: /detail/0U4BH8238XNSR9L54FSZ4TJ7PJ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_11
+                  - img "MOST REWATCHED"
+            - listitem [ref=e757]:
+              - article [ref=e758]:
+                - generic [ref=e760]:
+                  - button "Madharaasi"
+                  - link "Madharaasi" [ref=e761] [cursor=pointer]:
+                    - /url: /detail/0H1RI91GFRUKC16KBWX4OHI52A?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_Ef92BP_brws_6_12
+            - listitem [ref=e765]
+            - listitem [ref=e766]
+            - listitem [ref=e767]
+            - listitem [ref=e768]
+            - listitem [ref=e769]
+            - listitem [ref=e770]
+            - listitem [ref=e771]
+            - listitem [ref=e772]
+        - generic [ref=e775]:
+          - generic [ref=e777]:
+            - heading "Recently added TV" [level=2] [ref=e778]
+            - link "Recently added TV" [ref=e781] [cursor=pointer]:
+              - /url: /browse?serviceToken=v0_Cl0KJGMyYjYxZWRiLWY1NzctNGZlOC1hZWRhLTFmZWUyZDI3MjI2NRDAuavD-TMaLGpzRGowUWwwenJXQllEVHlIcThQbkRxbUc3ZnJKaTM1cnh6RXpERXppckk9IAESBXF1ZXJ5GAEqB2RlZmF1bHQyBmNlbnRlcjoGc2VhcmNoUglMTW5VS2JzbXJ6AIIBwQMSKjE6MTJRRFg2MVFYRllSTk8jI01aUVdHWkxVTVZTRUdZTFNONTJYR1pMTRr5AnFzLW9mZmVyX3R5cGU9MSZwdl9vZmZlcnM9SU46SU46c3ZvZDpwcmltZTp2b2Q6MTc4MjM3NjIwMC0xNzg0OTY4MjAwOjE3ODQ5NjgyMDAtJnFzLWNvdW50cnktY29kZT1JTiZpbmRleD1ldS1hbWF6b24tdmlkZW8tb3RoZXImcF9uX2VudGl0eV90eXBlPVRWIFNob3cmYWR1bHQtcHJvZHVjdD0wJnNlYXJjaC1hbGlhcz1pbnN0YW50LXZpZGVvJmJxPShhbmQgKGFuZCBzb3J0OidmZWF0dXJlZC1yYW5rJyBhbWF6b25fdmlkZW9fc3RhcnRfZGF0ZTonMzB4LTB5JykgKG5vdCBlbnRpdHlfdHlwZTonUHJvbW90aW9ufFRyYWlsZXJ8Qm9udXMgQ29udGVudCcpKSZwdl9icm93c2VfaW50ZXJuYWxfb2ZmZXI9c3ZvZCZwdl9icm93c2VfaW50ZXJuYWxfbGFuZ3VhZ2U9YWxsIhFSZWNlbnRseSBhZGRlZCBUVjAAUABwAA%3D%3D&jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_lmnukb_7_smr
+              - generic [ref=e782]: See more
+          - list [ref=e784]:
+            - listitem [ref=e785]:
+              - article [ref=e786]:
+                - generic [ref=e788]:
+                  - button "Alliance"
+                  - link "Alliance" [ref=e789] [cursor=pointer]:
+                    - /url: /detail/0KC4UA7AEQAJ31QST1T3G235KD?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_1
+                  - img "TOP 10"
+            - listitem [ref=e793]:
+              - article [ref=e794]:
+                - generic [ref=e796]:
+                  - button "From"
+                  - link "From" [ref=e797] [cursor=pointer]:
+                    - /url: /detail/0ORZ86EUXBQHD0TAPT7J4UNPQZ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_2
+            - listitem [ref=e801]:
+              - article [ref=e802]:
+                - generic [ref=e804]:
+                  - button "See You at Work Tomorrow!"
+                  - link "See You at Work Tomorrow!" [ref=e805] [cursor=pointer]:
+                    - /url: /detail/0NKUDJIM5VAE9079ZGUUVI3SS4?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_3
+            - listitem [ref=e809]:
+              - article [ref=e810]:
+                - generic [ref=e812]:
+                  - button "Adarsh Baal Vidyalaya"
+                  - link "Adarsh Baal Vidyalaya" [ref=e813] [cursor=pointer]:
+                    - /url: /detail/0IR9VI8C4BBY3HMFMTDKFZ5RP5?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_4
+                  - img "TRENDING"
+            - listitem [ref=e816]:
+              - article [ref=e817]:
+                - generic [ref=e819]:
+                  - button "Isakapatnam"
+                  - link "Isakapatnam" [ref=e820] [cursor=pointer]:
+                    - /url: /detail/0QSWWBEUSNAZFA9VHOJMXTCX9P?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_5
+            - listitem [ref=e824]:
+              - article [ref=e825]:
+                - generic [ref=e827]:
+                  - button "Elle"
+                  - link "Elle" [ref=e828] [cursor=pointer]:
+                    - /url: /detail/0R5AKKU9VTUSGZP8J4M94V9SCJ?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_6
+            - listitem [ref=e832]:
+              - article [ref=e833]:
+                - generic [ref=e835]:
+                  - button "Ride or Die"
+                  - link "Ride or Die" [ref=e836] [cursor=pointer]:
+                    - /url: /detail/0IXACW49VZL4VHX1T8GEHAW67J?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_7
+            - listitem [ref=e840]:
+              - article [ref=e841]:
+                - generic [ref=e843]:
+                  - button "Murder 101 (Limited Series)"
+                  - link "Murder 101 (Limited Series)" [ref=e844] [cursor=pointer]:
+                    - /url: /detail/0S0V8LUF7S7AYNYG30MLKUI3F0?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_8
+            - listitem [ref=e848]:
+              - article [ref=e849]:
+                - generic [ref=e851]:
+                  - button "Because This Is My First Life"
+                  - link "Because This Is My First Life" [ref=e852] [cursor=pointer]:
+                    - /url: /detail/0M5PUI132WU6WSEG2HPDPDA0ML?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_9
+            - listitem [ref=e856]:
+              - article [ref=e857]:
+                - generic [ref=e859]:
+                  - button "Appu - The Yogic Elephant"
+                  - link "Appu - The Yogic Elephant" [ref=e860] [cursor=pointer]:
+                    - /url: /detail/0T8X8TRUOWO0FSIE02RJGZYB3W?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_10
+            - listitem [ref=e864]:
+              - article [ref=e865]:
+                - generic [ref=e867]:
+                  - button "THE GHOST IN THE SHELL"
+                  - link "THE GHOST IN THE SHELL" [ref=e868] [cursor=pointer]:
+                    - /url: /detail/0MRWXUDE3L303XFEJRNWB20S3O?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_11
+            - listitem [ref=e872]:
+              - article [ref=e873]:
+                - generic [ref=e875]:
+                  - 'button "Fist of the North Star: HOKUTO NO KEN"'
+                  - 'link "Fist of the North Star: HOKUTO NO KEN" [ref=e876] [cursor=pointer]':
+                    - /url: /detail/0FHCA8284A4JP1BGB6EZM1UHXM?jic=8%7CEgRzdm9k&ref_=atv_hm_hom_c_LMnUKb_brws_7_12
+            - listitem [ref=e880]
+            - listitem [ref=e881]
+            - listitem [ref=e882]
+            - listitem [ref=e883]
+            - listitem [ref=e884]
+            - listitem [ref=e885]
+            - listitem [ref=e886]
+            - listitem [ref=e887]
+        - link "Load more videos" [ref=e891] [cursor=pointer]:
+          - /url: /storefront?startIndex=7&ref_=atv_hm_nxt_2&targetId=V2%3D4AEA6u69gYPeuYe-toZwYWdlSWSIcGFnZVR5cGWMY29sbGVjdGlvbklkiHdpZGdldElkjo5zd2lmdElkVmVyc2lvbt6UioRob21li4Rob21ljA-ND46CVjI%3D&pageSize=14&serviceToken=v0_Cl0KJGMyYjYxZWRiLWY1NzctNGZlOC1hZWRhLTFmZWUyZDI3MjI2NRDAuavD-TMaLGpzRGowUWwwenJXQllEVHlIcThQbkRxbUc3ZnJKaTM1cnh6RXpERXppckk9IAESBXZwYWdlGAAyBmNlbnRlckCEAUokMjMzMjhjNjYtYjg1OS00ODY3LThlMjItMzEyMWQ4NzJiM2M2UgBqVnsicnNpcFN0YXRlSWQiOiJSU0lQMWYwNWQ5NzRlNjE4ZTFiNmQ1NTQ5NWQ5MTBkMjJiYzk2YmJmZGI0MGQwM2NhYzA3YzE0YmFjZGUyMmQ4MzRiZiJ9evIHCrwFSDRzSUFBQUFBQUFBL3lXU1NYTEZJQXhFTDVRRnN5QTdNOWtZQTU3Ti8vYy9TTXJLVXE5YTNVaUkvbEsyc3hpYU9QaFN5dnBEZjJrYVBpT3gxMG5EM2Q2YXErVSsyU1AzY1FiNXczNmJsY3BFRGNwNHNJQUtlUld2RHdpa0tZNFdrWXVRT3QrZmNYbHJ0dm11Nk5ialo2L295VGc5MnZBY1Z0MEdROFhYMWwwY1IyL1BGek9VRzBBWVFaaFJ3MzhvSlVFR0VKWm9ob0R5cURSUUVzRks5RnlybzhYTS9oR3d2MkNsZWYwNk9JZERjK3dnd0hSUVlJRlRoaDFPMmdvbHlNNmFRVVZRWk9DYU0yclZmNHUwd21waWJKQk9JTEJVQ3g4OElVSUVCRXlBY0k0cnBXMThUZmNLSlIxUTA1bk5XMmRSczV1bThaNEhqNkhQTi9WUzdXQUJDSUxCUE5sNzY5ZG1IN1NNSUxYMElqcFE5bFhRM0tKWnRvbnJSRHNDWllZK3pqcUVzNkVwWjNUY3BwQWdmVXArZ1ZNdG5VZklOYWNSQldjNlNETjhQbFBDWjFLNUgwdVpKN1BFTkNHSW1lVVF3bW1yeHhCdVNWSnh2bTl1VnZ6bTVzUldhU2pUTUtNZ1dWcTR1NmE0YlJzT2NsME44aUhpRGdIUGdNNnU2R081R2pFN2ZydXY2N3cwSFNoWDZFaVRzT3dBMWExeGVBWlBPbFdTendIMzhIODRWMlg5TzFnaDBvU1dySDdMN3VXZ1JMNXdOMnhPc29WMTI4NWQxQmNZMHR3VXRuV2IzSU5qMFBFaklUTXRwb3FBbnBjV0orbmJzcXYyZjYyZlpoY1g4cWdjV25ZcTBwMUt2R3pIMVhSS0lzM3lJbUJSUU1WRmVvOStoSW1Ybno5TWhOTHBSQU1BQUE9PSIBAComMToxMlIyRkVPNFMzTE1NUCMjTkJTWEUzMkRNRlpHNjVMVE1WV0EqKTE6MUlBWUcwQlVUMUVWTyMjTVpRV0daTFVNVlNFR1lMU041MlhHWkxNKioxOjEzNkxWVDJXNVJHSjc1IyNNWlFXR1pMVU1WU0VHWUxTTjUyWEdaTE0qKjI6T0I1NjlGODc2OUQ3QjcjI01aUVdHWkxVTVZTRUdZTFNONTJYR1pMTSoqMToxMzVVTUQ4UzdFME82MyMjTVpRV0daTFVNVlNFR1lMU041MlhHWkxNKikxOjFJRjM0RUlYM1JXR0wjI01aUVdHWkxVTVZTRUdZTFNONTJYR1pMTSoqMToxMlFEWDYxUVhGWVJOTyMjTVpRV0daTFVNVlNFR1lMU041MlhHWkxNMAeCAQYwAFAAcAA%3D&page=2
+          - text: See more
+    - contentinfo [ref=e894]:
+      - list [ref=e896]:
+        - listitem [ref=e897]:
+          - link "Terms and Privacy Notice" [ref=e898] [cursor=pointer]:
+            - /url: /ww-av-legal-home?ref_=atv_ftr_ter
+        - listitem [ref=e899]:
+          - link "Send us feedback" [ref=e900] [cursor=pointer]:
+            - /url: /contactus?ref_=atv_ftr_cu
+        - listitem [ref=e901]:
+          - link "Help" [ref=e902] [cursor=pointer]:
+            - /url: /help?ref_=atv_ftr_hp
+        - listitem [ref=e903]: © 1996-2026, Amazon.com, Inc. or its affiliates
+  - generic: Watch free movies, TV shows, and more

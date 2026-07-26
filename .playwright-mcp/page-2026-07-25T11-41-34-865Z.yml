@@ -1,0 +1,248 @@
+- generic [ref=f2e2]:
+  - banner:
+    - navigation "Navigation Bar" [ref=f2e3]:
+      - generic [ref=f2e5]:
+        - link "Home" [ref=f2e6] [cursor=pointer]:
+          - /url: /
+          - img "Prime Video" [ref=f2e7]
+        - list [ref=f2e8]:
+          - listitem [ref=f2e9]:
+            - link "Home" [ref=f2e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f2e12]:
+            - link "Free to me" [ref=f2e13] [cursor=pointer]:
+              - /url: /collection/streamfree
+          - listitem [ref=f2e15]:
+            - link "Movies" [ref=f2e16] [cursor=pointer]:
+              - /url: /movie
+          - listitem [ref=f2e18]:
+            - link "TV shows" [ref=f2e19] [cursor=pointer]:
+              - /url: /tv
+          - listitem [ref=f2e21]:
+            - link "Live TV" [ref=f2e22] [cursor=pointer]:
+              - /url: /livetv
+        - link "Subscriptions" [ref=f2e27] [cursor=pointer]:
+          - /url: /addons
+        - list [ref=f2e34]:
+          - listitem [ref=f2e35]:
+            - button "Search Prime Video" [ref=f2e36]
+          - listitem [ref=f2e40]:
+            - button "EN" [ref=f2e41]
+          - listitem [ref=f2e44]:
+            - button "Categories" [ref=f2e45]
+          - listitem [ref=f2e56]:
+            - button "Profile, Settings, and Account" [ref=f2e57]:
+              - generic [ref=f2e58]: A
+          - listitem [ref=f2e59]:
+            - link "Join Prime" [ref=f2e60] [cursor=pointer]:
+              - /url: /signup
+  - main [ref=f2e62]:
+    - generic [ref=f2e65]:
+      - img [ref=f2e66]:
+        - generic [ref=f2e67]: prime
+      - heading "Adarsh Baal Vidyalaya" [level=1] [ref=f2e70]
+      - generic [ref=f2e71]:
+        - generic [ref=f2e72]:
+          - generic [ref=f2e73]:
+            - button "Watch trailer" [ref=f2e74]
+            - button "Add to Watchlist" [ref=f2e78]
+            - button "Like" [ref=f2e81]:
+              - generic [ref=f2e82]: ▲
+            - button "Not for me" [ref=f2e83]:
+              - generic [ref=f2e84]: ▼
+            - button "Share" [ref=f2e85]:
+              - generic [ref=f2e86]: ↗
+          - generic [ref=f2e87]:
+            - img [ref=f2e88]:
+              - generic [ref=f2e89]: prime
+            - generic [ref=f2e92]: Subscribe
+          - paragraph [ref=f2e93]: Watch with a Prime membership
+        - generic [ref=f2e97]:
+          - generic [ref=f2e98]:
+            - generic [ref=f2e99]: NEW SERIES
+            - generic [ref=f2e100]: "#9 in India"
+          - paragraph [ref=f2e105]: A well-meaning teacher takes charge of a chaotic small-town school.
+          - generic [ref=f2e106]:
+            - generic [ref=f2e107]:
+              - link "Comedy" [ref=f2e108] [cursor=pointer]:
+                - /url: /browse
+              - generic [ref=f2e109]: •
+            - generic [ref=f2e110]:
+              - link "Drama" [ref=f2e111] [cursor=pointer]:
+                - /url: /browse
+              - generic [ref=f2e112]: •
+            - generic [ref=f2e113]: "2025"
+            - generic [ref=f2e114]: 1 season
+        - generic [ref=f2e115]:
+          - paragraph [ref=f2e116]:
+            - text: "Cast:"
+            - generic [ref=f2e117]: Lead Performer,
+            - generic [ref=f2e118]: Second Lead,
+            - generic [ref=f2e119]: Supporting Actor
+          - generic [ref=f2e120]:
+            - generic [ref=f2e121]: A
+            - generic [ref=f2e122]: CC
+            - generic [ref=f2e123]: AD
+      - heading "Season 1" [level=2] [ref=f2e124]
+    - tablist [ref=f2e125]:
+      - tab "Episodes" [selected] [ref=f2e126]
+      - tab "Related" [ref=f2e128]
+      - tab "Details" [ref=f2e129]
+    - generic [ref=f2e130]:
+      - paragraph [ref=f2e131]: 8 episodes
+      - list [ref=f2e132]:
+        - listitem [ref=f2e133]:
+          - article [ref=f2e134]:
+            - img "Episode 1" [ref=f2e136]
+            - heading "1. Episode 1" [level=3] [ref=f2e141]
+            - paragraph [ref=f2e142]: Placeholder episode copy for this clone — the investigation widens and the cost of the truth keeps climbing.
+            - generic [ref=f2e143]:
+              - generic [ref=f2e144]: A
+              - generic [ref=f2e145]: CC
+              - generic [ref=f2e146]: 36min
+              - generic [ref=f2e147]: Jun 12, 2026
+        - listitem [ref=f2e148]:
+          - article [ref=f2e149]:
+            - img "Episode 2" [ref=f2e151]
+            - heading "2. Episode 2" [level=3] [ref=f2e156]
+            - paragraph [ref=f2e157]: Placeholder episode copy for this clone — the investigation widens and the cost of the truth keeps climbing.
+            - generic [ref=f2e158]:
+              - generic [ref=f2e159]: A
+              - generic [ref=f2e160]: CC
+              - generic [ref=f2e161]: 41min
+              - generic [ref=f2e162]: Jun 12, 2026
+        - listitem [ref=f2e163]:
+          - article [ref=f2e164]:
+            - img "Episode 3" [ref=f2e166]
+            - heading "3. Episode 3" [level=3] [ref=f2e171]
+            - paragraph [ref=f2e172]: Placeholder episode copy for this clone — the investigation widens and the cost of the truth keeps climbing.
+            - generic [ref=f2e173]:
+              - generic [ref=f2e174]: A
+              - generic [ref=f2e175]: CC
+              - generic [ref=f2e176]: 46min
+              - generic [ref=f2e177]: Jun 12, 2026
+        - listitem [ref=f2e178]:
+          - article [ref=f2e179]:
+            - img "Episode 4" [ref=f2e181]
+            - heading "4. Episode 4" [level=3] [ref=f2e186]
+            - paragraph [ref=f2e187]: Placeholder episode copy for this clone — the investigation widens and the cost of the truth keeps climbing.
+            - generic [ref=f2e188]:
+              - generic [ref=f2e189]: A
+              - generic [ref=f2e190]: CC
+              - generic [ref=f2e191]: 39min
+              - generic [ref=f2e192]: Jun 12, 2026
+        - listitem [ref=f2e193]:
+          - article [ref=f2e194]:
+            - img "Episode 5" [ref=f2e196]
+            - heading "5. Episode 5" [level=3] [ref=f2e201]
+            - paragraph [ref=f2e202]: Placeholder episode copy for this clone — the investigation widens and the cost of the truth keeps climbing.
+            - generic [ref=f2e203]:
+              - generic [ref=f2e204]: A
+              - generic [ref=f2e205]: CC
+              - generic [ref=f2e206]: 44min
+              - generic [ref=f2e207]: Jun 12, 2026
+        - listitem [ref=f2e208]:
+          - article [ref=f2e209]:
+            - img "Episode 6" [ref=f2e211]
+            - heading "6. Episode 6" [level=3] [ref=f2e216]
+            - paragraph [ref=f2e217]: Placeholder episode copy for this clone — the investigation widens and the cost of the truth keeps climbing.
+            - generic [ref=f2e218]:
+              - generic [ref=f2e219]: A
+              - generic [ref=f2e220]: CC
+              - generic [ref=f2e221]: 37min
+              - generic [ref=f2e222]: Jun 12, 2026
+        - listitem [ref=f2e223]:
+          - article [ref=f2e224]:
+            - img "Episode 7" [ref=f2e226]
+            - heading "7. Episode 7" [level=3] [ref=f2e231]
+            - paragraph [ref=f2e232]: Placeholder episode copy for this clone — the investigation widens and the cost of the truth keeps climbing.
+            - generic [ref=f2e233]:
+              - generic [ref=f2e234]: A
+              - generic [ref=f2e235]: CC
+              - generic [ref=f2e236]: 42min
+              - generic [ref=f2e237]: Jun 12, 2026
+        - listitem [ref=f2e238]:
+          - article [ref=f2e239]:
+            - img "Episode 8" [ref=f2e241]
+            - heading "8. Episode 8" [level=3] [ref=f2e246]
+            - paragraph [ref=f2e247]: Placeholder episode copy for this clone — the investigation widens and the cost of the truth keeps climbing.
+            - generic [ref=f2e248]:
+              - generic [ref=f2e249]: A
+              - generic [ref=f2e250]: CC
+              - generic [ref=f2e251]: 47min
+              - generic [ref=f2e252]: Jun 12, 2026
+    - generic [ref=f2e253]:
+      - generic [ref=f2e254]:
+        - generic [ref=f2e255]:
+          - heading "Adarsh Baal Vidyalaya" [level=3] [ref=f2e256]
+          - generic [ref=f2e257]:
+            - generic [ref=f2e258]:
+              - generic [ref=f2e259]: Comedy
+              - generic [ref=f2e260]: Drama
+              - generic [ref=f2e261]: "2025"
+              - generic [ref=f2e262]: HDR
+              - generic [ref=f2e263]: UHD
+            - paragraph [ref=f2e264]: A well-meaning teacher takes charge of a chaotic small-town school.
+            - button "More" [ref=f2e265]
+        - generic [ref=f2e266]:
+          - heading "Creators and Cast" [level=3] [ref=f2e267]
+          - generic [ref=f2e269]:
+            - generic [ref=f2e270]:
+              - term [ref=f2e271]: Directors
+              - definition [ref=f2e272]:
+                - generic [ref=f2e273]: A. Director,
+                - generic [ref=f2e274]: B. Director,
+                - generic [ref=f2e275]: C. Director
+            - generic [ref=f2e276]:
+              - term [ref=f2e277]: Producers
+              - definition [ref=f2e278]:
+                - generic [ref=f2e279]: Example Productions,
+                - generic [ref=f2e280]: Second Studio
+            - generic [ref=f2e281]:
+              - term [ref=f2e282]: Cast
+              - definition [ref=f2e283]:
+                - generic [ref=f2e284]: Lead Performer,
+                - generic [ref=f2e285]: Second Lead,
+                - generic [ref=f2e286]: Supporting Actor,
+                - generic [ref=f2e287]: Ensemble Member,
+                - generic [ref=f2e288]: Guest Star,
+                - generic [ref=f2e289]: Recurring Role
+            - generic [ref=f2e290]:
+              - term [ref=f2e291]: Studio
+              - definition [ref=f2e292]: Demo Studios
+      - generic [ref=f2e293]:
+        - generic [ref=f2e294]:
+          - heading "Content advisory" [level=3] [ref=f2e295]
+          - generic [ref=f2e296]: Asmoking depictions, violence, foul language, alcohol use, flashing lights may affect photosensitive viewers
+        - generic [ref=f2e297]:
+          - heading "Audio languages" [level=3] [ref=f2e298]
+          - generic [ref=f2e299]: Hindi, Hindi [Audio Description], Tamil, Telugu
+        - generic [ref=f2e300]:
+          - heading "Subtitles" [level=3] [ref=f2e301]
+          - generic [ref=f2e302]: English, Hindi [CC], Kannada, Malayalam, Tamil, Telugu, Indonesia, Melayu, Türkçe
+    - paragraph [ref=f2e303]:
+      - text: By clicking play, you agree to our
+      - link "Terms of Use" [ref=f2e304] [cursor=pointer]:
+        - /url: /terms
+      - text: .
+    - separator [ref=f2e305]
+    - generic [ref=f2e306]:
+      - heading "Feedback" [level=3] [ref=f2e307]
+      - button "Send us feedback" [ref=f2e308]
+    - generic [ref=f2e309]:
+      - heading "Support" [level=3] [ref=f2e310]
+      - link "Get Help" [ref=f2e311] [cursor=pointer]:
+        - /url: /help
+  - contentinfo [ref=f2e312]:
+    - img "Prime Video" [ref=f2e314]
+    - list [ref=f2e315]:
+      - listitem [ref=f2e316]:
+        - link "Terms and Privacy Notice" [ref=f2e317] [cursor=pointer]:
+          - /url: /terms
+      - listitem [ref=f2e318]:
+        - link "Send us feedback" [ref=f2e319] [cursor=pointer]:
+          - /url: /feedback
+      - listitem [ref=f2e320]:
+        - link "Help" [ref=f2e321] [cursor=pointer]:
+          - /url: /help
+      - listitem [ref=f2e322]: © 1996-2026, Amazon.com, Inc. or its affiliates

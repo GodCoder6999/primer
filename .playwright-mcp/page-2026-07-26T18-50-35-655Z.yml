@@ -1,0 +1,1817 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner:
+      - navigation "Navigation Bar" [ref=e3]:
+        - generic [ref=e5]:
+          - link "Home" [ref=e6] [cursor=pointer]:
+            - /url: /
+            - img "Prime Video" [ref=e7]
+          - list [ref=e8]:
+            - listitem [ref=e9]:
+              - link "Home" [ref=e10] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e12]:
+              - link "Free to me" [ref=e13] [cursor=pointer]:
+                - /url: /collection/streamfree
+            - listitem [ref=e15]:
+              - link "Movies" [ref=e16] [cursor=pointer]:
+                - /url: /movie
+            - listitem [ref=e18]:
+              - link "TV shows" [ref=e19] [cursor=pointer]:
+                - /url: /tv
+            - listitem [ref=e21]:
+              - link "Live TV" [ref=e22] [cursor=pointer]:
+                - /url: /livetv
+          - link "Subscriptions" [ref=e27] [cursor=pointer]:
+            - /url: /addons
+          - list [ref=e34]:
+            - listitem [ref=e35]:
+              - button "Search Prime Video" [ref=e36]
+            - listitem [ref=e40]:
+              - button "EN" [ref=e41]
+            - listitem [ref=e44]:
+              - button "Categories" [ref=e45]
+            - listitem [ref=e56]:
+              - button "Profile, Settings, and Account" [ref=e57]:
+                - generic [ref=e58]: A
+            - listitem [ref=e59]:
+              - link "Join Prime" [ref=e60] [cursor=pointer]:
+                - /url: /signup
+    - main [ref=e62]:
+      - region "Featured titles" [ref=e63]:
+        - generic [ref=e64]:
+          - button "Move back to title number 5" [ref=e66]
+          - button "Move forward to title number 2" [ref=e70]
+          - list [ref=e73]:
+            - listitem "Title number 1" [ref=e74]:
+              - generic [ref=e75]:
+                - generic [ref=e76]:
+                  - img "The Odyssey" [ref=e77]
+                  - paragraph [ref=e78]: English | Hindi | Tamil | Telugu
+                  - generic [ref=e79]:
+                    - link "Watch now" [ref=e80] [cursor=pointer]:
+                      - /url: /detail/t197?autoplay=1&t=0
+                    - button "Add to Watchlist" [ref=e81]
+                    - link "More info about The Odyssey" [ref=e84] [cursor=pointer]:
+                      - /url: /detail/t197
+                  - paragraph [ref=e88]:
+                    - generic [ref=e89]: ▸
+                    - text: Watch with a Prime membership
+                - generic [ref=e90]: U/A 13+
+            - listitem [ref=e91]:
+              - generic [ref=e92]:
+                - generic [ref=e93]:
+                  - paragraph [ref=e95]: English | Hindi | Tamil | Telugu
+                  - generic [ref=e96]:
+                    - link [ref=e97] [cursor=pointer]:
+                      - /url: /detail/t198?autoplay=1&t=0
+                      - text: Watch now
+                    - button [ref=e98]
+                    - link [ref=e101] [cursor=pointer]:
+                      - /url: /detail/t198
+                  - paragraph [ref=e105]:
+                    - generic [ref=e106]: ▸
+                    - text: Watch with a Prime membership
+                - generic [ref=e107]: U/A 13+
+            - listitem [ref=e108]:
+              - generic [ref=e109]:
+                - generic [ref=e110]:
+                  - paragraph [ref=e112]: English | Hindi | Tamil | Telugu
+                  - generic [ref=e113]:
+                    - link [ref=e114] [cursor=pointer]:
+                      - /url: /detail/t199?autoplay=1&t=0
+                      - text: Watch now
+                    - button [ref=e115]
+                    - link [ref=e118] [cursor=pointer]:
+                      - /url: /detail/t199
+                  - paragraph [ref=e122]:
+                    - generic [ref=e123]: ▸
+                    - text: Watch with a Prime membership
+                - generic [ref=e124]: U/A 13+
+            - listitem [ref=e125]:
+              - generic [ref=e126]:
+                - generic [ref=e127]:
+                  - paragraph [ref=e129]: English | Hindi | Tamil | Telugu
+                  - generic [ref=e130]:
+                    - link [ref=e131] [cursor=pointer]:
+                      - /url: /detail/t200?autoplay=1&t=0
+                      - text: Watch now
+                    - button [ref=e132]
+                    - link [ref=e135] [cursor=pointer]:
+                      - /url: /detail/t200
+                  - paragraph [ref=e139]:
+                    - generic [ref=e140]: ▸
+                    - text: Watch with a Prime membership
+                - generic [ref=e141]: U/A 13+
+            - listitem [ref=e142]:
+              - generic [ref=e143]:
+                - generic [ref=e144]:
+                  - paragraph [ref=e146]: English | Hindi | Tamil | Telugu
+                  - generic [ref=e147]:
+                    - link [ref=e148] [cursor=pointer]:
+                      - /url: /detail/t201?autoplay=1&t=0
+                      - text: Watch now
+                    - button [ref=e149]
+                    - link [ref=e152] [cursor=pointer]:
+                      - /url: /detail/t201
+                  - paragraph [ref=e156]:
+                    - generic [ref=e157]: ▸
+                    - text: Watch with a Prime membership
+                - generic [ref=e158]: U/A 13+
+        - list [ref=e160]:
+          - listitem [ref=e161]:
+            - button "Go to title number 1" [ref=e162]
+          - listitem [ref=e163]:
+            - button "Go to title number 2" [ref=e164]
+          - listitem [ref=e165]:
+            - button "Go to title number 3" [ref=e166]
+          - listitem [ref=e167]:
+            - button "Go to title number 4" [ref=e168]
+          - listitem:
+            - button "Go to title number 5"
+      - generic [ref=e169]:
+        - heading "Top 10 in India Today" [level=2] [ref=e172]
+        - generic [ref=e177]:
+          - list [ref=e178]:
+            - listitem [ref=e179]:
+              - generic [ref=e180]:
+                - generic [ref=e181]: "1"
+                - article [ref=e182]:
+                  - generic [ref=e183]:
+                    - img "Bleach" [ref=e184]
+                    - generic "NEW SERIES" [ref=e185]
+                    - link "Bleach" [ref=e190] [cursor=pointer]:
+                      - /url: /detail/t1
+            - listitem [ref=e192]:
+              - generic [ref=e193]:
+                - generic [ref=e194]: "2"
+                - article [ref=e195]:
+                  - generic [ref=e196]:
+                    - 'img "Avatar Aang: The Last Airbender" [ref=e197]'
+                    - generic "NEW EPISODE" [ref=e198]
+                    - img [ref=e200]:
+                      - generic [ref=e201]: prime
+                    - 'link "Avatar Aang: The Last Airbender" [ref=e204] [cursor=pointer]':
+                      - /url: /detail/t2
+            - listitem [ref=e206]:
+              - generic [ref=e207]:
+                - generic [ref=e208]: "3"
+                - article [ref=e209]:
+                  - generic [ref=e210]:
+                    - img "The Odyssey" [ref=e211]
+                    - generic "NEW MOVIE" [ref=e212]
+                    - img [ref=e214]:
+                      - generic [ref=e215]: prime
+                    - link "The Odyssey" [ref=e218] [cursor=pointer]:
+                      - /url: /detail/t3
+            - listitem [ref=e220]:
+              - generic [ref=e221]:
+                - generic [ref=e222]: "4"
+                - article [ref=e223]:
+                  - generic [ref=e224]:
+                    - img "Disclosure Day" [ref=e225]
+                    - generic "NEW SEASON" [ref=e226]
+                    - img [ref=e228]:
+                      - generic [ref=e229]: prime
+                    - link "Disclosure Day" [ref=e232] [cursor=pointer]:
+                      - /url: /detail/t4
+            - listitem [ref=e234]:
+              - generic [ref=e235]:
+                - generic [ref=e236]: "5"
+                - article [ref=e237]:
+                  - generic [ref=e238]:
+                    - img "72 HOURS" [ref=e239]
+                    - img [ref=e241]:
+                      - generic [ref=e242]: prime
+                    - link "72 HOURS" [ref=e245] [cursor=pointer]:
+                      - /url: /detail/t5
+            - listitem [ref=e247]:
+              - generic [ref=e248]:
+                - generic [ref=e249]: "6"
+                - article [ref=e250]:
+                  - generic [ref=e251]:
+                    - img "Agent Kim Reactivated" [ref=e252]
+                    - link "Agent Kim Reactivated" [ref=e257] [cursor=pointer]:
+                      - /url: /detail/t6
+            - listitem [ref=e259]:
+              - generic [ref=e260]:
+                - generic [ref=e261]: "7"
+                - article [ref=e262]:
+                  - generic [ref=e263]:
+                    - img "Masters of the Universe" [ref=e264]
+                    - img [ref=e266]:
+                      - generic [ref=e267]: prime
+                    - link "Masters of the Universe" [ref=e270] [cursor=pointer]:
+                      - /url: /detail/t7
+            - listitem [ref=e272]:
+              - generic [ref=e273]:
+                - generic [ref=e274]: "8"
+                - article [ref=e275]:
+                  - generic [ref=e276]:
+                    - img "Obsession" [ref=e277]
+                    - img [ref=e279]:
+                      - generic [ref=e280]: prime
+                    - link "Obsession" [ref=e283] [cursor=pointer]:
+                      - /url: /detail/t8
+            - listitem [ref=e285]:
+              - generic [ref=e286]:
+                - generic [ref=e287]: "9"
+                - article [ref=e288]:
+                  - generic [ref=e289]:
+                    - img "The Mandalorian and Grogu" [ref=e290]
+                    - img [ref=e292]:
+                      - generic [ref=e293]: prime
+                    - link "The Mandalorian and Grogu" [ref=e296] [cursor=pointer]:
+                      - /url: /detail/t9
+            - listitem [ref=e298]:
+              - generic [ref=e299]:
+                - generic [ref=e300]: "10"
+                - article [ref=e301]:
+                  - generic [ref=e302]:
+                    - 'img "Avengers: Doomsday" [ref=e303]'
+                    - img [ref=e305]:
+                      - generic [ref=e306]: prime
+                    - 'link "Avengers: Doomsday" [ref=e309] [cursor=pointer]':
+                      - /url: /detail/t10
+            - listitem [ref=e311]:
+              - generic [ref=e312]:
+                - generic [ref=e313]: "11"
+                - article [ref=e314]:
+                  - generic [ref=e315]:
+                    - img "Backrooms" [ref=e316]
+                    - link "Backrooms" [ref=e321] [cursor=pointer]:
+                      - /url: /detail/t11
+            - listitem [ref=e323]:
+              - generic [ref=e324]:
+                - generic [ref=e325]: "12"
+                - article [ref=e326]:
+                  - generic [ref=e327]:
+                    - img "Scary Movie" [ref=e328]
+                    - img [ref=e330]:
+                      - generic [ref=e331]: prime
+                    - link "Scary Movie" [ref=e334] [cursor=pointer]:
+                      - /url: /detail/t12
+            - listitem [ref=e336]:
+              - generic [ref=e337]:
+                - generic [ref=e338]: "13"
+                - article [ref=e339]:
+                  - generic [ref=e340]:
+                    - 'img "Spider-Man: Brand New Day" [ref=e341]'
+                    - img [ref=e343]:
+                      - generic [ref=e344]: prime
+                    - 'link "Spider-Man: Brand New Day" [ref=e347] [cursor=pointer]':
+                      - /url: /detail/t13
+            - listitem [ref=e349]:
+              - generic [ref=e350]:
+                - generic [ref=e351]: "14"
+                - article [ref=e352]:
+                  - generic [ref=e353]:
+                    - img "The Dink" [ref=e354]
+                    - img [ref=e356]:
+                      - generic [ref=e357]: prime
+                    - link "The Dink" [ref=e360] [cursor=pointer]:
+                      - /url: /detail/t14
+          - button "next 5 titles" [ref=e362]
+      - generic [ref=e365]:
+        - generic [ref=e367]:
+          - heading "Top TV" [level=2] [ref=e368]
+          - link "See more" [ref=e369] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e372]:
+          - list [ref=e373]:
+            - listitem [ref=e374]:
+              - article [ref=e375]:
+                - generic [ref=e376]:
+                  - img "Tagesschau" [ref=e377]
+                  - generic "NEW SERIES" [ref=e378]
+                  - link "Tagesschau" [ref=e383] [cursor=pointer]:
+                    - /url: /detail/t15
+            - listitem [ref=e385]:
+              - article [ref=e386]:
+                - generic [ref=e387]:
+                  - 'img "Law & Order: Special Victims Unit" [ref=e388]'
+                  - generic "NEW EPISODE" [ref=e389]
+                  - img [ref=e391]:
+                    - generic [ref=e392]: prime
+                  - 'link "Law & Order: Special Victims Unit" [ref=e395] [cursor=pointer]':
+                    - /url: /detail/t16
+            - listitem [ref=e397]:
+              - article [ref=e398]:
+                - generic [ref=e399]:
+                  - img "House of the Dragon" [ref=e400]
+                  - generic "NEW MOVIE" [ref=e401]
+                  - img [ref=e403]:
+                    - generic [ref=e404]: prime
+                  - link "House of the Dragon" [ref=e407] [cursor=pointer]:
+                    - /url: /detail/t17
+            - listitem [ref=e409]:
+              - article [ref=e410]:
+                - generic [ref=e411]:
+                  - img "The Mentalist" [ref=e412]
+                  - generic "NEW SEASON" [ref=e413]
+                  - img [ref=e415]:
+                    - generic [ref=e416]: prime
+                  - link "The Mentalist" [ref=e419] [cursor=pointer]:
+                    - /url: /detail/t18
+            - listitem [ref=e421]:
+              - article [ref=e422]:
+                - generic [ref=e423]:
+                  - img "Caressing My Hibernating Bear" [ref=e424]
+                  - img [ref=e426]:
+                    - generic [ref=e427]: prime
+                  - link "Caressing My Hibernating Bear" [ref=e430] [cursor=pointer]:
+                    - /url: /detail/t19
+            - listitem [ref=e432]:
+              - article [ref=e433]:
+                - generic [ref=e434]:
+                  - img "Rote Rosen" [ref=e435]
+                  - link "Rote Rosen" [ref=e440] [cursor=pointer]:
+                    - /url: /detail/t20
+            - listitem [ref=e442]:
+              - article [ref=e443]:
+                - generic [ref=e444]:
+                  - img "Law & Order" [ref=e445]
+                  - img [ref=e447]:
+                    - generic [ref=e448]: prime
+                  - link "Law & Order" [ref=e451] [cursor=pointer]:
+                    - /url: /detail/t21
+            - listitem [ref=e453]:
+              - article [ref=e454]:
+                - generic [ref=e455]:
+                  - img "Secret Mission - Undercover Agents Never Back Down!" [ref=e456]
+                  - img [ref=e458]:
+                    - generic [ref=e459]: prime
+                  - link "Secret Mission - Undercover Agents Never Back Down!" [ref=e462] [cursor=pointer]:
+                    - /url: /detail/t22
+            - listitem [ref=e464]:
+              - article [ref=e465]:
+                - generic [ref=e466]:
+                  - img "Silo" [ref=e467]
+                  - img [ref=e469]:
+                    - generic [ref=e470]: prime
+                  - link "Silo" [ref=e473] [cursor=pointer]:
+                    - /url: /detail/t23
+            - listitem [ref=e475]:
+              - article [ref=e476]:
+                - generic [ref=e477]:
+                  - img "Supernatural" [ref=e478]
+                  - img [ref=e480]:
+                    - generic [ref=e481]: prime
+                  - link "Supernatural" [ref=e484] [cursor=pointer]:
+                    - /url: /detail/t24
+            - listitem [ref=e486]:
+              - article [ref=e487]:
+                - generic [ref=e488]:
+                  - img "Grey's Anatomy" [ref=e489]
+                  - link "Grey's Anatomy" [ref=e494] [cursor=pointer]:
+                    - /url: /detail/t25
+            - listitem [ref=e496]:
+              - article [ref=e497]:
+                - generic [ref=e498]:
+                  - img "FROM" [ref=e499]
+                  - img [ref=e501]:
+                    - generic [ref=e502]: prime
+                  - link "FROM" [ref=e505] [cursor=pointer]:
+                    - /url: /detail/t26
+            - listitem [ref=e507]:
+              - article [ref=e508]:
+                - generic [ref=e509]:
+                  - img "Breaking Bad" [ref=e510]
+                  - img [ref=e512]:
+                    - generic [ref=e513]: prime
+                  - link "Breaking Bad" [ref=e516] [cursor=pointer]:
+                    - /url: /detail/t27
+            - listitem [ref=e518]:
+              - article [ref=e519]:
+                - generic [ref=e520]:
+                  - img "Rick and Morty" [ref=e521]
+                  - img [ref=e523]:
+                    - generic [ref=e524]: prime
+                  - link "Rick and Morty" [ref=e527] [cursor=pointer]:
+                    - /url: /detail/t28
+          - button "next 5 titles" [ref=e529]
+      - generic [ref=e532]:
+        - generic [ref=e534]:
+          - heading "Drama TV" [level=2] [ref=e535]
+          - link "See more" [ref=e536] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e539]:
+          - list [ref=e540]:
+            - listitem [ref=e541]:
+              - article [ref=e542]:
+                - generic [ref=e543]:
+                  - img "House of the Dragon" [ref=e544]
+                  - generic "NEW SERIES" [ref=e545]
+                  - link "House of the Dragon" [ref=e550] [cursor=pointer]:
+                    - /url: /detail/t29
+            - listitem [ref=e552]:
+              - article [ref=e553]:
+                - generic [ref=e554]:
+                  - 'img "Law & Order: Special Victims Unit" [ref=e555]'
+                  - generic "NEW EPISODE" [ref=e556]
+                  - img [ref=e558]:
+                    - generic [ref=e559]: prime
+                  - 'link "Law & Order: Special Victims Unit" [ref=e562] [cursor=pointer]':
+                    - /url: /detail/t30
+            - listitem [ref=e564]:
+              - article [ref=e565]:
+                - generic [ref=e566]:
+                  - img "Rote Rosen" [ref=e567]
+                  - generic "NEW MOVIE" [ref=e568]
+                  - img [ref=e570]:
+                    - generic [ref=e571]: prime
+                  - link "Rote Rosen" [ref=e574] [cursor=pointer]:
+                    - /url: /detail/t31
+            - listitem [ref=e576]:
+              - article [ref=e577]:
+                - generic [ref=e578]:
+                  - img "The Mentalist" [ref=e579]
+                  - generic "NEW SEASON" [ref=e580]
+                  - img [ref=e582]:
+                    - generic [ref=e583]: prime
+                  - link "The Mentalist" [ref=e586] [cursor=pointer]:
+                    - /url: /detail/t32
+            - listitem [ref=e588]:
+              - article [ref=e589]:
+                - generic [ref=e590]:
+                  - img "Law & Order" [ref=e591]
+                  - img [ref=e593]:
+                    - generic [ref=e594]: prime
+                  - link "Law & Order" [ref=e597] [cursor=pointer]:
+                    - /url: /detail/t33
+            - listitem [ref=e599]:
+              - article [ref=e600]:
+                - generic [ref=e601]:
+                  - img "The Rookie" [ref=e602]
+                  - link "The Rookie" [ref=e607] [cursor=pointer]:
+                    - /url: /detail/t34
+            - listitem [ref=e609]:
+              - article [ref=e610]:
+                - generic [ref=e611]:
+                  - img "Silo" [ref=e612]
+                  - img [ref=e614]:
+                    - generic [ref=e615]: prime
+                  - link "Silo" [ref=e618] [cursor=pointer]:
+                    - /url: /detail/t35
+            - listitem [ref=e620]:
+              - article [ref=e621]:
+                - generic [ref=e622]:
+                  - img "FROM" [ref=e623]
+                  - img [ref=e625]:
+                    - generic [ref=e626]: prime
+                  - link "FROM" [ref=e629] [cursor=pointer]:
+                    - /url: /detail/t36
+            - listitem [ref=e631]:
+              - article [ref=e632]:
+                - generic [ref=e633]:
+                  - img "Supernatural" [ref=e634]
+                  - img [ref=e636]:
+                    - generic [ref=e637]: prime
+                  - link "Supernatural" [ref=e640] [cursor=pointer]:
+                    - /url: /detail/t37
+            - listitem [ref=e642]:
+              - article [ref=e643]:
+                - generic [ref=e644]:
+                  - img "Grey's Anatomy" [ref=e645]
+                  - img [ref=e647]:
+                    - generic [ref=e648]: prime
+                  - link "Grey's Anatomy" [ref=e651] [cursor=pointer]:
+                    - /url: /detail/t38
+            - listitem [ref=e653]:
+              - article [ref=e654]:
+                - generic [ref=e655]:
+                  - img "Kaatelal & Sons" [ref=e656]
+                  - link "Kaatelal & Sons" [ref=e661] [cursor=pointer]:
+                    - /url: /detail/t39
+            - listitem [ref=e663]:
+              - article [ref=e664]:
+                - generic [ref=e665]:
+                  - img "NCIS" [ref=e666]
+                  - img [ref=e668]:
+                    - generic [ref=e669]: prime
+                  - link "NCIS" [ref=e672] [cursor=pointer]:
+                    - /url: /detail/t40
+            - listitem [ref=e674]:
+              - article [ref=e675]:
+                - generic [ref=e676]:
+                  - img "Agent Kim Reactivated" [ref=e677]
+                  - img [ref=e679]:
+                    - generic [ref=e680]: prime
+                  - link "Agent Kim Reactivated" [ref=e683] [cursor=pointer]:
+                    - /url: /detail/t41
+            - listitem [ref=e685]:
+              - article [ref=e686]:
+                - generic [ref=e687]:
+                  - img "The Prosecutor's Proposal" [ref=e688]
+                  - img [ref=e690]:
+                    - generic [ref=e691]: prime
+                  - link "The Prosecutor's Proposal" [ref=e694] [cursor=pointer]:
+                    - /url: /detail/t42
+          - button "next 5 titles" [ref=e696]
+      - generic [ref=e699]:
+        - generic [ref=e701]:
+          - heading "Top movies" [level=2] [ref=e702]
+          - link "See more" [ref=e703] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e706]:
+          - list [ref=e707]:
+            - listitem [ref=e708]:
+              - article [ref=e709]:
+                - generic [ref=e710]:
+                  - img "The Odyssey" [ref=e711]
+                  - generic "NEW SERIES" [ref=e712]
+                  - link "The Odyssey" [ref=e717] [cursor=pointer]:
+                    - /url: /detail/t43
+            - listitem [ref=e719]:
+              - article [ref=e720]:
+                - generic [ref=e721]:
+                  - img "Disclosure Day" [ref=e722]
+                  - generic "NEW EPISODE" [ref=e723]
+                  - img [ref=e725]:
+                    - generic [ref=e726]: prime
+                  - link "Disclosure Day" [ref=e729] [cursor=pointer]:
+                    - /url: /detail/t44
+            - listitem [ref=e731]:
+              - article [ref=e732]:
+                - generic [ref=e733]:
+                  - img "Moana" [ref=e734]
+                  - generic "NEW MOVIE" [ref=e735]
+                  - img [ref=e737]:
+                    - generic [ref=e738]: prime
+                  - link "Moana" [ref=e741] [cursor=pointer]:
+                    - /url: /detail/t45
+            - listitem [ref=e743]:
+              - article [ref=e744]:
+                - generic [ref=e745]:
+                  - img "Obsession" [ref=e746]
+                  - generic "NEW SEASON" [ref=e747]
+                  - img [ref=e749]:
+                    - generic [ref=e750]: prime
+                  - link "Obsession" [ref=e753] [cursor=pointer]:
+                    - /url: /detail/t46
+            - listitem [ref=e755]:
+              - article [ref=e756]:
+                - generic [ref=e757]:
+                  - img "Backrooms" [ref=e758]
+                  - img [ref=e760]:
+                    - generic [ref=e761]: prime
+                  - link "Backrooms" [ref=e764] [cursor=pointer]:
+                    - /url: /detail/t47
+            - listitem [ref=e766]:
+              - article [ref=e767]:
+                - generic [ref=e768]:
+                  - img "Supergirl" [ref=e769]
+                  - link "Supergirl" [ref=e774] [cursor=pointer]:
+                    - /url: /detail/t48
+            - listitem [ref=e776]:
+              - article [ref=e777]:
+                - generic [ref=e778]:
+                  - img "Masters of the Universe" [ref=e779]
+                  - img [ref=e781]:
+                    - generic [ref=e782]: prime
+                  - link "Masters of the Universe" [ref=e785] [cursor=pointer]:
+                    - /url: /detail/t49
+            - listitem [ref=e787]:
+              - article [ref=e788]:
+                - generic [ref=e789]:
+                  - img "Minions & Monsters" [ref=e790]
+                  - img [ref=e792]:
+                    - generic [ref=e793]: prime
+                  - link "Minions & Monsters" [ref=e796] [cursor=pointer]:
+                    - /url: /detail/t50
+            - listitem [ref=e798]:
+              - article [ref=e799]:
+                - generic [ref=e800]:
+                  - img "Toy Story 5" [ref=e801]
+                  - img [ref=e803]:
+                    - generic [ref=e804]: prime
+                  - link "Toy Story 5" [ref=e807] [cursor=pointer]:
+                    - /url: /detail/t51
+            - listitem [ref=e809]:
+              - article [ref=e810]:
+                - generic [ref=e811]:
+                  - img "Scary Movie" [ref=e812]
+                  - img [ref=e814]:
+                    - generic [ref=e815]: prime
+                  - link "Scary Movie" [ref=e818] [cursor=pointer]:
+                    - /url: /detail/t52
+            - listitem [ref=e820]:
+              - article [ref=e821]:
+                - generic [ref=e822]:
+                  - img "Desire" [ref=e823]
+                  - link "Desire" [ref=e828] [cursor=pointer]:
+                    - /url: /detail/t53
+            - listitem [ref=e830]:
+              - article [ref=e831]:
+                - generic [ref=e832]:
+                  - img "Borderline" [ref=e833]
+                  - img [ref=e835]:
+                    - generic [ref=e836]: prime
+                  - link "Borderline" [ref=e839] [cursor=pointer]:
+                    - /url: /detail/t54
+            - listitem [ref=e841]:
+              - article [ref=e842]:
+                - generic [ref=e843]:
+                  - img "The Mandalorian and Grogu" [ref=e844]
+                  - img [ref=e846]:
+                    - generic [ref=e847]: prime
+                  - link "The Mandalorian and Grogu" [ref=e850] [cursor=pointer]:
+                    - /url: /detail/t55
+            - listitem [ref=e852]:
+              - article [ref=e853]:
+                - generic [ref=e854]:
+                  - 'img "Spider-Man: Brand New Day" [ref=e855]'
+                  - img [ref=e857]:
+                    - generic [ref=e858]: prime
+                  - 'link "Spider-Man: Brand New Day" [ref=e861] [cursor=pointer]':
+                    - /url: /detail/t56
+          - button "next 5 titles" [ref=e863]
+      - generic [ref=e866]:
+        - generic [ref=e868]:
+          - heading "Drama movies" [level=2] [ref=e869]
+          - link "See more" [ref=e870] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e873]:
+          - list [ref=e874]:
+            - listitem [ref=e875]:
+              - article [ref=e876]:
+                - generic [ref=e877]:
+                  - img "Desire" [ref=e878]
+                  - generic "NEW SERIES" [ref=e879]
+                  - link "Desire" [ref=e884] [cursor=pointer]:
+                    - /url: /detail/t57
+            - listitem [ref=e886]:
+              - article [ref=e887]:
+                - generic [ref=e888]:
+                  - img "The Death of Robin Hood" [ref=e889]
+                  - generic "NEW EPISODE" [ref=e890]
+                  - img [ref=e892]:
+                    - generic [ref=e893]: prime
+                  - link "The Death of Robin Hood" [ref=e896] [cursor=pointer]:
+                    - /url: /detail/t58
+            - listitem [ref=e898]:
+              - article [ref=e899]:
+                - generic [ref=e900]:
+                  - img "The Devil Wears Prada 2" [ref=e901]
+                  - generic "NEW MOVIE" [ref=e902]
+                  - img [ref=e904]:
+                    - generic [ref=e905]: prime
+                  - link "The Devil Wears Prada 2" [ref=e908] [cursor=pointer]:
+                    - /url: /detail/t59
+            - listitem [ref=e910]:
+              - article [ref=e911]:
+                - generic [ref=e912]:
+                  - img "The Sparrow's Fluttering" [ref=e913]
+                  - generic "NEW SEASON" [ref=e914]
+                  - img [ref=e916]:
+                    - generic [ref=e917]: prime
+                  - link "The Sparrow's Fluttering" [ref=e920] [cursor=pointer]:
+                    - /url: /detail/t60
+            - listitem [ref=e922]:
+              - article [ref=e923]:
+                - generic [ref=e924]:
+                  - img "Au Bonheur des Dames" [ref=e925]
+                  - img [ref=e927]:
+                    - generic [ref=e928]: prime
+                  - link "Au Bonheur des Dames" [ref=e931] [cursor=pointer]:
+                    - /url: /detail/t61
+            - listitem [ref=e933]:
+              - article [ref=e934]:
+                - generic [ref=e935]:
+                  - img "Michael" [ref=e936]
+                  - link "Michael" [ref=e941] [cursor=pointer]:
+                    - /url: /detail/t62
+            - listitem [ref=e943]:
+              - article [ref=e944]:
+                - generic [ref=e945]:
+                  - img "A Flame in My Heart" [ref=e946]
+                  - img [ref=e948]:
+                    - generic [ref=e949]: prime
+                  - link "A Flame in My Heart" [ref=e952] [cursor=pointer]:
+                    - /url: /detail/t63
+            - listitem [ref=e954]:
+              - article [ref=e955]:
+                - generic [ref=e956]:
+                  - img "The Shawshank Redemption" [ref=e957]
+                  - img [ref=e959]:
+                    - generic [ref=e960]: prime
+                  - link "The Shawshank Redemption" [ref=e963] [cursor=pointer]:
+                    - /url: /detail/t64
+            - listitem [ref=e965]:
+              - article [ref=e966]:
+                - generic [ref=e967]:
+                  - img "Jana Nayagan" [ref=e968]
+                  - img [ref=e970]:
+                    - generic [ref=e971]: prime
+                  - link "Jana Nayagan" [ref=e974] [cursor=pointer]:
+                    - /url: /detail/t65
+            - listitem [ref=e976]:
+              - article [ref=e977]:
+                - generic [ref=e978]:
+                  - img "Siping" [ref=e979]
+                  - img [ref=e981]:
+                    - generic [ref=e982]: prime
+                  - link "Siping" [ref=e985] [cursor=pointer]:
+                    - /url: /detail/t66
+            - listitem [ref=e987]:
+              - article [ref=e988]:
+                - generic [ref=e989]:
+                  - img "Interstellar" [ref=e990]
+                  - link "Interstellar" [ref=e995] [cursor=pointer]:
+                    - /url: /detail/t67
+            - listitem [ref=e997]:
+              - article [ref=e998]:
+                - generic [ref=e999]:
+                  - img "Kung Fu Soccer" [ref=e1000]
+                  - img [ref=e1002]:
+                    - generic [ref=e1003]: prime
+                  - link "Kung Fu Soccer" [ref=e1006] [cursor=pointer]:
+                    - /url: /detail/t68
+            - listitem [ref=e1008]:
+              - article [ref=e1009]:
+                - generic [ref=e1010]:
+                  - img "Boulevard" [ref=e1011]
+                  - img [ref=e1013]:
+                    - generic [ref=e1014]: prime
+                  - link "Boulevard" [ref=e1017] [cursor=pointer]:
+                    - /url: /detail/t69
+            - listitem [ref=e1019]:
+              - article [ref=e1020]:
+                - generic [ref=e1021]:
+                  - 'img "The Punisher: One Last Kill" [ref=e1022]'
+                  - img [ref=e1024]:
+                    - generic [ref=e1025]: prime
+                  - 'link "The Punisher: One Last Kill" [ref=e1028] [cursor=pointer]':
+                    - /url: /detail/t70
+          - button "next 5 titles" [ref=e1030]
+      - generic [ref=e1033]:
+        - generic [ref=e1035]:
+          - heading "Recently added TV" [level=2] [ref=e1036]
+          - link "See more" [ref=e1037] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e1040]:
+          - list [ref=e1041]:
+            - listitem [ref=e1042]:
+              - article [ref=e1043]:
+                - generic [ref=e1044]:
+                  - img "House of the Dragon" [ref=e1045]
+                  - generic "NEW SERIES" [ref=e1046]
+                  - link "House of the Dragon" [ref=e1051] [cursor=pointer]:
+                    - /url: /detail/t71
+            - listitem [ref=e1053]:
+              - article [ref=e1054]:
+                - generic [ref=e1055]:
+                  - img "Silo" [ref=e1056]
+                  - generic "NEW EPISODE" [ref=e1057]
+                  - img [ref=e1059]:
+                    - generic [ref=e1060]: prime
+                  - link "Silo" [ref=e1063] [cursor=pointer]:
+                    - /url: /detail/t72
+            - listitem [ref=e1065]:
+              - article [ref=e1066]:
+                - generic [ref=e1067]:
+                  - img "Rick and Morty" [ref=e1068]
+                  - generic "NEW MOVIE" [ref=e1069]
+                  - img [ref=e1071]:
+                    - generic [ref=e1072]: prime
+                  - link "Rick and Morty" [ref=e1075] [cursor=pointer]:
+                    - /url: /detail/t73
+            - listitem [ref=e1077]:
+              - article [ref=e1078]:
+                - generic [ref=e1079]:
+                  - img "Watch What Happens Live with Andy Cohen" [ref=e1080]
+                  - generic "NEW SEASON" [ref=e1081]
+                  - img [ref=e1083]:
+                    - generic [ref=e1084]: prime
+                  - link "Watch What Happens Live with Andy Cohen" [ref=e1087] [cursor=pointer]:
+                    - /url: /detail/t74
+            - listitem [ref=e1089]:
+              - article [ref=e1090]:
+                - generic [ref=e1091]:
+                  - img "Binnelanders" [ref=e1092]
+                  - img [ref=e1094]:
+                    - generic [ref=e1095]: prime
+                  - link "Binnelanders" [ref=e1098] [cursor=pointer]:
+                    - /url: /detail/t75
+            - listitem [ref=e1100]:
+              - article [ref=e1101]:
+                - generic [ref=e1102]:
+                  - img "Agent Kim Reactivated" [ref=e1103]
+                  - link "Agent Kim Reactivated" [ref=e1108] [cursor=pointer]:
+                    - /url: /detail/t76
+            - listitem [ref=e1110]:
+              - article [ref=e1111]:
+                - generic [ref=e1112]:
+                  - img "The Daily Show" [ref=e1113]
+                  - img [ref=e1115]:
+                    - generic [ref=e1116]: prime
+                  - link "The Daily Show" [ref=e1119] [cursor=pointer]:
+                    - /url: /detail/t77
+            - listitem [ref=e1121]:
+              - article [ref=e1122]:
+                - generic [ref=e1123]:
+                  - 'img "Mushoku Tensei: Jobless Reincarnation" [ref=e1124]'
+                  - img [ref=e1126]:
+                    - generic [ref=e1127]: prime
+                  - 'link "Mushoku Tensei: Jobless Reincarnation" [ref=e1130] [cursor=pointer]':
+                    - /url: /detail/t78
+            - listitem [ref=e1132]:
+              - article [ref=e1133]:
+                - generic [ref=e1134]:
+                  - img "Late Night with Seth Meyers" [ref=e1135]
+                  - img [ref=e1137]:
+                    - generic [ref=e1138]: prime
+                  - link "Late Night with Seth Meyers" [ref=e1141] [cursor=pointer]:
+                    - /url: /detail/t79
+            - listitem [ref=e1143]:
+              - article [ref=e1144]:
+                - generic [ref=e1145]:
+                  - img "Deep In" [ref=e1146]
+                  - img [ref=e1148]:
+                    - generic [ref=e1149]: prime
+                  - link "Deep In" [ref=e1152] [cursor=pointer]:
+                    - /url: /detail/t80
+            - listitem [ref=e1154]:
+              - article [ref=e1155]:
+                - generic [ref=e1156]:
+                  - img "Secret Story" [ref=e1157]
+                  - link "Secret Story" [ref=e1162] [cursor=pointer]:
+                    - /url: /detail/t81
+            - listitem [ref=e1164]:
+              - article [ref=e1165]:
+                - generic [ref=e1166]:
+                  - img "Good Mythical Morning" [ref=e1167]
+                  - img [ref=e1169]:
+                    - generic [ref=e1170]: prime
+                  - link "Good Mythical Morning" [ref=e1173] [cursor=pointer]:
+                    - /url: /detail/t82
+            - listitem [ref=e1175]:
+              - article [ref=e1176]:
+                - generic [ref=e1177]:
+                  - img "Overdo" [ref=e1178]
+                  - img [ref=e1180]:
+                    - generic [ref=e1181]: prime
+                  - link "Overdo" [ref=e1184] [cursor=pointer]:
+                    - /url: /detail/t83
+            - listitem [ref=e1186]:
+              - article [ref=e1187]:
+                - generic [ref=e1188]:
+                  - img "Lucky" [ref=e1189]
+                  - img [ref=e1191]:
+                    - generic [ref=e1192]: prime
+                  - link "Lucky" [ref=e1195] [cursor=pointer]:
+                    - /url: /detail/t84
+          - button "next 5 titles" [ref=e1197]
+      - generic [ref=e1200]:
+        - generic [ref=e1202]:
+          - heading "Featured Originals" [level=2] [ref=e1203]
+          - link "See more" [ref=e1204] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e1207]:
+          - list [ref=e1208]:
+            - listitem [ref=e1209]:
+              - article [ref=e1210]:
+                - link "Accidental Partners" [ref=e1212] [cursor=pointer]:
+                  - /url: /detail/t85
+                  - img "Accidental Partners" [ref=e1214]
+                - generic "NEW SERIES" [ref=e1215]
+                - img [ref=e1217]:
+                  - generic [ref=e1218]: prime
+            - listitem [ref=e1221]:
+              - article [ref=e1222]:
+                - link "Swapped" [ref=e1224] [cursor=pointer]:
+                  - /url: /detail/t86
+                  - img "Swapped" [ref=e1226]
+                - generic "NEW EPISODE" [ref=e1227]
+                - img [ref=e1229]:
+                  - generic [ref=e1230]: prime
+            - listitem [ref=e1233]:
+              - article [ref=e1234]:
+                - link "The Shawshank Redemption" [ref=e1236] [cursor=pointer]:
+                  - /url: /detail/t87
+                  - img "The Shawshank Redemption" [ref=e1238]
+                - generic "NEW MOVIE" [ref=e1239]
+                - img [ref=e1241]:
+                  - generic [ref=e1242]: prime
+            - listitem [ref=e1245]:
+              - article [ref=e1246]:
+                - link "Michael" [ref=e1248] [cursor=pointer]:
+                  - /url: /detail/t88
+                  - img "Michael" [ref=e1250]
+                - generic "NEW SEASON" [ref=e1251]
+                - img [ref=e1253]:
+                  - generic [ref=e1254]: prime
+            - listitem [ref=e1257]:
+              - article [ref=e1258]:
+                - link "The Godfather" [ref=e1260] [cursor=pointer]:
+                  - /url: /detail/t89
+                  - img "The Godfather" [ref=e1262]
+                - img [ref=e1264]:
+                  - generic [ref=e1265]: prime
+            - listitem [ref=e1268]:
+              - article [ref=e1269]:
+                - link "Project Hail Mary" [ref=e1271] [cursor=pointer]:
+                  - /url: /detail/t90
+                  - img "Project Hail Mary" [ref=e1273]
+                - img [ref=e1275]:
+                  - generic [ref=e1276]: prime
+            - listitem [ref=e1279]:
+              - article [ref=e1280]:
+                - link "The Godfather Part II" [ref=e1282] [cursor=pointer]:
+                  - /url: /detail/t91
+                  - img "The Godfather Part II" [ref=e1284]
+                - img [ref=e1286]:
+                  - generic [ref=e1287]: prime
+            - listitem [ref=e1290]:
+              - article [ref=e1291]:
+                - link "Schindler's List" [ref=e1293] [cursor=pointer]:
+                  - /url: /detail/t92
+                  - img "Schindler's List" [ref=e1295]
+                - img [ref=e1297]:
+                  - generic [ref=e1298]: prime
+            - listitem [ref=e1301]:
+              - article [ref=e1302]:
+                - link "12 Angry Men" [ref=e1304] [cursor=pointer]:
+                  - /url: /detail/t93
+                  - img "12 Angry Men" [ref=e1306]
+                - img [ref=e1308]:
+                  - generic [ref=e1309]: prime
+            - listitem [ref=e1312]:
+              - article [ref=e1313]:
+                - link "Spirited Away" [ref=e1315] [cursor=pointer]:
+                  - /url: /detail/t94
+                  - img "Spirited Away" [ref=e1317]
+                - img [ref=e1319]:
+                  - generic [ref=e1320]: prime
+            - listitem [ref=e1323]:
+              - article [ref=e1324]:
+                - link "The Dark Knight" [ref=e1326] [cursor=pointer]:
+                  - /url: /detail/t95
+                  - img "The Dark Knight" [ref=e1328]
+                - img [ref=e1330]:
+                  - generic [ref=e1331]: prime
+            - listitem [ref=e1334]:
+              - article [ref=e1335]:
+                - link "Dilwale Dulhania Le Jayenge" [ref=e1337] [cursor=pointer]:
+                  - /url: /detail/t96
+                  - img "Dilwale Dulhania Le Jayenge" [ref=e1339]
+                - img [ref=e1341]:
+                  - generic [ref=e1342]: prime
+            - listitem [ref=e1345]:
+              - article [ref=e1346]:
+                - link "The Green Mile" [ref=e1348] [cursor=pointer]:
+                  - /url: /detail/t97
+                  - img "The Green Mile" [ref=e1350]
+                - img [ref=e1352]:
+                  - generic [ref=e1353]: prime
+            - listitem [ref=e1356]:
+              - article [ref=e1357]:
+                - 'link "The Lord of the Rings: The Return of the King" [ref=e1359] [cursor=pointer]':
+                  - /url: /detail/t98
+                  - 'img "The Lord of the Rings: The Return of the King" [ref=e1361]'
+                - img [ref=e1363]:
+                  - generic [ref=e1364]: prime
+          - button "next 5 titles" [ref=e1367]
+      - generic [ref=e1370]:
+        - generic [ref=e1372]:
+          - heading "Action and adventure" [level=2] [ref=e1373]
+          - link "See more" [ref=e1374] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e1377]:
+          - list [ref=e1378]:
+            - listitem [ref=e1379]:
+              - article [ref=e1380]:
+                - generic [ref=e1381]:
+                  - img "The Odyssey" [ref=e1382]
+                  - generic "NEW SERIES" [ref=e1383]
+                  - link "The Odyssey" [ref=e1388] [cursor=pointer]:
+                    - /url: /detail/t99
+            - listitem [ref=e1390]:
+              - article [ref=e1391]:
+                - generic [ref=e1392]:
+                  - img "Supergirl" [ref=e1393]
+                  - generic "NEW EPISODE" [ref=e1394]
+                  - img [ref=e1396]:
+                    - generic [ref=e1397]: prime
+                  - link "Supergirl" [ref=e1400] [cursor=pointer]:
+                    - /url: /detail/t100
+            - listitem [ref=e1402]:
+              - article [ref=e1403]:
+                - generic [ref=e1404]:
+                  - img "Masters of the Universe" [ref=e1405]
+                  - generic "NEW MOVIE" [ref=e1406]
+                  - img [ref=e1408]:
+                    - generic [ref=e1409]: prime
+                  - link "Masters of the Universe" [ref=e1412] [cursor=pointer]:
+                    - /url: /detail/t101
+            - listitem [ref=e1414]:
+              - article [ref=e1415]:
+                - generic [ref=e1416]:
+                  - img "The Mandalorian and Grogu" [ref=e1417]
+                  - generic "NEW SEASON" [ref=e1418]
+                  - img [ref=e1420]:
+                    - generic [ref=e1421]: prime
+                  - link "The Mandalorian and Grogu" [ref=e1424] [cursor=pointer]:
+                    - /url: /detail/t102
+            - listitem [ref=e1426]:
+              - article [ref=e1427]:
+                - generic [ref=e1428]:
+                  - 'img "Spider-Man: Brand New Day" [ref=e1429]'
+                  - img [ref=e1431]:
+                    - generic [ref=e1432]: prime
+                  - 'link "Spider-Man: Brand New Day" [ref=e1435] [cursor=pointer]':
+                    - /url: /detail/t103
+            - listitem [ref=e1437]:
+              - article [ref=e1438]:
+                - generic [ref=e1439]:
+                  - img "The Death of Robin Hood" [ref=e1440]
+                  - link "The Death of Robin Hood" [ref=e1445] [cursor=pointer]:
+                    - /url: /detail/t104
+            - listitem [ref=e1447]:
+              - article [ref=e1448]:
+                - generic [ref=e1449]:
+                  - img "The Debt Collector" [ref=e1450]
+                  - img [ref=e1452]:
+                    - generic [ref=e1453]: prime
+                  - link "The Debt Collector" [ref=e1456] [cursor=pointer]:
+                    - /url: /detail/t105
+            - listitem [ref=e1458]:
+              - article [ref=e1459]:
+                - generic [ref=e1460]:
+                  - img "Kraken" [ref=e1461]
+                  - img [ref=e1463]:
+                    - generic [ref=e1464]: prime
+                  - link "Kraken" [ref=e1467] [cursor=pointer]:
+                    - /url: /detail/t106
+            - listitem [ref=e1469]:
+              - article [ref=e1470]:
+                - generic [ref=e1471]:
+                  - 'img "Avatar Aang: The Last Airbender" [ref=e1472]'
+                  - img [ref=e1474]:
+                    - generic [ref=e1475]: prime
+                  - 'link "Avatar Aang: The Last Airbender" [ref=e1478] [cursor=pointer]':
+                    - /url: /detail/t107
+            - listitem [ref=e1480]:
+              - article [ref=e1481]:
+                - generic [ref=e1482]:
+                  - img "Mortal Kombat II" [ref=e1483]
+                  - img [ref=e1485]:
+                    - generic [ref=e1486]: prime
+                  - link "Mortal Kombat II" [ref=e1489] [cursor=pointer]:
+                    - /url: /detail/t108
+            - listitem [ref=e1491]:
+              - article [ref=e1492]:
+                - generic [ref=e1493]:
+                  - img "The Furious" [ref=e1494]
+                  - link "The Furious" [ref=e1499] [cursor=pointer]:
+                    - /url: /detail/t109
+            - listitem [ref=e1501]:
+              - article [ref=e1502]:
+                - generic [ref=e1503]:
+                  - img "Avatar" [ref=e1504]
+                  - img [ref=e1506]:
+                    - generic [ref=e1507]: prime
+                  - link "Avatar" [ref=e1510] [cursor=pointer]:
+                    - /url: /detail/t110
+            - listitem [ref=e1512]:
+              - article [ref=e1513]:
+                - generic [ref=e1514]:
+                  - 'img "Spider-Man: No Way Home" [ref=e1515]'
+                  - img [ref=e1517]:
+                    - generic [ref=e1518]: prime
+                  - 'link "Spider-Man: No Way Home" [ref=e1521] [cursor=pointer]':
+                    - /url: /detail/t111
+            - listitem [ref=e1523]:
+              - article [ref=e1524]:
+                - generic [ref=e1525]:
+                  - img "Citizen Vigilante" [ref=e1526]
+                  - img [ref=e1528]:
+                    - generic [ref=e1529]: prime
+                  - link "Citizen Vigilante" [ref=e1532] [cursor=pointer]:
+                    - /url: /detail/t112
+          - button "next 5 titles" [ref=e1534]
+      - generic [ref=e1537]:
+        - generic [ref=e1539]:
+          - heading "Comedy" [level=2] [ref=e1540]
+          - link "See more" [ref=e1541] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e1544]:
+          - list [ref=e1545]:
+            - listitem [ref=e1546]:
+              - article [ref=e1547]:
+                - generic [ref=e1548]:
+                  - img "Moana" [ref=e1549]
+                  - generic "NEW SERIES" [ref=e1550]
+                  - link "Moana" [ref=e1555] [cursor=pointer]:
+                    - /url: /detail/t113
+            - listitem [ref=e1557]:
+              - article [ref=e1558]:
+                - generic [ref=e1559]:
+                  - img "Minions & Monsters" [ref=e1560]
+                  - generic "NEW EPISODE" [ref=e1561]
+                  - img [ref=e1563]:
+                    - generic [ref=e1564]: prime
+                  - link "Minions & Monsters" [ref=e1567] [cursor=pointer]:
+                    - /url: /detail/t114
+            - listitem [ref=e1569]:
+              - article [ref=e1570]:
+                - generic [ref=e1571]:
+                  - img "Toy Story 5" [ref=e1572]
+                  - generic "NEW MOVIE" [ref=e1573]
+                  - img [ref=e1575]:
+                    - generic [ref=e1576]: prime
+                  - link "Toy Story 5" [ref=e1579] [cursor=pointer]:
+                    - /url: /detail/t115
+            - listitem [ref=e1581]:
+              - article [ref=e1582]:
+                - generic [ref=e1583]:
+                  - img "Scary Movie" [ref=e1584]
+                  - generic "NEW SEASON" [ref=e1585]
+                  - img [ref=e1587]:
+                    - generic [ref=e1588]: prime
+                  - link "Scary Movie" [ref=e1591] [cursor=pointer]:
+                    - /url: /detail/t116
+            - listitem [ref=e1593]:
+              - article [ref=e1594]:
+                - generic [ref=e1595]:
+                  - img "The Devil Wears Prada 2" [ref=e1596]
+                  - img [ref=e1598]:
+                    - generic [ref=e1599]: prime
+                  - link "The Devil Wears Prada 2" [ref=e1602] [cursor=pointer]:
+                    - /url: /detail/t117
+            - listitem [ref=e1604]:
+              - article [ref=e1605]:
+                - generic [ref=e1606]:
+                  - img "The Super Mario Galaxy Movie" [ref=e1607]
+                  - link "The Super Mario Galaxy Movie" [ref=e1612] [cursor=pointer]:
+                    - /url: /detail/t118
+            - listitem [ref=e1614]:
+              - article [ref=e1615]:
+                - generic [ref=e1616]:
+                  - img "72 HOURS" [ref=e1617]
+                  - img [ref=e1619]:
+                    - generic [ref=e1620]: prime
+                  - link "72 HOURS" [ref=e1623] [cursor=pointer]:
+                    - /url: /detail/t119
+            - listitem [ref=e1625]:
+              - article [ref=e1626]:
+                - generic [ref=e1627]:
+                  - img "Kung Fu Soccer" [ref=e1628]
+                  - img [ref=e1630]:
+                    - generic [ref=e1631]: prime
+                  - link "Kung Fu Soccer" [ref=e1634] [cursor=pointer]:
+                    - /url: /detail/t120
+            - listitem [ref=e1636]:
+              - article [ref=e1637]:
+                - generic [ref=e1638]:
+                  - img "The Sheep Detectives" [ref=e1639]
+                  - img [ref=e1641]:
+                    - generic [ref=e1642]: prime
+                  - link "The Sheep Detectives" [ref=e1645] [cursor=pointer]:
+                    - /url: /detail/t121
+            - listitem [ref=e1647]:
+              - article [ref=e1648]:
+                - generic [ref=e1649]:
+                  - img "The Bad Guys 2" [ref=e1650]
+                  - img [ref=e1652]:
+                    - generic [ref=e1653]: prime
+                  - link "The Bad Guys 2" [ref=e1656] [cursor=pointer]:
+                    - /url: /detail/t122
+            - listitem [ref=e1658]:
+              - article [ref=e1659]:
+                - generic [ref=e1660]:
+                  - img "Hoppers" [ref=e1661]
+                  - link "Hoppers" [ref=e1666] [cursor=pointer]:
+                    - /url: /detail/t123
+            - listitem [ref=e1668]:
+              - article [ref=e1669]:
+                - generic [ref=e1670]:
+                  - img "Zootopia 2" [ref=e1671]
+                  - img [ref=e1673]:
+                    - generic [ref=e1674]: prime
+                  - link "Zootopia 2" [ref=e1677] [cursor=pointer]:
+                    - /url: /detail/t124
+            - listitem [ref=e1679]:
+              - article [ref=e1680]:
+                - generic [ref=e1681]:
+                  - img "The Dink" [ref=e1682]
+                  - img [ref=e1684]:
+                    - generic [ref=e1685]: prime
+                  - link "The Dink" [ref=e1688] [cursor=pointer]:
+                    - /url: /detail/t125
+            - listitem [ref=e1690]:
+              - article [ref=e1691]:
+                - generic [ref=e1692]:
+                  - img "Moana 2" [ref=e1693]
+                  - img [ref=e1695]:
+                    - generic [ref=e1696]: prime
+                  - link "Moana 2" [ref=e1699] [cursor=pointer]:
+                    - /url: /detail/t126
+          - button "next 5 titles" [ref=e1701]
+      - generic [ref=e1704]:
+        - generic [ref=e1706]:
+          - heading "Documentaries" [level=2] [ref=e1707]
+          - link "See more" [ref=e1708] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e1711]:
+          - list [ref=e1712]:
+            - listitem [ref=e1713]:
+              - article [ref=e1714]:
+                - generic [ref=e1715]:
+                  - img "A Toxic Love Story" [ref=e1716]
+                  - generic "NEW SERIES" [ref=e1717]
+                  - link "A Toxic Love Story" [ref=e1722] [cursor=pointer]:
+                    - /url: /detail/t127
+            - listitem [ref=e1724]:
+              - article [ref=e1725]:
+                - generic [ref=e1726]:
+                  - 'img "1000 Men and Me: The Bonnie Blue Story" [ref=e1727]'
+                  - generic "NEW EPISODE" [ref=e1728]
+                  - img [ref=e1730]:
+                    - generic [ref=e1731]: prime
+                  - 'link "1000 Men and Me: The Bonnie Blue Story" [ref=e1734] [cursor=pointer]':
+                    - /url: /detail/t128
+            - listitem [ref=e1736]:
+              - article [ref=e1737]:
+                - generic [ref=e1738]:
+                  - img "Operación Palace" [ref=e1739]
+                  - generic "NEW MOVIE" [ref=e1740]
+                  - img [ref=e1742]:
+                    - generic [ref=e1743]: prime
+                  - link "Operación Palace" [ref=e1746] [cursor=pointer]:
+                    - /url: /detail/t129
+            - listitem [ref=e1748]:
+              - article [ref=e1749]:
+                - generic [ref=e1750]:
+                  - 'img "Shipwrecked: Nightmare at Sea" [ref=e1751]'
+                  - generic "NEW SEASON" [ref=e1752]
+                  - img [ref=e1754]:
+                    - generic [ref=e1755]: prime
+                  - 'link "Shipwrecked: Nightmare at Sea" [ref=e1758] [cursor=pointer]':
+                    - /url: /detail/t130
+            - listitem [ref=e1760]:
+              - article [ref=e1761]:
+                - generic [ref=e1762]:
+                  - img "Filmmakers in Action" [ref=e1763]
+                  - img [ref=e1765]:
+                    - generic [ref=e1766]: prime
+                  - link "Filmmakers in Action" [ref=e1769] [cursor=pointer]:
+                    - /url: /detail/t131
+            - listitem [ref=e1771]:
+              - article [ref=e1772]:
+                - generic [ref=e1773]:
+                  - 'img "Selena Gomez: My Mind & Me" [ref=e1774]'
+                  - 'link "Selena Gomez: My Mind & Me" [ref=e1779] [cursor=pointer]':
+                    - /url: /detail/t132
+            - listitem [ref=e1781]:
+              - article [ref=e1782]:
+                - generic [ref=e1783]:
+                  - img "Grandma Maria" [ref=e1784]
+                  - img [ref=e1786]:
+                    - generic [ref=e1787]: prime
+                  - link "Grandma Maria" [ref=e1790] [cursor=pointer]:
+                    - /url: /detail/t133
+            - listitem [ref=e1792]:
+              - article [ref=e1793]:
+                - generic [ref=e1794]:
+                  - img "Uprising" [ref=e1795]
+                  - img [ref=e1797]:
+                    - generic [ref=e1798]: prime
+                  - link "Uprising" [ref=e1801] [cursor=pointer]:
+                    - /url: /detail/t134
+            - listitem [ref=e1803]:
+              - article [ref=e1804]:
+                - generic [ref=e1805]:
+                  - img "Sweet Toronto" [ref=e1806]
+                  - img [ref=e1808]:
+                    - generic [ref=e1809]: prime
+                  - link "Sweet Toronto" [ref=e1812] [cursor=pointer]:
+                    - /url: /detail/t135
+            - listitem [ref=e1814]:
+              - article [ref=e1815]:
+                - generic [ref=e1816]:
+                  - img "Jackass 3D" [ref=e1817]
+                  - img [ref=e1819]:
+                    - generic [ref=e1820]: prime
+                  - link "Jackass 3D" [ref=e1823] [cursor=pointer]:
+                    - /url: /detail/t136
+            - listitem [ref=e1825]:
+              - article [ref=e1826]:
+                - generic [ref=e1827]:
+                  - img "Jackass Number Two" [ref=e1828]
+                  - link "Jackass Number Two" [ref=e1833] [cursor=pointer]:
+                    - /url: /detail/t137
+            - listitem [ref=e1835]:
+              - article [ref=e1836]:
+                - generic [ref=e1837]:
+                  - 'img "Jackass: Best and Last" [ref=e1838]'
+                  - img [ref=e1840]:
+                    - generic [ref=e1841]: prime
+                  - 'link "Jackass: Best and Last" [ref=e1844] [cursor=pointer]':
+                    - /url: /detail/t138
+            - listitem [ref=e1846]:
+              - article [ref=e1847]:
+                - generic [ref=e1848]:
+                  - img "ANNA ASTI. Path of the Phoenix" [ref=e1849]
+                  - img [ref=e1851]:
+                    - generic [ref=e1852]: prime
+                  - link "ANNA ASTI. Path of the Phoenix" [ref=e1855] [cursor=pointer]:
+                    - /url: /detail/t139
+            - listitem [ref=e1857]:
+              - article [ref=e1858]:
+                - generic [ref=e1859]:
+                  - img "J'ai tout donné" [ref=e1860]
+                  - img [ref=e1862]:
+                    - generic [ref=e1863]: prime
+                  - link "J'ai tout donné" [ref=e1866] [cursor=pointer]:
+                    - /url: /detail/t140
+          - button "next 5 titles" [ref=e1868]
+      - generic [ref=e1871]:
+        - generic [ref=e1873]:
+          - heading "Kids and family" [level=2] [ref=e1874]
+          - link "See more" [ref=e1875] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e1878]:
+          - list [ref=e1879]:
+            - listitem [ref=e1880]:
+              - article [ref=e1881]:
+                - generic [ref=e1882]:
+                  - img "Moana" [ref=e1883]
+                  - generic "NEW SERIES" [ref=e1884]
+                  - link "Moana" [ref=e1889] [cursor=pointer]:
+                    - /url: /detail/t141
+            - listitem [ref=e1891]:
+              - article [ref=e1892]:
+                - generic [ref=e1893]:
+                  - img "Toy Story 5" [ref=e1894]
+                  - generic "NEW EPISODE" [ref=e1895]
+                  - img [ref=e1897]:
+                    - generic [ref=e1898]: prime
+                  - link "Toy Story 5" [ref=e1901] [cursor=pointer]:
+                    - /url: /detail/t142
+            - listitem [ref=e1903]:
+              - article [ref=e1904]:
+                - generic [ref=e1905]:
+                  - img "Minions & Monsters" [ref=e1906]
+                  - generic "NEW MOVIE" [ref=e1907]
+                  - img [ref=e1909]:
+                    - generic [ref=e1910]: prime
+                  - link "Minions & Monsters" [ref=e1913] [cursor=pointer]:
+                    - /url: /detail/t143
+            - listitem [ref=e1915]:
+              - article [ref=e1916]:
+                - generic [ref=e1917]:
+                  - 'img "Descendants: Wicked Wonderland" [ref=e1918]'
+                  - generic "NEW SEASON" [ref=e1919]
+                  - img [ref=e1921]:
+                    - generic [ref=e1922]: prime
+                  - 'link "Descendants: Wicked Wonderland" [ref=e1925] [cursor=pointer]':
+                    - /url: /detail/t144
+            - listitem [ref=e1927]:
+              - article [ref=e1928]:
+                - generic [ref=e1929]:
+                  - img "The Super Mario Galaxy Movie" [ref=e1930]
+                  - img [ref=e1932]:
+                    - generic [ref=e1933]: prime
+                  - link "The Super Mario Galaxy Movie" [ref=e1936] [cursor=pointer]:
+                    - /url: /detail/t145
+            - listitem [ref=e1938]:
+              - article [ref=e1939]:
+                - generic [ref=e1940]:
+                  - img "Swapped" [ref=e1941]
+                  - link "Swapped" [ref=e1946] [cursor=pointer]:
+                    - /url: /detail/t146
+            - listitem [ref=e1948]:
+              - article [ref=e1949]:
+                - generic [ref=e1950]:
+                  - img "Hoppers" [ref=e1951]
+                  - img [ref=e1953]:
+                    - generic [ref=e1954]: prime
+                  - link "Hoppers" [ref=e1957] [cursor=pointer]:
+                    - /url: /detail/t147
+            - listitem [ref=e1959]:
+              - article [ref=e1960]:
+                - generic [ref=e1961]:
+                  - img "The Bad Guys 2" [ref=e1962]
+                  - img [ref=e1964]:
+                    - generic [ref=e1965]: prime
+                  - link "The Bad Guys 2" [ref=e1968] [cursor=pointer]:
+                    - /url: /detail/t148
+            - listitem [ref=e1970]:
+              - article [ref=e1971]:
+                - generic [ref=e1972]:
+                  - img "The Sheep Detectives" [ref=e1973]
+                  - img [ref=e1975]:
+                    - generic [ref=e1976]: prime
+                  - link "The Sheep Detectives" [ref=e1979] [cursor=pointer]:
+                    - /url: /detail/t149
+            - listitem [ref=e1981]:
+              - article [ref=e1982]:
+                - generic [ref=e1983]:
+                  - img "Zootopia 2" [ref=e1984]
+                  - img [ref=e1986]:
+                    - generic [ref=e1987]: prime
+                  - link "Zootopia 2" [ref=e1990] [cursor=pointer]:
+                    - /url: /detail/t150
+            - listitem [ref=e1992]:
+              - article [ref=e1993]:
+                - generic [ref=e1994]:
+                  - img "GOAT" [ref=e1995]
+                  - link "GOAT" [ref=e2000] [cursor=pointer]:
+                    - /url: /detail/t151
+            - listitem [ref=e2002]:
+              - article [ref=e2003]:
+                - generic [ref=e2004]:
+                  - img "Moana 2" [ref=e2005]
+                  - img [ref=e2007]:
+                    - generic [ref=e2008]: prime
+                  - link "Moana 2" [ref=e2011] [cursor=pointer]:
+                    - /url: /detail/t152
+            - listitem [ref=e2013]:
+              - article [ref=e2014]:
+                - generic [ref=e2015]:
+                  - img "The Wild Robot" [ref=e2016]
+                  - img [ref=e2018]:
+                    - generic [ref=e2019]: prime
+                  - link "The Wild Robot" [ref=e2022] [cursor=pointer]:
+                    - /url: /detail/t153
+            - listitem [ref=e2024]:
+              - article [ref=e2025]:
+                - generic [ref=e2026]:
+                  - img "Toy Story" [ref=e2027]
+                  - img [ref=e2029]:
+                    - generic [ref=e2030]: prime
+                  - link "Toy Story" [ref=e2033] [cursor=pointer]:
+                    - /url: /detail/t154
+          - button "next 5 titles" [ref=e2035]
+      - generic [ref=e2038]:
+        - generic [ref=e2040]:
+          - heading "Science fiction" [level=2] [ref=e2041]
+          - link "See more" [ref=e2042] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e2045]:
+          - list [ref=e2046]:
+            - listitem [ref=e2047]:
+              - article [ref=e2048]:
+                - generic [ref=e2049]:
+                  - img "Disclosure Day" [ref=e2050]
+                  - generic "NEW SERIES" [ref=e2051]
+                  - link "Disclosure Day" [ref=e2056] [cursor=pointer]:
+                    - /url: /detail/t155
+            - listitem [ref=e2058]:
+              - article [ref=e2059]:
+                - generic [ref=e2060]:
+                  - img "Backrooms" [ref=e2061]
+                  - generic "NEW EPISODE" [ref=e2062]
+                  - img [ref=e2064]:
+                    - generic [ref=e2065]: prime
+                  - link "Backrooms" [ref=e2068] [cursor=pointer]:
+                    - /url: /detail/t156
+            - listitem [ref=e2070]:
+              - article [ref=e2071]:
+                - generic [ref=e2072]:
+                  - img "Supergirl" [ref=e2073]
+                  - generic "NEW MOVIE" [ref=e2074]
+                  - img [ref=e2076]:
+                    - generic [ref=e2077]: prime
+                  - link "Supergirl" [ref=e2080] [cursor=pointer]:
+                    - /url: /detail/t157
+            - listitem [ref=e2082]:
+              - article [ref=e2083]:
+                - generic [ref=e2084]:
+                  - img "Masters of the Universe" [ref=e2085]
+                  - generic "NEW SEASON" [ref=e2086]
+                  - img [ref=e2088]:
+                    - generic [ref=e2089]: prime
+                  - link "Masters of the Universe" [ref=e2092] [cursor=pointer]:
+                    - /url: /detail/t158
+            - listitem [ref=e2094]:
+              - article [ref=e2095]:
+                - generic [ref=e2096]:
+                  - img "The Mandalorian and Grogu" [ref=e2097]
+                  - img [ref=e2099]:
+                    - generic [ref=e2100]: prime
+                  - link "The Mandalorian and Grogu" [ref=e2103] [cursor=pointer]:
+                    - /url: /detail/t159
+            - listitem [ref=e2105]:
+              - article [ref=e2106]:
+                - generic [ref=e2107]:
+                  - 'img "Spider-Man: Brand New Day" [ref=e2108]'
+                  - 'link "Spider-Man: Brand New Day" [ref=e2113] [cursor=pointer]':
+                    - /url: /detail/t160
+            - listitem [ref=e2115]:
+              - article [ref=e2116]:
+                - generic [ref=e2117]:
+                  - img "Project Hail Mary" [ref=e2118]
+                  - img [ref=e2120]:
+                    - generic [ref=e2121]: prime
+                  - link "Project Hail Mary" [ref=e2124] [cursor=pointer]:
+                    - /url: /detail/t161
+            - listitem [ref=e2126]:
+              - article [ref=e2127]:
+                - generic [ref=e2128]:
+                  - img "Avatar" [ref=e2129]
+                  - img [ref=e2131]:
+                    - generic [ref=e2132]: prime
+                  - link "Avatar" [ref=e2135] [cursor=pointer]:
+                    - /url: /detail/t162
+            - listitem [ref=e2137]:
+              - article [ref=e2138]:
+                - generic [ref=e2139]:
+                  - 'img "Avatar: Fire and Ash" [ref=e2140]'
+                  - img [ref=e2142]:
+                    - generic [ref=e2143]: prime
+                  - 'link "Avatar: Fire and Ash" [ref=e2146] [cursor=pointer]':
+                    - /url: /detail/t163
+            - listitem [ref=e2148]:
+              - article [ref=e2149]:
+                - generic [ref=e2150]:
+                  - 'img "Avengers: Doomsday" [ref=e2151]'
+                  - img [ref=e2153]:
+                    - generic [ref=e2154]: prime
+                  - 'link "Avengers: Doomsday" [ref=e2157] [cursor=pointer]':
+                    - /url: /detail/t164
+            - listitem [ref=e2159]:
+              - article [ref=e2160]:
+                - generic [ref=e2161]:
+                  - 'img "Spider-Man: No Way Home" [ref=e2162]'
+                  - 'link "Spider-Man: No Way Home" [ref=e2167] [cursor=pointer]':
+                    - /url: /detail/t165
+            - listitem [ref=e2169]:
+              - article [ref=e2170]:
+                - generic [ref=e2171]:
+                  - img "Colony" [ref=e2172]
+                  - img [ref=e2174]:
+                    - generic [ref=e2175]: prime
+                  - link "Colony" [ref=e2178] [cursor=pointer]:
+                    - /url: /detail/t166
+            - listitem [ref=e2180]:
+              - article [ref=e2181]:
+                - generic [ref=e2182]:
+                  - img "Interstellar" [ref=e2183]
+                  - img [ref=e2185]:
+                    - generic [ref=e2186]: prime
+                  - link "Interstellar" [ref=e2189] [cursor=pointer]:
+                    - /url: /detail/t167
+            - listitem [ref=e2191]:
+              - article [ref=e2192]:
+                - generic [ref=e2193]:
+                  - img "Black Box" [ref=e2194]
+                  - img [ref=e2196]:
+                    - generic [ref=e2197]: prime
+                  - link "Black Box" [ref=e2200] [cursor=pointer]:
+                    - /url: /detail/t168
+          - button "next 5 titles" [ref=e2202]
+      - generic [ref=e2205]:
+        - generic [ref=e2207]:
+          - heading "Horror" [level=2] [ref=e2208]
+          - link "See more" [ref=e2209] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e2212]:
+          - list [ref=e2213]:
+            - listitem [ref=e2214]:
+              - article [ref=e2215]:
+                - generic [ref=e2216]:
+                  - img "Obsession" [ref=e2217]
+                  - generic "NEW SERIES" [ref=e2218]
+                  - link "Obsession" [ref=e2223] [cursor=pointer]:
+                    - /url: /detail/t169
+            - listitem [ref=e2225]:
+              - article [ref=e2226]:
+                - generic [ref=e2227]:
+                  - img "Backrooms" [ref=e2228]
+                  - generic "NEW EPISODE" [ref=e2229]
+                  - img [ref=e2231]:
+                    - generic [ref=e2232]: prime
+                  - link "Backrooms" [ref=e2235] [cursor=pointer]:
+                    - /url: /detail/t170
+            - listitem [ref=e2237]:
+              - article [ref=e2238]:
+                - generic [ref=e2239]:
+                  - img "Scary Movie" [ref=e2240]
+                  - generic "NEW MOVIE" [ref=e2241]
+                  - img [ref=e2243]:
+                    - generic [ref=e2244]: prime
+                  - link "Scary Movie" [ref=e2247] [cursor=pointer]:
+                    - /url: /detail/t171
+            - listitem [ref=e2249]:
+              - article [ref=e2250]:
+                - generic [ref=e2251]:
+                  - img "Kraken" [ref=e2252]
+                  - generic "NEW SEASON" [ref=e2253]
+                  - img [ref=e2255]:
+                    - generic [ref=e2256]: prime
+                  - link "Kraken" [ref=e2259] [cursor=pointer]:
+                    - /url: /detail/t172
+            - listitem [ref=e2261]:
+              - article [ref=e2262]:
+                - generic [ref=e2263]:
+                  - img "Deep Water" [ref=e2264]
+                  - img [ref=e2266]:
+                    - generic [ref=e2267]: prime
+                  - link "Deep Water" [ref=e2270] [cursor=pointer]:
+                    - /url: /detail/t173
+            - listitem [ref=e2272]:
+              - article [ref=e2273]:
+                - generic [ref=e2274]:
+                  - img "Passenger" [ref=e2275]
+                  - link "Passenger" [ref=e2280] [cursor=pointer]:
+                    - /url: /detail/t174
+            - listitem [ref=e2282]:
+              - article [ref=e2283]:
+                - generic [ref=e2284]:
+                  - img "Lee Cronin's The Mummy" [ref=e2285]
+                  - img [ref=e2287]:
+                    - generic [ref=e2288]: prime
+                  - link "Lee Cronin's The Mummy" [ref=e2291] [cursor=pointer]:
+                    - /url: /detail/t175
+            - listitem [ref=e2293]:
+              - article [ref=e2294]:
+                - generic [ref=e2295]:
+                  - img "Forgive Us All" [ref=e2296]
+                  - img [ref=e2298]:
+                    - generic [ref=e2299]: prime
+                  - link "Forgive Us All" [ref=e2302] [cursor=pointer]:
+                    - /url: /detail/t176
+            - listitem [ref=e2304]:
+              - article [ref=e2305]:
+                - generic [ref=e2306]:
+                  - img "Colony" [ref=e2307]
+                  - img [ref=e2309]:
+                    - generic [ref=e2310]: prime
+                  - link "Colony" [ref=e2313] [cursor=pointer]:
+                    - /url: /detail/t177
+            - listitem [ref=e2315]:
+              - article [ref=e2316]:
+                - generic [ref=e2317]:
+                  - img "The Bay" [ref=e2318]
+                  - img [ref=e2320]:
+                    - generic [ref=e2321]: prime
+                  - link "The Bay" [ref=e2324] [cursor=pointer]:
+                    - /url: /detail/t178
+            - listitem [ref=e2326]:
+              - article [ref=e2327]:
+                - generic [ref=e2328]:
+                  - img "Black Box" [ref=e2329]
+                  - link "Black Box" [ref=e2334] [cursor=pointer]:
+                    - /url: /detail/t179
+            - listitem [ref=e2336]:
+              - article [ref=e2337]:
+                - generic [ref=e2338]:
+                  - img "Evil Dead Burn" [ref=e2339]
+                  - img [ref=e2341]:
+                    - generic [ref=e2342]: prime
+                  - link "Evil Dead Burn" [ref=e2345] [cursor=pointer]:
+                    - /url: /detail/t180
+            - listitem [ref=e2347]:
+              - article [ref=e2348]:
+                - generic [ref=e2349]:
+                  - img "Hungry" [ref=e2350]
+                  - img [ref=e2352]:
+                    - generic [ref=e2353]: prime
+                  - link "Hungry" [ref=e2356] [cursor=pointer]:
+                    - /url: /detail/t181
+            - listitem [ref=e2358]:
+              - article [ref=e2359]:
+                - generic [ref=e2360]:
+                  - img "The Hanged Woman" [ref=e2361]
+                  - img [ref=e2363]:
+                    - generic [ref=e2364]: prime
+                  - link "The Hanged Woman" [ref=e2367] [cursor=pointer]:
+                    - /url: /detail/t182
+          - button "next 5 titles" [ref=e2369]
+      - generic [ref=e2372]:
+        - generic [ref=e2374]:
+          - heading "Romance" [level=2] [ref=e2375]
+          - link "See more" [ref=e2376] [cursor=pointer]:
+            - /url: /browse
+        - generic [ref=e2379]:
+          - list [ref=e2380]:
+            - listitem [ref=e2381]:
+              - article [ref=e2382]:
+                - generic [ref=e2383]:
+                  - img "Your Heart Will Be Broken" [ref=e2384]
+                  - generic "NEW SERIES" [ref=e2385]
+                  - link "Your Heart Will Be Broken" [ref=e2390] [cursor=pointer]:
+                    - /url: /detail/t183
+            - listitem [ref=e2392]:
+              - article [ref=e2393]:
+                - generic [ref=e2394]:
+                  - img "The Sparrow's Fluttering" [ref=e2395]
+                  - generic "NEW EPISODE" [ref=e2396]
+                  - img [ref=e2398]:
+                    - generic [ref=e2399]: prime
+                  - link "The Sparrow's Fluttering" [ref=e2402] [cursor=pointer]:
+                    - /url: /detail/t184
+            - listitem [ref=e2404]:
+              - article [ref=e2405]:
+                - generic [ref=e2406]:
+                  - img "Au Bonheur des Dames" [ref=e2407]
+                  - generic "NEW MOVIE" [ref=e2408]
+                  - img [ref=e2410]:
+                    - generic [ref=e2411]: prime
+                  - link "Au Bonheur des Dames" [ref=e2414] [cursor=pointer]:
+                    - /url: /detail/t185
+            - listitem [ref=e2416]:
+              - article [ref=e2417]:
+                - generic [ref=e2418]:
+                  - img "Shape of My Heart" [ref=e2419]
+                  - generic "NEW SEASON" [ref=e2420]
+                  - img [ref=e2422]:
+                    - generic [ref=e2423]: prime
+                  - link "Shape of My Heart" [ref=e2426] [cursor=pointer]:
+                    - /url: /detail/t186
+            - listitem [ref=e2428]:
+              - article [ref=e2429]:
+                - generic [ref=e2430]:
+                  - img "Boulevard" [ref=e2431]
+                  - img [ref=e2433]:
+                    - generic [ref=e2434]: prime
+                  - link "Boulevard" [ref=e2437] [cursor=pointer]:
+                    - /url: /detail/t187
+            - listitem [ref=e2439]:
+              - article [ref=e2440]:
+                - generic [ref=e2441]:
+                  - img "Heartstopper Forever" [ref=e2442]
+                  - link "Heartstopper Forever" [ref=e2447] [cursor=pointer]:
+                    - /url: /detail/t188
+            - listitem [ref=e2449]:
+              - article [ref=e2450]:
+                - generic [ref=e2451]:
+                  - img "Damage" [ref=e2452]
+                  - img [ref=e2454]:
+                    - generic [ref=e2455]: prime
+                  - link "Damage" [ref=e2458] [cursor=pointer]:
+                    - /url: /detail/t189
+            - listitem [ref=e2460]:
+              - article [ref=e2461]:
+                - generic [ref=e2462]:
+                  - img "The Drama" [ref=e2463]
+                  - img [ref=e2465]:
+                    - generic [ref=e2466]: prime
+                  - link "The Drama" [ref=e2469] [cursor=pointer]:
+                    - /url: /detail/t190
+            - listitem [ref=e2471]:
+              - article [ref=e2472]:
+                - generic [ref=e2473]:
+                  - img "Stainless Night" [ref=e2474]
+                  - img [ref=e2476]:
+                    - generic [ref=e2477]: prime
+                  - link "Stainless Night" [ref=e2480] [cursor=pointer]:
+                    - /url: /detail/t191
+            - listitem [ref=e2482]:
+              - article [ref=e2483]:
+                - generic [ref=e2484]:
+                  - img "My Fault" [ref=e2485]
+                  - img [ref=e2487]:
+                    - generic [ref=e2488]: prime
+                  - link "My Fault" [ref=e2491] [cursor=pointer]:
+                    - /url: /detail/t192
+            - listitem [ref=e2493]:
+              - article [ref=e2494]:
+                - generic [ref=e2495]:
+                  - img "Titanic" [ref=e2496]
+                  - link "Titanic" [ref=e2501] [cursor=pointer]:
+                    - /url: /detail/t193
+            - listitem [ref=e2503]:
+              - article [ref=e2504]:
+                - generic [ref=e2505]:
+                  - img "Melancoly Baby" [ref=e2506]
+                  - img [ref=e2508]:
+                    - generic [ref=e2509]: prime
+                  - link "Melancoly Baby" [ref=e2512] [cursor=pointer]:
+                    - /url: /detail/t194
+            - listitem [ref=e2514]:
+              - article [ref=e2515]:
+                - generic [ref=e2516]:
+                  - img "Forrest Gump" [ref=e2517]
+                  - img [ref=e2519]:
+                    - generic [ref=e2520]: prime
+                  - link "Forrest Gump" [ref=e2523] [cursor=pointer]:
+                    - /url: /detail/t195
+            - listitem [ref=e2525]:
+              - article [ref=e2526]:
+                - generic [ref=e2527]:
+                  - img "Accidental Partners" [ref=e2528]
+                  - img [ref=e2530]:
+                    - generic [ref=e2531]: prime
+                  - link "Accidental Partners" [ref=e2534] [cursor=pointer]:
+                    - /url: /detail/t196
+          - button "next 5 titles" [ref=e2536]
+      - link "See more" [ref=e2540] [cursor=pointer]:
+        - /url: /browse
+    - contentinfo [ref=e2541]:
+      - img "Prime Video" [ref=e2543]
+      - list [ref=e2544]:
+        - listitem [ref=e2545]:
+          - link "Terms and Privacy Notice" [ref=e2546] [cursor=pointer]:
+            - /url: /terms
+        - listitem [ref=e2547]:
+          - link "Send us feedback" [ref=e2548] [cursor=pointer]:
+            - /url: /feedback
+        - listitem [ref=e2549]:
+          - link "Help" [ref=e2550] [cursor=pointer]:
+            - /url: /help
+        - listitem [ref=e2551]: © 1996-2026, Amazon.com, Inc. or its affiliates
+  - button "Open Next.js Dev Tools" [ref=e2557] [cursor=pointer]
+  - alert [ref=e2561]

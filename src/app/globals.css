@@ -4,41 +4,73 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ---------------------------------------------------------------------------
+   Design tokens extracted from primevideo.com (2026-07-25).
+   Names mirror the target's own "fable" / "dv" variable system where useful.
+   --------------------------------------------------------------------------- */
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+
+  --font-sans: var(--font-amazon-ember), "Amazon Ember", "Amazon Arabic Ember", Arial, sans-serif;
   --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
+  --font-mono: ui-monospace, monospace;
+
+  /* shadcn token bridge — required for @apply border-border / outline-ring. */
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Surfaces */
+  --color-pv-base: var(--pv-base);
+  --color-pv-surface: var(--pv-surface);
+  --color-pv-card-placeholder: var(--pv-card-placeholder);
+  --color-pv-nav-glass: var(--pv-nav-glass);
+  --color-pv-panel: var(--pv-panel);
+
+  /* Text */
+  --color-pv-text: var(--pv-text);
+  --color-pv-text-secondary: var(--pv-text-secondary);
+  --color-pv-text-tertiary: var(--pv-text-tertiary);
+  --color-pv-text-muted: var(--pv-text-muted);
+  --color-pv-text-synopsis: var(--pv-text-synopsis);
+  --color-pv-footer-text: var(--pv-footer-text);
+  --color-pv-link: var(--pv-link);
+
+  /* Accents */
+  --color-pv-blue: var(--pv-blue);
+  --color-pv-blue-cta: var(--pv-blue-cta);
+  --color-pv-yellow: var(--pv-yellow);
+  --color-pv-imdb: var(--pv-imdb);
+  --color-pv-live: var(--pv-live);
+
+  /* Layout */
+  --spacing-pv-gutter: var(--pv-gutter);
+  --spacing-pv-card-gap: var(--pv-card-gap);
+  --spacing-pv-nav-height: var(--pv-nav-height);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -49,82 +81,210 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* --- Prime Video palette (verified via getComputedStyle / stylesheet) --- */
+  --pv-base: #00050d;             /* page background, theme-color meta */
+  --pv-surface: #0f171e;
+  --pv-card-placeholder: #33373d; /* card background before art loads */
+  --pv-nav-glass: rgb(25 30 37 / 0.8);
+  --pv-panel: #000000;            /* card hover expansion panel */
+
+  --pv-text: #ffffff;
+  --pv-text-secondary: #aaaaaa;
+  --pv-text-tertiary: #888888;
+  --pv-text-muted: #c4cacf;
+  --pv-text-synopsis: #f1f1f1;
+  --pv-footer-text: #8197a4;
+  --pv-link: #79b8f3;
+
+  --pv-blue: #1a98ff;
+  --pv-blue-cta: rgb(26 152 255 / 0.8); /* "Join Prime" button */
+  --pv-yellow: #ffd62c;
+  --pv-imdb: #f5c518;
+  --pv-live: #ff0019;
+
+  /* --- Layout scale (from --dv-* custom properties) --- */
+  --pv-gutter: 72px;      /* --dv-carousel-column-margin / --dv-page-margin */
+  --pv-card-gap: 10px;    /* --dv-carousel-column-gap */
+  --pv-page-gap: 24px;    /* --dv-page-column-gap */
+  --pv-nav-height: 66px;  /* --dv-pvnav-height */
+  --pv-columns: 12;
+
+  /* --- Typography scale (fable) --- */
+  --pv-heading-800: 50px;
+  --pv-heading-600: 40px;
+  --pv-heading-400: 32px;
+  --pv-heading-200: 20px;  /* carousel row headings, weight 700, lh 28 */
+  --pv-body: 20px;
+  --pv-label-400: 18px;
+  --pv-label-100: 16px;
+  --pv-badge: 13px;
+  --pv-footer: 15px;
+
+  /* --- Motion --- */
+  --pv-ease-out: cubic-bezier(0.2, 0.45, 0, 1);
+  --pv-ease-fade: cubic-bezier(0, 0, 0, 0);
+
+  /* shadcn bridge — dark-only product, both scopes point at the PV palette */
+  --background: var(--pv-base);
+  --foreground: var(--pv-text);
+  --card: var(--pv-surface);
+  --card-foreground: var(--pv-text);
+  --popover: var(--pv-panel);
+  --popover-foreground: var(--pv-text);
+  --primary: var(--pv-blue);
+  --primary-foreground: var(--pv-text);
+  --secondary: #252e39;
+  --secondary-foreground: var(--pv-text);
+  --muted: #33373d;
+  --muted-foreground: var(--pv-text-secondary);
+  --accent: #252e39;
+  --accent-foreground: var(--pv-text);
+  --destructive: var(--pv-live);
+  --border: rgb(255 255 255 / 0.15);
+  --input: rgb(255 255 255 / 0.15);
+  --ring: var(--pv-blue);
+  --radius: 0.5rem; /* 8px — the site's ubiquitous card/button radius */
+  --sidebar: var(--pv-surface);
+  --sidebar-foreground: var(--pv-text);
+  --sidebar-primary: var(--pv-blue);
+  --sidebar-primary-foreground: var(--pv-text);
+  --sidebar-accent: #252e39;
+  --sidebar-accent-foreground: var(--pv-text);
+  --sidebar-border: rgb(255 255 255 / 0.1);
+  --sidebar-ring: var(--pv-blue);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* The target ships a single dark theme; .dark mirrors :root. */
+  --background: var(--pv-base);
+  --foreground: var(--pv-text);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply font-sans;
+    background-color: var(--pv-base);
+  }
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+  /* The target uses native scrolling — no smooth-scroll library. */
+}
+
+/* Skeleton shimmer. The target streams content in behind placeholders on an
+   already-dark page — there is no crossfade between routes. */
+@keyframes pv-shimmer {
+  0% {
+    background-position: -200% 0;
   }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@layer utilities {
+  .pv-skeleton {
+    background-color: var(--pv-card-placeholder);
+    background-image: linear-gradient(
+      90deg,
+      rgb(255 255 255 / 0) 0%,
+      rgb(255 255 255 / 0.07) 50%,
+      rgb(255 255 255 / 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: pv-shimmer 1s linear infinite;
+  }
+
+  /* Carousel tracks scroll horizontally but never show a scrollbar. */
+  .pv-scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .pv-scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Bottom-right radial vignette burned into every title card.
+     Reproduced from the target's inline SVG data-URI:
+     stop .368 @ opacity 0 -> stop .6 @ opacity .7, rotate(115.982deg). */
+  .pv-card-vignette {
+    background-image: radial-gradient(
+      ellipse 140% 160% at 18% 8%,
+      rgb(0 5 13 / 0) 36.8%,
+      rgb(0 5 13 / 0.7) 60%
+    );
+  }
+
+  /* Hero scrim — the target ships a 19-stop eased rgba(0,5,13,a) ramp. */
+  .pv-hero-scrim-bottom {
+    background-image: linear-gradient(
+      to top,
+      rgb(0 5 13 / 0.991) 0%,
+      rgb(0 5 13 / 0.964) 6%,
+      rgb(0 5 13 / 0.918) 12%,
+      rgb(0 5 13 / 0.853) 18%,
+      rgb(0 5 13 / 0.768) 24%,
+      rgb(0 5 13 / 0.668) 31%,
+      rgb(0 5 13 / 0.557) 38%,
+      rgb(0 5 13 / 0.443) 45%,
+      rgb(0 5 13 / 0.332) 52%,
+      rgb(0 5 13 / 0.232) 60%,
+      rgb(0 5 13 / 0.147) 68%,
+      rgb(0 5 13 / 0.082) 76%,
+      rgb(0 5 13 / 0.036) 84%,
+      rgb(0 5 13 / 0.009) 92%,
+      rgb(0 5 13 / 0) 100%
+    );
+  }
+  .pv-hero-scrim-left {
+    background-image: linear-gradient(
+      to right,
+      rgb(0 5 13 / 0.75) 0%,
+      rgb(0 5 13 / 0.5) 25%,
+      rgb(0 5 13 / 0.232) 50%,
+      rgb(0 5 13 / 0) 75%
+    );
+  }
+
+  /* Scrolled nav glass — painted on a ::before in the target. */
+}
+
+/* Scrolled nav glass.
+   Deliberately unlayered: Tailwind v4 drops compound `::before` selectors
+   declared inside `@layer utilities`, which silently killed the background
+   and blur while leaving the radius/shadow intact.
+
+   The target paints this on a ::before at z-index:-1 rather than on the
+   element itself, so the blur sits behind the nav's own children, and fades
+   via `transition: background-color .1s linear`. The state change is a binary
+   snap (IntersectionObserver on a top-of-document marker), not a
+   scroll-proportional ramp — translucency comes from the rgba colour, and the
+   pseudo-element's own opacity stays 1. */
+.pv-nav-surface {
+  position: relative;
+}
+.pv-nav-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: transparent;
+  transition: background-color 0.1s linear;
+}
+.pv-nav-surface.pv-nav-glass {
+  border-radius: 0 0 12px 12px;
+  box-shadow:
+    0 4px 4px 0 rgb(0 0 0 / 0.3),
+    0 8px 12px 6px rgb(0 0 0 / 0.15);
+}
+.pv-nav-surface.pv-nav-glass::before {
+  background-color: var(--pv-nav-glass);
+  /* Do not hand-write -webkit-backdrop-filter here: Lightning CSS collapses
+     the pair and emits the prefixed property ONLY, which drops the standard
+     one. Declaring just the standard property lets it add prefixes itself. */
+  backdrop-filter: blur(16px);
+  border-radius: 0 0 12px 12px;
 }

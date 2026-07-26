@@ -1,0 +1,38 @@
+- generic [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - generic [ref=f6e3]: Demo stream — no real source found for this title
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: X-Ray
+              - generic: IMDb
+              - button "All"
+            - button "Cast (20)"
+          - paragraph: The Odyssey
+          - generic:
+            - generic:
+              - button "Subtitles and audio"
+            - generic:
+              - button "Settings"
+            - generic:
+              - button "Volume"
+            - button "Picture in picture"
+            - button "Full screen"
+            - button "Close player"
+      - generic:
+        - button "Rewind 10 seconds" [ref=f6e51]:
+          - img [ref=f6e52]:
+            - generic [ref=f6e55]: "10"
+        - button "Play" [active] [ref=f6e88]
+        - button "Forward 10 seconds" [ref=f6e59]:
+          - img [ref=f6e60]:
+            - generic [ref=f6e63]: "10"
+      - generic:
+        - slider "Seek"
+        - paragraph:
+          - text: 0:00:26
+          - generic: / 0:10:34
+  - button "Open Next.js Dev Tools" [ref=f6e78] [cursor=pointer]
+  - alert [ref=f6e82]
