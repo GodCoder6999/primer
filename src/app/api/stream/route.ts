@@ -86,6 +86,75 @@ async function tryEmbedSu(
   return match[1];
 }
 
+/** Try vidsrc.to — alternative vidsrc domain */
+async function tryVidsrcTo(
+  tmdbId: number,
+  type: "movie" | "tv",
+  season: string,
+  episode: string
+): Promise<string> {
+  const url =
+    type === "tv"
+      ? `https://vidsrc.to/embed/tv/${tmdbId}/${season}/${episode}`
+      : `https://vidsrc.to/embed/movie/${tmdbId}`;
+
+  const res = await fetch(url, {
+    headers: { ...BROWSER_HEADERS, Referer: "https://vidsrc.to/" },
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  });
+  if (!res.ok) throw new Error(`vidsrc.to ${res.status}`);
+  const html = await res.text();
+  const match = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)['"]/);
+  if (!match) throw new Error("vidsrc.to: no m3u8 found");
+  return match[1];
+}
+
+/** Try smashystream.com */
+async function trySmashyStream(
+  tmdbId: number,
+  type: "movie" | "tv",
+  season: string,
+  episode: string
+): Promise<string> {
+  const url =
+    type === "tv"
+      ? `https://embed.smashystream.com/playertv/${tmdbId}/${season}/${episode}`
+      : `https://embed.smashystream.com/playemovie/${tmdbId}`;
+
+  const res = await fetch(url, {
+    headers: { ...BROWSER_HEADERS, Referer: "https://smashystream.com/" },
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  });
+  if (!res.ok) throw new Error(`smashystream ${res.status}`);
+  const html = await res.text();
+  const match = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)['"]/);
+  if (!match) throw new Error("smashystream: no m3u8 found");
+  return match[1];
+}
+
+/** Try multiembed.mov */
+async function tryMultiEmbed(
+  tmdbId: number,
+  type: "movie" | "tv",
+  season: string,
+  episode: string
+): Promise<string> {
+  const url =
+    type === "tv"
+      ? `https://multiembed.mov/directstream.php?tmdb_type=tv&tmdb_id=${tmdbId}&season=${season}&episode=${episode}`
+      : `https://multiembed.mov/directstream.php?tmdb_type=movie&tmdb_id=${tmdbId}`;
+
+  const res = await fetch(url, {
+    headers: { ...BROWSER_HEADERS, Referer: "https://multiembed.mov/" },
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  });
+  if (!res.ok) throw new Error(`multiembed ${res.status}`);
+  const html = await res.text();
+  const match = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)['"]/);
+  if (!match) throw new Error("multiembed: no m3u8 found");
+  return match[1];
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const tmdbParam = searchParams.get("tmdb");
@@ -108,6 +177,9 @@ export async function GET(request: NextRequest) {
       tryAutoEmbed(tmdbId, type, season, episode),
       tryVidsrcCc(tmdbId, type, season, episode),
       tryEmbedSu(tmdbId, type, season, episode),
+      tryVidsrcTo(tmdbId, type, season, episode),
+      trySmashyStream(tmdbId, type, season, episode),
+      tryMultiEmbed(tmdbId, type, season, episode),
     ]);
 
     const isHls = streamUrl.includes(".m3u8");
