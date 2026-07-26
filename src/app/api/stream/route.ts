@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import puppeteer from "puppeteer";
 
 /**
- * Server-side stream proxy.
- * Runs all providers IN PARALLEL and returns the first working stream URL.
- * Falls back to a reliable public HLS test stream within 6 seconds max.
+ * Advanced stream extractor backend.
+ * Uses headless browser to extract actual stream URLs from embed players,
+ * intercepting network requests to bypass embedded player UIs.
  *
  * GET /api/stream?tmdb=<id>&type=movie|tv&season=1&episode=1
  */
@@ -15,7 +16,7 @@ const BROWSER_HEADERS = {
   "Accept-Language": "en-US,en;q=0.9",
 };
 
-const TIMEOUT_MS = 5000;
+const TIMEOUT_MS = 8000;
 
 /** Try autoembed.co JSON API */
 async function tryAutoEmbed(
@@ -40,119 +41,107 @@ async function tryAutoEmbed(
   return src;
 }
 
-/** Try vidsrc.cc embed page — scrape m3u8 from HTML */
-async function tryVidsrcCc(
+/** Extract streams from vidsrc.cc using headless browser */
+async function tryVidsrcCcHeadless(
   tmdbId: number,
   type: "movie" | "tv",
   season: string,
   episode: string
 ): Promise<string> {
-  const url =
-    type === "tv"
-      ? `https://vidsrc.cc/v2/embed/tv/${tmdbId}/${season}/${episode}`
-      : `https://vidsrc.cc/v2/embed/movie/${tmdbId}`;
+  let browser: Awaited<ReturnType<typeof puppeteer.launch>> | null = null;
 
-  const res = await fetch(url, {
-    headers: { ...BROWSER_HEADERS, Referer: "https://vidsrc.cc/" },
-    signal: AbortSignal.timeout(TIMEOUT_MS),
-  });
-  if (!res.ok) throw new Error(`vidsrc.cc ${res.status}`);
-  const html = await res.text();
-  const match = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)['"]/);
-  if (!match) throw new Error("vidsrc.cc: no m3u8 found");
-  return match[1];
+  try {
+    const url =
+      type === "tv"
+        ? `https://vidsrc.cc/v2/embed/tv/${tmdbId}/${season}/${episode}`
+        : `https://vidsrc.cc/v2/embed/movie/${tmdbId}`;
+
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
+
+    const page = await browser.newPage();
+
+    // Capture network requests for stream URLs
+    let streamUrl: string | null = null;
+    page.on("response", (response) => {
+      const url = response.url();
+      if (url.includes(".m3u8") || url.includes(".mp4")) {
+        streamUrl = url;
+      }
+    });
+
+    await page.goto(url, { waitUntil: "networkidle2", timeout: TIMEOUT_MS });
+
+    // Wait for stream to appear in DOM or network
+    await page.waitForFunction(
+      () => {
+        const src = (document.querySelector("video source") as HTMLSourceElement)?.src;
+        return !!src;
+      },
+      { timeout: TIMEOUT_MS }
+    ).catch(() => null);
+
+    // Extract from video element if available
+    if (!streamUrl) {
+      streamUrl = await page.evaluate(() => {
+        const src = (document.querySelector("video source") as HTMLSourceElement)?.src;
+        return src || null;
+      });
+    }
+
+    if (!streamUrl) throw new Error("vidsrc.cc: no stream found");
+    return streamUrl;
+  } finally {
+    if (browser) await browser.close().catch(() => null);
+  }
 }
 
-/** Try embed.su — scrape m3u8 from HTML */
-async function tryEmbedSu(
+/** Extract streams from embed.su using headless browser */
+async function tryEmbedSuHeadless(
   tmdbId: number,
   type: "movie" | "tv",
   season: string,
   episode: string
 ): Promise<string> {
-  const url =
-    type === "tv"
-      ? `https://embed.su/embed/tv/${tmdbId}/${season}/${episode}`
-      : `https://embed.su/embed/movie/${tmdbId}`;
+  let browser: Awaited<ReturnType<typeof puppeteer.launch>> | null = null;
 
-  const res = await fetch(url, {
-    headers: { ...BROWSER_HEADERS, Referer: "https://embed.su/" },
-    signal: AbortSignal.timeout(TIMEOUT_MS),
-  });
-  if (!res.ok) throw new Error(`embed.su ${res.status}`);
-  const html = await res.text();
-  const match = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)['"]/);
-  if (!match) throw new Error("embed.su: no m3u8 found");
-  return match[1];
-}
+  try {
+    const url =
+      type === "tv"
+        ? `https://embed.su/embed/tv/${tmdbId}/${season}/${episode}`
+        : `https://embed.su/embed/movie/${tmdbId}`;
 
-/** Try vidsrc.to — alternative vidsrc domain */
-async function tryVidsrcTo(
-  tmdbId: number,
-  type: "movie" | "tv",
-  season: string,
-  episode: string
-): Promise<string> {
-  const url =
-    type === "tv"
-      ? `https://vidsrc.to/embed/tv/${tmdbId}/${season}/${episode}`
-      : `https://vidsrc.to/embed/movie/${tmdbId}`;
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
 
-  const res = await fetch(url, {
-    headers: { ...BROWSER_HEADERS, Referer: "https://vidsrc.to/" },
-    signal: AbortSignal.timeout(TIMEOUT_MS),
-  });
-  if (!res.ok) throw new Error(`vidsrc.to ${res.status}`);
-  const html = await res.text();
-  const match = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)['"]/);
-  if (!match) throw new Error("vidsrc.to: no m3u8 found");
-  return match[1];
-}
+    const page = await browser.newPage();
 
-/** Try smashystream.com */
-async function trySmashyStream(
-  tmdbId: number,
-  type: "movie" | "tv",
-  season: string,
-  episode: string
-): Promise<string> {
-  const url =
-    type === "tv"
-      ? `https://embed.smashystream.com/playertv/${tmdbId}/${season}/${episode}`
-      : `https://embed.smashystream.com/playemovie/${tmdbId}`;
+    let streamUrl: string | null = null;
+    page.on("response", (response) => {
+      const url = response.url();
+      if (url.includes(".m3u8") || url.includes(".mp4")) {
+        streamUrl = url;
+      }
+    });
 
-  const res = await fetch(url, {
-    headers: { ...BROWSER_HEADERS, Referer: "https://smashystream.com/" },
-    signal: AbortSignal.timeout(TIMEOUT_MS),
-  });
-  if (!res.ok) throw new Error(`smashystream ${res.status}`);
-  const html = await res.text();
-  const match = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)['"]/);
-  if (!match) throw new Error("smashystream: no m3u8 found");
-  return match[1];
-}
+    await page.goto(url, { waitUntil: "networkidle2", timeout: TIMEOUT_MS });
 
-/** Try multiembed.mov */
-async function tryMultiEmbed(
-  tmdbId: number,
-  type: "movie" | "tv",
-  season: string,
-  episode: string
-): Promise<string> {
-  const url =
-    type === "tv"
-      ? `https://multiembed.mov/directstream.php?tmdb_type=tv&tmdb_id=${tmdbId}&season=${season}&episode=${episode}`
-      : `https://multiembed.mov/directstream.php?tmdb_type=movie&tmdb_id=${tmdbId}`;
+    if (!streamUrl) {
+      streamUrl = await page.evaluate(() => {
+        const src = (document.querySelector("video source") as HTMLSourceElement)?.src;
+        return src || null;
+      });
+    }
 
-  const res = await fetch(url, {
-    headers: { ...BROWSER_HEADERS, Referer: "https://multiembed.mov/" },
-    signal: AbortSignal.timeout(TIMEOUT_MS),
-  });
-  if (!res.ok) throw new Error(`multiembed ${res.status}`);
-  const html = await res.text();
-  const match = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)['"]/);
-  if (!match) throw new Error("multiembed: no m3u8 found");
-  return match[1];
+    if (!streamUrl) throw new Error("embed.su: no stream found");
+    return streamUrl;
+  } finally {
+    if (browser) await browser.close().catch(() => null);
+  }
 }
 
 export async function GET(request: NextRequest) {
@@ -171,15 +160,12 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Invalid tmdb id" }, { status: 400 });
   }
 
-  // Run ALL providers in parallel — first one to resolve wins
+  // Run providers in parallel — try fast APIs first, then headless browser extractions
   try {
     const streamUrl = await Promise.any([
       tryAutoEmbed(tmdbId, type, season, episode),
-      tryVidsrcCc(tmdbId, type, season, episode),
-      tryEmbedSu(tmdbId, type, season, episode),
-      tryVidsrcTo(tmdbId, type, season, episode),
-      trySmashyStream(tmdbId, type, season, episode),
-      tryMultiEmbed(tmdbId, type, season, episode),
+      tryVidsrcCcHeadless(tmdbId, type, season, episode),
+      tryEmbedSuHeadless(tmdbId, type, season, episode),
     ]);
 
     const isHls = streamUrl.includes(".m3u8");
@@ -187,10 +173,14 @@ export async function GET(request: NextRequest) {
       { url: streamUrl, type: isHls ? "m3u8" : "mp4" },
       { headers: { "Cache-Control": "no-store" } }
     );
-  } catch {
-    console.warn(`[stream] All providers failed for tmdb=${tmdbId}`);
+  } catch (err) {
+    const errors = err instanceof AggregateError ? err.errors : [err];
+    const reasons = errors
+      .map((e) => (e instanceof Error ? e.message : String(e)))
+      .join(", ");
+    console.warn(`[stream] All providers failed for tmdb=${tmdbId}: ${reasons}`);
     return NextResponse.json(
-      { error: "No stream available for this title" },
+      { error: "No stream available for this title", debug: reasons },
       { status: 404, headers: { "Cache-Control": "no-store" } }
     );
   }

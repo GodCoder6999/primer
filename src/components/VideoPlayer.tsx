@@ -115,9 +115,10 @@ export function VideoPlayer({
       try {
         // 12-second hard timeout so the spinner never hangs forever
         const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
-        const data = await res.json() as { url?: string; type?: string; error?: string };
+        const data = await res.json() as { url?: string; type?: string; error?: string; debug?: string };
 
         if (!res.ok || data.error) {
+          if (data.debug) console.error("Provider failures:", data.debug);
           throw new Error(data.error || `API error ${res.status}`);
         }
 
