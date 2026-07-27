@@ -142,8 +142,7 @@ export function VideoPlayer({
                 signal: AbortSignal.timeout(5000),
               });
               if (bridgeRes.ok) {
-                const streamUrl = bridgeUrl; // Use bridge URL directly
-                player.src = streamUrl;
+                player.src = bridgeUrl;
                 player.play().catch(() => {});
                 setLoading(false);
                 setPlaying(true);
@@ -152,13 +151,10 @@ export function VideoPlayer({
             } catch {}
           }
 
-          // Fallback to test stream if bridges fail
-          player.src =
-            "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8";
-          player.play().catch(() => {});
-          setLoading(false);
-          setPlaying(true);
-          return;
+          // No bridges available
+          throw new Error(
+            "Torrent found but streaming bridge unavailable. Try again later."
+          );
         }
 
         if (data.type === "m3u8") {
