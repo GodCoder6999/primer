@@ -1,6 +1,11 @@
-import { formatStream } from '../utils/extractor.js';
+import { formatStream } from '../utils/extractor';
 
-export async function scrape({ tmdbId, type }) {
+interface ScrapeParams {
+  tmdbId: string;
+  type?: string;
+}
+
+export async function scrape({ tmdbId, type = 'movie' }: ScrapeParams) {
   try {
     return [
       formatStream({
@@ -12,7 +17,7 @@ export async function scrape({ tmdbId, type }) {
         headers: { Referer: 'https://xprime.tv' }
       })
     ];
-  } catch (err) {
+  } catch (err: any) {
     console.error(`[Xprime Error]: ${err.message}`);
     return [];
   }
