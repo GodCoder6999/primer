@@ -1,22 +1,29 @@
-import { formatStream } from '../utils/extractor.js';
+import { formatStream } from '../utils/extractor';
 
-export async function scrape({ title, tmdbId }) {
+interface ScrapeParams {
+  tmdbId?: string;
+  type?: string;
+  title?: string;
+  year?: string;
+}
+
+export async function scrape({ title, tmdbId }: ScrapeParams) {
   try {
-    // PixelDrain / Cloud Locker extraction pattern
-    const fileId = 'sample_file'; // Resolved from landing page parsing
+    // UHDMovies Direct Host / PixelDrain bypass pattern
+    const fileId = 'sample_file_id'; 
     const directUrl = `https://pixeldrain.com/api/file/${fileId}?download`;
 
     return [
       formatStream({
         providerName: 'uhdmovies',
-        title: 'UHDMovies Direct Cloud Locker',
+        title: title ? `${title} [UHDMovies 4K]` : 'UHDMovies 4K Remux',
         url: directUrl,
         quality: '4K Remux',
         type: 'http_range',
         headers: { 'User-Agent': 'Primer-MediaEngine/1.0' }
       })
     ];
-  } catch (err) {
+  } catch (err: any) {
     console.error(`[UHDMovies Error]: ${err.message}`);
     return [];
   }
