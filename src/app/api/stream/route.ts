@@ -155,7 +155,19 @@ export async function GET(request: NextRequest) {
             );
         }
 
-        const torrentStream = data.streams[0];
+        // Filter streams: exclude 2160p/4K and >4GB (webtor works best with 480p-1080p, <4GB)
+        const filteredStreams = data.streams.filter((s: any) => {
+            const title = s.title || "";
+            const is4k = /2160p|4k|uhd/i.test(title);
+            const sizeMatch = title.match(/([\d.]+)\s*(?:gb|mb)/i);
+            const sizeGB = sizeMatch ? parseFloat(sizeMatch[1]) : 0;
+            const isTooLarge = /GB/i.test(sizeMatch?.[0] || "") && sizeGB > 4;
+
+            return !is4k && !isTooLarge;
+        });
+
+        const torrentStreams = filteredStreams.length > 0 ? filteredStreams : data.streams;
+        const torrentStream = torrentStreams[0];
         const infoHash = torrentStream.infoHash || torrentStream.url;
 
         if (!infoHash) {
