@@ -7,44 +7,24 @@ export interface NativeVideoPlayerProps {
     src: string;
     poster?: string;
     title?: string;
-    isEmbedUrl?: boolean;
 }
 
 export const NativeVideoPlayer: React.FC<NativeVideoPlayerProps> = ({
     src,
     poster,
     title,
-    isEmbedUrl = false,
 }) => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const hlsRef = useRef<Hls | null>(null);
-    const iframeRef = useRef<HTMLIFrameElement | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!src) return;
+        const video = videoRef.current;
+        if (!video || !src) return;
 
         setLoading(true);
         setError(null);
-
-        // Embed URL - use iframe instead of video tag
-        if (isEmbedUrl) {
-            const iframe = iframeRef.current;
-            if (iframe) {
-                iframe.src = src;
-                iframe.onload = () => setLoading(false);
-                iframe.onerror = () => {
-                    setError("Failed to load embedded player.");
-                    setLoading(false);
-                };
-            }
-            return;
-        }
-
-        // Video URL - use HTML5 video player
-        const video = videoRef.current;
-        if (!video) return;
 
         // Destroy any existing HLS instance before loading a new URL
         if (hlsRef.current) {
@@ -102,7 +82,7 @@ export const NativeVideoPlayer: React.FC<NativeVideoPlayerProps> = ({
                 hlsRef.current = null;
             }
         };
-    }, [src, isEmbedUrl]);
+    }, [src]);
 
     return (
         <div className="relative w-full aspect-video bg-black rounded-xl overflow-hidden border border-neutral-800 shadow-2xl group">
@@ -121,27 +101,17 @@ export const NativeVideoPlayer: React.FC<NativeVideoPlayerProps> = ({
                 </div>
             )}
 
-            {/* Embedded Player (for AutoEmbed, 2Embed, etc.) */}
-            {isEmbedUrl ? (
-                <iframe
-                    ref={iframeRef}
-                    className="w-full h-full border-none"
-                    allowFullScreen
-                    allow="autoplay; encrypted-media"
-                />
-            ) : (
-                /* HTML5 Video Element */
-                <video
-                    ref={videoRef}
-                    controls
-                    autoPlay
-                    playsInline
-                    poster={poster}
-                    className="w-full h-full object-contain"
-                >
-                    Your browser does not support HTML5 video playback.
-                </video>
-            )}
+            {/* HTML5 Video Element */}
+            <video
+                ref={videoRef}
+                controls
+                autoPlay
+                playsInline
+                poster={poster}
+                className="w-full h-full object-contain"
+            >
+                Your browser does not support HTML5 video playback.
+            </video>
 
             {/* Optional Overlay Title */}
             {title && (
