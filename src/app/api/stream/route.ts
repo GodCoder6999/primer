@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import cloudflare from "cloudscraper";
+import puppeteer from "puppeteer";
 
 /**
  * Stream API - Torrentio with TMDB→IMDb conversion
@@ -14,6 +16,41 @@ const imdbIdCache: Record<string, string> = {
     "238": "tt0068646",      // The Godfather
     "1275779": "tt15047880", // Disclosure Day
 };
+
+async function tryWebtorWithPuppeteer(magnetUrl: string): Promise<string | null> {
+    let browser = null;
+    try {
+        browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
+        const page = await browser.newPage();
+
+        const url = `https://webtor.io/?magnet=${encodeURIComponent(magnetUrl)}`;
+        await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
+
+        // Wait for stream player or download link to appear
+        await page.waitForSelector("video, a[href*='stream'], .player", { timeout: 10000 }).catch(() => null);
+
+        // Extract stream URL from video src or download link
+        const streamUrl = await page.evaluate(() => {
+            const video = document.querySelector("video");
+            if (video) return video.src;
+
+            const link = document.querySelector("a[href*='stream']");
+            if (link) return (link as any).href;
+
+            const src = document.querySelector("[src*='stream']");
+            if (src) return (src as any).src;
+
+            return null;
+        });
+
+        return streamUrl;
+    } catch (err) {
+        console.log("Puppeteer webtor failed:", err);
+        return null;
+    } finally {
+        if (browser) await browser.close();
+    }
+}
 
 async function getTmdbExternalIds(tmdbId: string, isSeries: boolean): Promise<string | null> {
     // Check cache first
@@ -179,6 +216,45 @@ export async function GET(request: NextRequest) {
 
         const magnetUrl = `magnet:?xt=urn:btih:${infoHash}`;
 
+        // Try Webtor with Puppeteer to bypass Cloudflare
+        try {
+            const webtorStream = await tryWebtorWithPuppeteer(magnetUrl);
+            if (webtorStream) {
+                return NextResponse.json({
+                    url: webtorStream,
+                    type: "m3u8",
+                    provider: "torrentio + webtor",
+                    title: torrentStream.title,
+                    quality: torrentStream.title?.match(/\d+p/)?.[0] || "auto",
+                });
+            }
+        } catch (err) {
+            console.log("Webtor Puppeteer error:", err);
+        }
+
+        // Try Seedr free tier for direct HTTP streaming
+        try {
+            const seedrUrl = `https://www.seedr.cc/api/torrent/fetch?magnet=${encodeURIComponent(magnetUrl)}`;
+            const seedrRes = await fetch(seedrUrl, {
+                signal: AbortSignal.timeout(8000),
+            });
+
+            if (seedrRes.ok) {
+                const seedrData = await seedrRes.json() as any;
+                if (seedrData.result?.download_url) {
+                    return NextResponse.json({
+                        url: seedrData.result.download_url,
+                        type: "mp4",
+                        provider: "torrentio + seedr",
+                        title: torrentStream.title,
+                        quality: torrentStream.title?.match(/\d+p/)?.[0] || "auto",
+                    });
+                }
+            }
+        } catch (err) {
+            console.log("Seedr unavailable, trying alternatives");
+        }
+
         // Try Instant.io API for reliable magnet streaming
         try {
             const instantUrl = `https://instant.io/get?magnet=${encodeURIComponent(magnetUrl)}&timeout=60`;
@@ -199,7 +275,7 @@ export async function GET(request: NextRequest) {
                 }
             }
         } catch (err) {
-            console.log("Instant.io unavailable, trying alternatives");
+            console.log("Instant.io unavailable");
         }
 
         // Try Webtor.io API for direct HTTP streaming
