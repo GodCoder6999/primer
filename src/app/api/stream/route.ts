@@ -3,15 +3,12 @@ import { NextResponse } from 'next/server';
 const TMDB_API_KEY = process.env.TMDB_API_KEY || '';
 
 async function getImdbId(rawId: string, type: string): Promise<string | null> {
-  // If it's already a valid IMDb ID
   if (rawId.startsWith('tt')) {
     return rawId;
   }
 
-  // Strip prefixes like 't' (e.g. 't17' -> '17')
   const cleanId = rawId.startsWith('t') ? rawId.substring(1) : rawId;
 
-  // Try fetching official external mapping from TMDb if API key is available
   if (TMDB_API_KEY) {
     try {
       const endpoint = `https://api.themoviedb.org/3/${type === 'tv' ? 'tv' : 'movie'}/${cleanId}/external_ids?api_key=${TMDB_API_KEY}`;
@@ -25,7 +22,6 @@ async function getImdbId(rawId: string, type: string): Promise<string | null> {
     }
   }
 
-  // Fallback ID estimation if external lookup is bypassed
   return `tt${cleanId.padStart(7, '0')}`;
 }
 
@@ -52,22 +48,44 @@ export async function GET(request: Request) {
       return NextResponse.json({ success: false, error: 'COMET_TOKEN environment variable is missing.' }, { status: 500 });
     }
 
-    // Query Comet instance with valid IMDb ID
     const cometUrl = `https://comet.elfhosted.com/${cometToken}/stream/${type}/${imdbId}.json`;
     const res = await fetch(cometUrl);
     const data = await res.json();
 
     if (!data || !data.streams || data.streams.length === 0) {
-      return NextResponse.json({ success: false, error: 'No cached debrid streams found from Comet for this title.' }, { status: 404 });
+      return NextResponse.json({ success: false, error: 'No streams found from Comet.' }, { status: 404 });
     }
 
-    // Format streams cleanly for your HTML5 / hls.js custom player
-    const formattedStreams = data.streams.map((stream: any) => ({
-      provider: 'comet',
-      name: stream.title || stream.name || 'Comet Stream',
-      type: stream.url && stream.url.includes('.m3u8') ? 'hls' : 'http_range',
-      url: stream.url
-    })).filter((s: any) => s.url);
+    // Map and STRICTLY FILTER OUT any stream URLs that contain embed wrappers or iframes
+    const formattedStreams = data.streams
+      .map((stream: any) => ({
+        provider: 'comet',
+        name: stream.title || stream.name || 'Comet Stream',
+        type: stream.url && stream.url.includes('.m3u8') ? 'hls' : 'http_range',
+        url: stream.url
+      }))
+      .filter((s: any) => {
+        if (!s.url) return false;
+        const lowerUrl = s.url.toLowerCase();
+        // Block third-party embeds, iframes, and web player wrappers
+        if (
+          lowerUrl.includes('/embed/') ||
+          lowerUrl.includes('vidsrc') ||
+          lowerUrl.includes('vidlink') ||
+          lowerUrl.includes('embed.') ||
+          lowerUrl.includes('iframe')
+        ) {
+          return false;
+        }
+        return true;
+      });
+
+    if (formattedStreams.length === 0) {
+      return NextResponse.json(
+        { success: false, error: 'No direct video/HLS streams available. Embedded players have been blocked.' },
+        { status: 404 }
+      );
+    }
 
     return NextResponse.json({ success: true, streams: formattedStreams });
   } catch (error: any) {
