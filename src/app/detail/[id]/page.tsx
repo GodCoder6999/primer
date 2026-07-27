@@ -1,14 +1,16 @@
-useEffect(() => {
-  async function loadStream() {
-    // Pass type, tmdbId, season, and episode
-    const res = await fetch(`/api/stream?type=tv&tmdbId=94997&season=1&episode=1`);
-    const data = await res.json();
-    
-    if (data.streams && data.streams.length > 0) {
-      // Set stream source to your video player state
-      setStreamUrl(data.streams[0].url);
-    }
-  }
-  
-  loadStream();
-}, []);
+import React from 'react';
+
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function DetailPage({ params }: PageProps) {
+  const { id } = await params;
+
+  return (
+    <div className="min-h-screen bg-black text-white p-8">
+      <h1 className="text-3xl font-bold">Media Detail Page</h1>
+      <p className="mt-2 text-gray-400">Media ID: {id}</p>
+    </div>
+  );
+}
