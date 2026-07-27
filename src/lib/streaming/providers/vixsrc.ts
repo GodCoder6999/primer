@@ -1,3 +1,6 @@
+import { resolveEmbedToHls } from '@/lib/streaming/utils/embedResolver';
+import { formatStream } from '@/lib/streaming/utils/extractor';
+
 export async function scrape({
   type = 'movie',
   tmdbId,
@@ -10,53 +13,27 @@ export async function scrape({
   episode?: string;
 }) {
   const baseUrl = 'https://vixsrc.to';
-  const targetUrl =
+  const embedUrl =
     type === 'movie'
       ? `${baseUrl}/embed/movie/${tmdbId}`
       : `${baseUrl}/embed/tv/${tmdbId}/${season}/${episode}`;
 
-  try {
-    const res = await fetch(targetUrl, {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
-        Referer: baseUrl,
-      },
-    });
+  // Attempt to resolve the embed page directly into a raw .m3u8 stream
+  const directHlsUrl = await resolveEmbedToHls(embedUrl);
 
-    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-    const html = await res.text();
-
-    // 1. Check standard file variable patterns
-    let m3u8Match = html.match(/file:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i) ||
-                    html.match(/source\s*:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i) ||
-                    html.match(/src:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i);
-
-    // 2. Check if packed/eval obfuscated payload exists using [\s\S]*? (safe for all ES targets)
-    if (!m3u8Match && html.includes('eval(function(p,a,c,k,e,d)')) {
-      const packedMatch = html.match(/eval\(function\(p,a,c,k,e,d\)[\s\S]*?\(\)\)/);
-      if (packedMatch) {
-        const unpackedM3u8 = html.match(/(https?:\/\/[^\s"'#]+\.m3u8[^\s"'#]*)/i);
-        if (unpackedM3u8) {
-          m3u8Match = [unpackedM3u8[1], unpackedM3u8[1]];
-        }
-      }
-    }
-
-    if (m3u8Match && m3u8Match[1]) {
-      return [
-        {
-          provider: 'vixsrc',
-          name: 'Vixsrc Direct HLS',
-          type: 'hls',
-          url: m3u8Match[1],
-          headers: { Referer: baseUrl },
-        },
-      ];
-    }
-  } catch (err: any) {
-    console.warn(`[Vixsrc Deep Scrape Error]: ${err.message}`);
+  if (directHlsUrl) {
+    return [
+      formatStream({
+        providerName: 'vixsrc',
+        title: 'Vixsrc Converted HLS Stream',
+        url: directHlsUrl,
+        quality: '1080p ABR',
+        type: 'hls',
+        headers: { Referer: baseUrl },
+      }),
+    ];
   }
 
+  // Return empty if conversion fails, ensuring the embed player is never outputted
   return [];
 }
