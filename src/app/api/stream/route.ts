@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { getCategory3Streams } from '@/lib/streaming/providerEngine';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -14,19 +13,30 @@ export async function GET(request: Request) {
   }
 
   try {
-    const streams = await getCategory3Streams({ type, tmdbId, season, episode });
+    // 1. Convert TMDb ID to IMDb ID format required by Stremio-compatible addons like Comet
+    // (You can use an external lookup or pass an IMDb ID directly from your frontend)
+    const imdbId = `tt${tmdbId}`; 
 
-    // Filter to keep ONLY direct HLS or HTTP streams, dropping any accidental embeds
-    const directStreams = streams.filter(s => s.type === 'hls' || s.url.includes('.m3u8'));
+    // 2. Query your Comet instance REST API endpoint
+    const cometToken = process.TS_COMET_TOKEN || 'YOUR_COMET_SECRET_TOKEN';
+    const cometUrl = `https://comet.elfhosted.com/${cometToken}/stream/${type}/${imdbId}.json`;
 
-    if (!directStreams || directStreams.length === 0) {
-      return NextResponse.json(
-        { success: false, error: 'No direct HLS streams could be scraped from providers.' },
-        { status: 404 }
-      );
+    const res = await fetch(cometUrl);
+    const data = await res.json();
+
+    if (!data || !data.streams || data.streams.length === 0) {
+      return NextResponse.json({ success: false, error: 'No streams found from Comet.' }, { status: 404 });
     }
 
-    return NextResponse.json({ success: true, streams: directStreams });
+    // 3. Map Comet streams into your clean format
+    const formattedStreams = data.streams.map((stream: any) => ({
+      provider: 'comet',
+      name: stream.title || stream.name || 'Comet Stream',
+      type: stream.url.includes('.m3u8') ? 'hls' : 'http_range',
+      url: stream.url
+    }));
+
+    return NextResponse.json({ success: true, streams: formattedStreams });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
