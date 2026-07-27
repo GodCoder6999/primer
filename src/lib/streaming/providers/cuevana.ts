@@ -1,6 +1,14 @@
-import { formatStream } from '../utils/extractor.js';
+import { formatStream } from '../utils/extractor';
 
-export async function scrape({ tmdbId, type }) {
+interface ScrapeParams {
+  tmdbId: string;
+  type?: string;
+  season?: string;
+  episode?: string;
+  title?: string;
+}
+
+export async function scrape({ tmdbId, type = 'movie' }: ScrapeParams) {
   try {
     return [
       formatStream({
@@ -12,7 +20,7 @@ export async function scrape({ tmdbId, type }) {
         headers: { Referer: 'https://cuevana.pro' }
       })
     ];
-  } catch (err) {
+  } catch (err: any) {
     console.error(`[Cuevana Error]: ${err.message}`);
     return [];
   }
