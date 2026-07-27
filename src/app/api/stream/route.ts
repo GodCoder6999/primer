@@ -16,26 +16,17 @@ export async function GET(request: Request) {
   try {
     const streams = await getCategory3Streams({ type, tmdbId, season, episode });
 
-    // Fallback embed if scraper yields no direct HLS link
-    if (!streams || streams.length === 0) {
-      const fallbackEmbed = type === 'tv'
-        ? `https://vidsrc.me/embed/tv?tmdb=${tmdbId}&season=${season}&episode=${episode}`
-        : `https://vidsrc.me/embed/movie?tmdb=${tmdbId}`;
+    // Filter to keep ONLY direct HLS or HTTP streams, dropping any accidental embeds
+    const directStreams = streams.filter(s => s.type === 'hls' || s.url.includes('.m3u8'));
 
-      return NextResponse.json({
-        success: true,
-        streams: [
-          {
-            provider: 'fallback_embed',
-            name: 'External Embed Stream',
-            type: 'embed', // <-- Frontend reads this to hide custom UI
-            url: fallbackEmbed
-          }
-        ]
-      });
+    if (!directStreams || directStreams.length === 0) {
+      return NextResponse.json(
+        { success: false, error: 'No direct HLS streams could be scraped from providers.' },
+        { status: 404 }
+      );
     }
 
-    return NextResponse.json({ success: true, streams });
+    return NextResponse.json({ success: true, streams: directStreams });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
