@@ -13,12 +13,10 @@ export async function GET(request: Request) {
   }
 
   try {
-    // 1. Convert TMDb ID to IMDb ID format required by Stremio-compatible addons like Comet
-    // (You can use an external lookup or pass an IMDb ID directly from your frontend)
     const imdbId = `tt${tmdbId}`; 
 
-    // 2. Query your Comet instance REST API endpoint
-    const cometToken = process.TS_COMET_TOKEN || 'YOUR_COMET_SECRET_TOKEN';
+    // Correctly reference process.env for environment variables
+    const cometToken = process.env.COMET_TOKEN || process.env.TS_COMET_TOKEN || 'YOUR_COMET_SECRET_TOKEN';
     const cometUrl = `https://comet.elfhosted.com/${cometToken}/stream/${type}/${imdbId}.json`;
 
     const res = await fetch(cometUrl);
@@ -28,7 +26,6 @@ export async function GET(request: Request) {
       return NextResponse.json({ success: false, error: 'No streams found from Comet.' }, { status: 404 });
     }
 
-    // 3. Map Comet streams into your clean format
     const formattedStreams = data.streams.map((stream: any) => ({
       provider: 'comet',
       name: stream.title || stream.name || 'Comet Stream',
