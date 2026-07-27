@@ -1,42 +1,36 @@
-// app/api/stream/route.js
 import { NextResponse } from 'next/server';
 import { getCategory3Streams } from '@/lib/streaming/providerEngine';
 
-export async function GET(request) {
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  
-  // Extract parameters
-  const type = searchParams.get('type') || 'tv'; // default or detected
-  const tmdbId = searchParams.get('tmdbId') || searchParams.get('id') || '94997'; // 94997 = House of the Dragon TMDB ID
+
+  const tmdbId = searchParams.get('tmdbId') || searchParams.get('id');
+  const type = searchParams.get('type') || 'movie';
   const season = searchParams.get('season') || '1';
   const episode = searchParams.get('episode') || '1';
+
+  if (!tmdbId) {
+    return NextResponse.json({ error: 'tmdbId is required' }, { status: 400 });
+  }
 
   try {
     const streams = await getCategory3Streams({ type, tmdbId, season, episode });
 
-    // Fallback embed sources if third-party scrapers return empty on Vercel IPs
-    if (!streams || streams.length === 0) {
-      const fallbackUrl = type === 'tv' 
-        ? `https://vidsrc.me/embed/tv?tmdb=${tmdbId}&season=${season}&episode=${episode}`
-        : `https://vidsrc.me/embed/movie?tmdb=${tmdbId}`;
+    // Filter strictly for direct HLS files (.m3u8)
+    const hlsStreams = streams.filter(s => s.type === 'hls' || s.url.includes('.m3u8'));
 
-      return NextResponse.json({
-        success: true,
-        count: 1,
-        streams: [
-          {
-            provider: 'vidsrc_fallback',
-            name: 'Direct Multi-Server Embed',
-            title: `House of the Dragon S${season}E${episode} [Auto Multi-Quality]`,
-            type: 'embed',
-            url: fallbackUrl
-          }
-        ]
-      });
+    if (!hlsStreams || hlsStreams.length === 0) {
+      return NextResponse.json(
+        { 
+          success: false, 
+          error: 'Could not extract direct .m3u8 stream. Embedded fallback blocked to enforce custom player.' 
+        },
+        { status: 404 }
+      );
     }
 
-    return NextResponse.json({ success: true, count: streams.length, streams });
-  } catch (error) {
+    return NextResponse.json({ success: true, streams: hlsStreams });
+  } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
