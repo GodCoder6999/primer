@@ -6,22 +6,21 @@ import Hls from 'hls.js';
 interface VideoPlayerProps {
   streamUrl?: string;
   title?: string;
+  isEmbed?: boolean;
 }
 
-export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: VideoPlayerProps) {
+export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmbed }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
 
+  const isIframe =
+    isEmbed ||
+    (streamUrl && (streamUrl.includes('/embed/') || streamUrl.includes('vidsrc')));
+
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !streamUrl) return;
-
-    // Block any attempt to load an iframe embed URL into the custom player
-    if (streamUrl.includes('/embed/') || streamUrl.includes('vidsrc')) {
-      setHasError(true);
-      return;
-    }
+    if (!video || !streamUrl || isIframe) return;
 
     if (streamUrl.includes('.m3u8')) {
       if (Hls.isSupported()) {
@@ -44,9 +43,9 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: Vid
     } else {
       video.src = streamUrl;
     }
-  }, [streamUrl]);
+  }, [streamUrl, isIframe]);
 
-  if (!streamUrl || hasError || streamUrl.includes('/embed/')) {
+  if (!streamUrl || hasError || isIframe) {
     return (
       <div className="w-full h-screen bg-black text-white flex flex-col items-center justify-center gap-2">
         <p className="text-xl font-bold">Custom Player Error</p>
@@ -57,7 +56,6 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: Vid
 
   return (
     <div className="relative w-full h-screen bg-black overflow-hidden group">
-      {/* Native HTML5 Video Driven Exclusively by Your Custom Code */}
       <video
         ref={videoRef}
         className="w-full h-full object-contain cursor-pointer"
@@ -70,9 +68,7 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: Vid
         }}
       />
 
-      {/* Custom Prime Video Overlay Controls */}
       <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/80 via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-        {/* Top Header */}
         <div className="flex items-center justify-between text-white pointer-events-auto">
           <div className="flex items-center gap-3">
             <span className="font-bold text-xl">X-Ray</span>
@@ -81,7 +77,6 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: Vid
           <h1 className="text-xl font-semibold">{title}</h1>
         </div>
 
-        {/* Center Skip & Play Controls */}
         <div className="flex items-center justify-center gap-8 pointer-events-auto">
           <button
             onClick={() => { if (videoRef.current) videoRef.current.currentTime -= 10; }}
@@ -109,7 +104,6 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: Vid
           </button>
         </div>
 
-        {/* Bottom Timeline Control */}
         <div className="w-full flex items-center gap-4 text-white text-sm pointer-events-auto">
           <input
             type="range"
