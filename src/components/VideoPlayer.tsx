@@ -142,7 +142,10 @@ export function VideoPlayer({
 
         if (data.type === "m3u8") {
           if (Hls.isSupported()) {
-            hls = new Hls();
+            hls = new Hls({
+              enableWorker: true,
+              lowLatencyMode: true,
+            });
             hlsRef.current = hls;
             hls.loadSource(data.url);
             hls.attachMedia(player);
@@ -153,9 +156,11 @@ export function VideoPlayer({
                 setPlaying(true);
               }
             });
-            // Stop spinning on error
             hls.on(Hls.Events.ERROR, (_evt, errData) => {
-              if (errData.fatal) setLoading(false);
+              if (errData.fatal) {
+                console.error("HLS fatal error:", errData);
+                setLoading(false);
+              }
             });
           } else {
             // Safari native HLS
@@ -164,8 +169,7 @@ export function VideoPlayer({
             setLoading(false);
             setPlaying(true);
           }
-        } else {
-          // MP4
+        } else if (data.type === "mp4") {
           player.src = data.url;
           player.play().catch(() => {});
           setLoading(false);
@@ -298,20 +302,31 @@ export function VideoPlayer({
               {magnetLink && (
                 <div className="space-y-4">
                   <p className="text-sm text-white/70">
-                    Download this torrent using qBittorrent, Transmission, or similar:
+                    Open in your torrent client to stream:
                   </p>
-                  <div className="bg-white/10 rounded p-4 break-all text-xs text-white/90 font-mono">
-                    {magnetLink}
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      // Try to open with default torrent client
+                      window.location.href = magnetLink;
+                    }}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded font-medium transition-colors"
+                  >
+                    ⬇ Open in Torrent Client
+                  </button>
                   <button
                     type="button"
                     onClick={() => {
                       navigator.clipboard.writeText(magnetLink);
+                      alert("Magnet link copied! Paste in your torrent client.");
                     }}
-                    className="w-full bg-white/20 hover:bg-white/30 text-white py-2 px-4 rounded transition-colors"
+                    className="w-full bg-white/20 hover:bg-white/30 text-white py-2 px-4 rounded transition-colors text-sm"
                   >
-                    Copy Magnet Link
+                    📋 Copy Magnet Link
                   </button>
+                  <div className="bg-white/10 rounded p-3 break-all text-xs text-white/70 font-mono max-h-20 overflow-y-auto">
+                    {magnetLink}
+                  </div>
                 </div>
               )}
             </div>

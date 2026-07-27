@@ -130,35 +130,90 @@ export async function GET(request: NextRequest) {
 
         const magnetUrl = `magnet:?xt=urn:btih:${infoHash}`;
 
-        // Try bridge services server-side to avoid CORS issues
-        let workingBridgeUrl: string | null = null;
-
-        // Try webtorrent first
+        // Try Instant.io API for reliable magnet streaming
         try {
-            const bridgeRes = await fetch(`https://webtorrent.io/api/stream?magnet=${encodeURIComponent(magnetUrl)}`, {
+            const instantUrl = `https://instant.io/get?magnet=${encodeURIComponent(magnetUrl)}&timeout=60`;
+            const instantRes = await fetch(instantUrl, {
+                signal: AbortSignal.timeout(5000),
+            });
+
+            if (instantRes.ok) {
+                const instantData = await instantRes.json() as any;
+                if (instantData.url) {
+                    return NextResponse.json({
+                        url: instantData.url,
+                        type: "mp4",
+                        provider: "torrentio + instant.io",
+                        title: torrentStream.title,
+                        quality: torrentStream.title?.match(/\d+p/)?.[0] || "auto",
+                    });
+                }
+            }
+        } catch (err) {
+            console.log("Instant.io unavailable, trying alternatives");
+        }
+
+        // Try Webtor.io API for direct HTTP streaming
+        try {
+            const webtorUrl = `https://api.webtor.io/stream/get?magnet=${encodeURIComponent(magnetUrl)}&timeout=30000`;
+            const webtorRes = await fetch(webtorUrl, {
+                signal: AbortSignal.timeout(5000),
+            });
+
+            if (webtorRes.ok) {
+                const webtorData = await webtorRes.json() as any;
+                if (webtorData.url) {
+                    return NextResponse.json({
+                        url: webtorData.url,
+                        type: "m3u8",
+                        provider: "torrentio + webtor",
+                        title: torrentStream.title,
+                        quality: torrentStream.title?.match(/\d+p/)?.[0] || "auto",
+                    });
+                }
+            }
+        } catch (err) {
+            console.log("Webtor API unavailable");
+        }
+
+        // Try webtorrent bridge
+        try {
+            const webtorrentUrl = `https://webtorrent.io/api/stream?magnet=${encodeURIComponent(magnetUrl)}`;
+            const wtRes = await fetch(webtorrentUrl, {
                 signal: AbortSignal.timeout(3000),
             });
-            if (bridgeRes.ok) {
-                workingBridgeUrl = `https://webtorrent.io/api/stream?magnet=${encodeURIComponent(magnetUrl)}`;
+            if (wtRes.ok) {
+                return NextResponse.json({
+                    url: webtorrentUrl,
+                    type: "m3u8",
+                    provider: "torrentio + webtorrent",
+                    title: torrentStream.title,
+                    quality: torrentStream.title?.match(/\d+p/)?.[0] || "auto",
+                });
             }
         } catch {}
 
-        // Try mediaflow if webtorrent failed
-        if (!workingBridgeUrl) {
-            try {
-                const bridgeRes = await fetch(`https://stream.mediaflow.plus/?magnet=${encodeURIComponent(magnetUrl)}`, {
-                    signal: AbortSignal.timeout(3000),
+        // Try mediaflow bridge
+        try {
+            const mediaflowUrl = `https://stream.mediaflow.plus/?magnet=${encodeURIComponent(magnetUrl)}`;
+            const mfRes = await fetch(mediaflowUrl, {
+                signal: AbortSignal.timeout(3000),
+            });
+            if (mfRes.ok) {
+                return NextResponse.json({
+                    url: mediaflowUrl,
+                    type: "m3u8",
+                    provider: "torrentio + mediaflow",
+                    title: torrentStream.title,
+                    quality: torrentStream.title?.match(/\d+p/)?.[0] || "auto",
                 });
-                if (bridgeRes.ok) {
-                    workingBridgeUrl = `https://stream.mediaflow.plus/?magnet=${encodeURIComponent(magnetUrl)}`;
-                }
-            } catch {}
-        }
+            }
+        } catch {}
 
-        // Return working bridge URL if found, otherwise magnet link
+        // Last resort: return magnet link for manual download
         return NextResponse.json({
-            url: workingBridgeUrl || magnetUrl,
-            type: workingBridgeUrl ? "m3u8" : "torrent",
+            url: magnetUrl,
+            type: "torrent",
             provider: "torrentio",
             title: torrentStream.title,
             quality: torrentStream.title?.match(/\d+p/)?.[0] || "auto",
