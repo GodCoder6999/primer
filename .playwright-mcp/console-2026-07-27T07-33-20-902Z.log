@@ -1,0 +1,79 @@
+[     136ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     143ms] [LOG] [Fast Refresh] done in 119ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     375ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     427ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     650ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     667ms] [LOG] [Fast Refresh] done in 125ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    1540ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    1609ms] [LOG] [Fast Refresh] done in 185ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    3385ms] [ERROR] Stream load failed: Error: Torrent found but streaming bridge unavailable. Try again later.
+    at loadStream (http://localhost:3000/_next/static/chunks/Downloads_prime%20clone_src_0rf5r5w._.js:2360:31) @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:3272
+[   15601ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   15834ms] [LOG] [Fast Refresh] done in 333ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   24088ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   24089ms] [LOG] [Fast Refresh] done in 101ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   96840ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   98925ms] [LOG] [Fast Refresh] done in 2196ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  102675ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  102769ms] [LOG] [Fast Refresh] done in 209ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  206684ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  207128ms] [LOG] [Fast Refresh] done in 550ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  223825ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  223954ms] [LOG] [Fast Refresh] done in 230ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  231842ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  232078ms] [LOG] [Fast Refresh] done in 333ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  247853ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  247873ms] [LOG] [Fast Refresh] done in 121ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  255705ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  255842ms] [LOG] [Fast Refresh] done in 303ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  259694ms] [ERROR] Stream load failed: Error: Torrent available but requires external client. Magnet link: magnet:?xt=urn:btih:a1ad8f2ea70254e145a91aae9a24140feea37a84
+    at loadStream (http://localhost:3000/_next/static/chunks/Downloads_prime%20clone_src_0rf5r5w._.js?id=%255Bproject%255D%252FDownloads%252Fprime+clone%252Fsrc%252Fcomponents%252FVideoPlayer.tsx+%255Bapp-client%255D+%2528ecmascript%2529:105:31) @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:3272
+[  265430ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  271907ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  272218ms] [LOG] [Fast Refresh] done in 6327ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  272834ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  275289ms] [LOG] [Fast Refresh] done in 2568ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  276370ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  277082ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  278835ms] [LOG] [Fast Refresh] done in 1857ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  278936ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  279916ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://localhost:3000/detail/t44?autoplay=1&t=0&_rsc=1hme7:0
+[  279917ms] [ERROR] Failed to fetch RSC payload for http://localhost:3000/detail/t44?autoplay=1&t=0. Falling back to browser navigation. TypeError: Failed to fetch
+    at createFetch (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:8084:21)
+    at fetchServerResponse (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:7928:27)
+    at fetchMissingDynamicData (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:9341:75)
+    at spawnDynamicRequests (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:9149:35)
+    at navigateToKnownRoute (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:10033:54)
+    at refreshDynamicData (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:10653:49)
+    at hmrRefreshReducer (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:10802:51)
+    at clientReducer (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:11398:65)
+    at Object.action (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:11631:55)
+    at runAction (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:11536:38)
+    at dispatchAction (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:11599:9)
+    at Object.dispatch (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:11629:40)
+    at http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:963:29
+    at startTransition (http://localhost:3000/_next/static/chunks/03j__next_dist_compiled_react-dom_0gnk4t3._.js:5469:31)
+    at nextDispatch (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:962:13)
+    at dispatchAppRouterAction (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:922:5)
+    at http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:11800:61
+    at startTransition (http://localhost:3000/_next/static/chunks/03j__next_dist_compiled_0t2md8n._.js:1279:31)
+    at Object.hmrRefresh (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:11799:40)
+    at http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:13967:64
+    at startTransition (http://localhost:3000/_next/static/chunks/03j__next_dist_compiled_0t2md8n._.js:1279:31)
+    at processMessage (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:13966:44)
+    at WebSocket.handleMessage (http://localhost:3000/_next/static/chunks/03j__next_dist_client_03q4jfa._.js:13335:52) @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:3272
+[  280226ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://localhost:3000/detail/t44?autoplay=1&t=0&_rsc=1hme7:0

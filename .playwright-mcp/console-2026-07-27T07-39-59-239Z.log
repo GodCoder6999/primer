@@ -1,0 +1,51 @@
+[      25ms] [LOG] [Fast Refresh] done in 355ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     211ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     511ms] [LOG] [Fast Refresh] done in 401ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     715ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     960ms] [LOG] [Fast Refresh] done in 348ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    1075ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    1916ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    2068ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    2370ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    2469ms] [LOG] [Fast Refresh] done in 201ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    2864ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    2866ms] [LOG] [Fast Refresh] done in 183ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    3451ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    3804ms] [LOG] [Fast Refresh] done in 460ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    4023ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    4186ms] [LOG] [Fast Refresh] done in 270ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    6255ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   10117ms] [LOG] [Fast Refresh] done in 3973ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   10225ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   12342ms] [LOG] [Fast Refresh] done in 2223ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   12343ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/torrent-stream?magnet=magnet%3A%3Fxt%3Durn%3Abtih%3Aa1ad8f2ea70254e145a91aae9a24140feea37a84:0
+[   12344ms] [ERROR] Stream load failed: Error: Torrent streaming failed: Proxy error: 500
+    at loadStream (http://localhost:3000/_next/static/chunks/Downloads_prime%20clone_src_0rf5r5w._.js:2358:35) @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:3272
+[   41943ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   42002ms] [LOG] [Fast Refresh] done in 171ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   76866ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   78109ms] [LOG] [Fast Refresh] done in 1335ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   78235ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   79072ms] [LOG] [Fast Refresh] done in 946ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   79230ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   79237ms] [LOG] [Fast Refresh] done in 116ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   79403ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   79588ms] [LOG] [Fast Refresh] done in 286ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   79892ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   79906ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   80212ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   80489ms] [LOG] [Fast Refresh] done in 382ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   80823ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   80908ms] [LOG] [Fast Refresh] done in 187ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   87285ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   87453ms] [LOG] [Fast Refresh] done in 235ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  101731ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  101871ms] [LOG] [Fast Refresh] done in 337ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  104335ms] [ERROR] Stream load failed: Error: Torrent available: magnet:?xt=urn:btih:a1ad8f2ea70254e145a91aae9a24140feea37a84
+
+Open this magnet link in your torrent client (qBittorrent, Transmission, uTorrent, etc.) to download and play.
+    at loadStream (http://localhost:3000/_next/static/chunks/Downloads_prime%20clone_src_0rf5r5w._.js?id=%255Bproject%255D%252FDownloads%252Fprime+clone%252Fsrc%252Fcomponents%252FVideoPlayer.tsx+%255Bapp-client%255D+%2528ecmascript%2529:106:31) @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:3272
+[  108364ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  108467ms] [LOG] [Fast Refresh] done in 154ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  117514ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[  117737ms] [LOG] [Fast Refresh] done in 318ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431

@@ -1,0 +1,11 @@
+[     141ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[     179ms] [LOG] [Fast Refresh] done in 149ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    1328ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    1963ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[    3418ms] [ERROR] Access to fetch at 'https://webtorrent.io/api/stream?magnet=magnet%3A%3Fxt%3Durn%3Abtih%3A45fa4233ef87c58f5f8b4817e4d50c9f5363caef' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/detail/t64?autoplay=1&t=0:0
+[    3418ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://webtorrent.io/api/stream?magnet=magnet%3A%3Fxt%3Durn%3Abtih%3A45fa4233ef87c58f5f8b4817e4d50c9f5363caef:0
+[    3967ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://stream.mediaflow.plus/?magnet=magnet%3A%3Fxt%3Durn%3Abtih%3A45fa4233ef87c58f5f8b4817e4d50c9f5363caef:0
+[    3967ms] [ERROR] Stream load failed: Error: Torrent found but streaming bridge unavailable. Try again later.
+    at loadStream (http://localhost:3000/_next/static/chunks/Downloads_prime%20clone_src_0rf5r5w._.js:2360:31) @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:3272
+[   26047ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431
+[   26190ms] [LOG] [Fast Refresh] done in 248ms @ http://localhost:3000/_next/static/chunks/03j__next_dist_01qnk27._.js:2431

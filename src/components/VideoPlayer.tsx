@@ -66,6 +66,8 @@ export function VideoPlayer({
   const [panel, setPanel] = useState<PlayerPanel>(null);
   const [volume, setVolume] = useState(0.85);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [magnetLink, setMagnetLink] = useState<string | null>(null);
 
   const hideTimer = useRef<number | undefined>(undefined);
   const shellRef = useRef<HTMLDivElement>(null);
@@ -131,10 +133,10 @@ export function VideoPlayer({
         const player = videoRef.current;
         if (!player || !data.url || !data.type) return;
 
-        // Handle torrent streams (magnet links)
+        // Handle torrent streams - show magnet link for user's torrent client
         if (data.type === "torrent") {
           throw new Error(
-            `Torrent available but requires external client. Magnet link: ${data.url}`
+            `Torrent available: ${data.url}\n\nOpen this magnet link in your torrent client (qBittorrent, Transmission, uTorrent, etc.) to download and play.`
           );
         }
 
@@ -170,7 +172,18 @@ export function VideoPlayer({
           setPlaying(true);
         }
       } catch (e) {
+        const msg = e instanceof Error ? e.message : "Stream load failed";
         console.error("Stream load failed:", e);
+
+        // Extract magnet link if present
+        const magnetMatch = msg.match(/magnet:\?[^\s]+/);
+        if (magnetMatch) {
+          setMagnetLink(magnetMatch[0]);
+          setError("Torrent available - use your torrent client");
+        } else {
+          setError(msg);
+        }
+
         setLoading(false);
       }
     }
@@ -274,6 +287,34 @@ export function VideoPlayer({
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
             <div className="h-12 w-12 animate-spin rounded-full border-4 border-white/20 border-t-white" />
             <p className="text-sm text-white/60">Loading stream…</p>
+          </div>
+        )}
+
+        {/* Error message with magnet link */}
+        {error && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 bg-black/80 p-8">
+            <div className="max-w-md text-center">
+              <p className="text-lg font-bold text-white mb-2">{error}</p>
+              {magnetLink && (
+                <div className="space-y-4">
+                  <p className="text-sm text-white/70">
+                    Download this torrent using qBittorrent, Transmission, or similar:
+                  </p>
+                  <div className="bg-white/10 rounded p-4 break-all text-xs text-white/90 font-mono">
+                    {magnetLink}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText(magnetLink);
+                    }}
+                    className="w-full bg-white/20 hover:bg-white/30 text-white py-2 px-4 rounded transition-colors"
+                  >
+                    Copy Magnet Link
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         )}
       </div>
