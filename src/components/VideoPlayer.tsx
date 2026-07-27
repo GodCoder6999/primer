@@ -3,73 +3,76 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
-interface Stream {
-  type: 'hls' | 'http_range' | 'embed';
-  url: string;
-  headers?: Record<string, string>;
+interface VideoPlayerProps {
+  streamUrl?: string;
+  title?: string;
+  isEmbed?: boolean;
 }
 
-export default function CustomVideoPlayer({ stream }: { stream: Stream | null }) {
+export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmbed }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  // Auto-detect if the stream URL is an iframe embed or an m3u8 stream
+  const isIframeEmbed =
+    isEmbed ||
+    (streamUrl && (streamUrl.includes('/embed/') || streamUrl.includes('vidsrc') || streamUrl.includes('vixsrc')));
+
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !stream || stream.type === 'embed') return;
+    if (!video || !streamUrl || isIframeEmbed) return;
 
-    // 1. Direct HLS (.m3u8) Playback using hls.js
-    if (stream.type === 'hls' && Hls.isSupported()) {
-      const hls = new Hls({
-        enableWorker: true,
-        lowLatencyMode: true,
-      });
-
-      hls.loadSource(stream.url);
-      hls.attachMedia(video);
-
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play().catch(() => console.log('Autoplay blocked'));
-      });
-
-      return () => {
-        hls.destroy();
-      };
-    } 
-    // 2. Native Safari / Mobile HLS support
-    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = stream.url;
-    } 
-    // 3. Direct MP4 playback
-    else {
-      video.src = stream.url;
+    // Attach HLS stream to HTML5 video element using hls.js
+    if (streamUrl.includes('.m3u8')) {
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(streamUrl);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          video.play().catch(() => {});
+        });
+        return () => hls.destroy();
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = streamUrl;
+      }
+    } else {
+      video.src = streamUrl;
     }
-  }, [stream]);
+  }, [streamUrl, isIframeEmbed]);
 
-  if (!stream) {
-    return <div className="text-white text-center p-8">Loading stream...</div>;
+  if (!streamUrl) {
+    return (
+      <div className="w-full h-screen bg-black text-white flex items-center justify-center">
+        Loading stream...
+      </div>
+    );
   }
 
-  // Fallback: If only an embed iframe exists, hide custom controls to avoid overlapping
-  if (stream.type === 'embed') {
+  // =========================================================================
+  // CASE 1: EXTERNAL EMBED (Hide Custom Prime UI so 2 players don't overlap)
+  // =========================================================================
+  if (isIframeEmbed) {
     return (
       <div className="relative w-full h-screen bg-black">
         <iframe
-          src={stream.url}
+          src={streamUrl}
           className="w-full h-full border-0"
           allowFullScreen
-          allow="autoplay; encrypted-media"
+          allow="autoplay; encrypted-media; picture-in-picture"
         />
       </div>
     );
   }
 
-  // Proper Custom Player Structure
+  // =========================================================================
+  // CASE 2: DIRECT HLS STREAM (.m3u8) -> Render YOUR Custom Player & Controls
+  // =========================================================================
   return (
     <div className="relative w-full h-screen bg-black overflow-hidden group">
-      {/* 1. Raw HTML5 Video Element */}
+      {/* 1. Native HTML5 Video Element */}
       <video
         ref={videoRef}
-        className="w-full h-full object-contain"
+        className="w-full h-full object-contain cursor-pointer"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onClick={() => {
@@ -79,43 +82,47 @@ export default function CustomVideoPlayer({ stream }: { stream: Stream | null })
         }}
       />
 
-      {/* 2. Your Single Custom UI Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-between p-6 pointer-events-none group-hover:opacity-100 transition-opacity">
+      {/* 2. Custom Prime Video Overlay Controls */}
+      <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/80 via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
         {/* Top Header / X-Ray */}
-        <div className="pointer-events-auto flex items-center justify-between text-white">
-          <h1 className="text-2xl font-bold">Disclosure Day</h1>
+        <div className="flex items-center justify-between text-white pointer-events-auto">
+          <div className="flex items-center gap-3">
+            <span className="font-bold text-xl">X-Ray</span>
+            <span className="text-xs bg-white/20 px-2 py-0.5 rounded">IMDb</span>
+          </div>
+          <h1 className="text-xl font-semibold">{title}</h1>
         </div>
 
-        {/* Center Play/Pause Controls */}
-        <div className="pointer-events-auto flex items-center justify-center gap-8">
-          <button 
+        {/* Center Skip & Play Controls */}
+        <div className="flex items-center justify-center gap-8 pointer-events-auto">
+          <button
             onClick={() => { if (videoRef.current) videoRef.current.currentTime -= 10; }}
-            className="text-white text-2xl p-4 bg-black/40 rounded-full hover:bg-black/70"
+            className="text-white text-xl p-3 bg-black/50 rounded-full hover:bg-black/80"
           >
             ↺ 10
           </button>
-          
-          <button 
+
+          <button
             onClick={() => {
               if (videoRef.current) {
                 isPlaying ? videoRef.current.pause() : videoRef.current.play();
               }
             }}
-            className="text-white text-4xl p-6 bg-black/50 rounded-full hover:bg-black/80"
+            className="text-white text-3xl p-5 bg-black/60 rounded-full hover:bg-black/90"
           >
             {isPlaying ? '❚❚' : '▶'}
           </button>
 
-          <button 
+          <button
             onClick={() => { if (videoRef.current) videoRef.current.currentTime += 10; }}
-            className="text-white text-2xl p-4 bg-black/40 rounded-full hover:bg-black/70"
+            className="text-white text-xl p-3 bg-black/50 rounded-full hover:bg-black/80"
           >
             ↻ 10
           </button>
         </div>
 
-        {/* Bottom Timeline Controls */}
-        <div className="pointer-events-auto w-full flex items-center gap-4">
+        {/* Bottom Timeline Control */}
+        <div className="w-full flex items-center gap-4 text-white text-sm pointer-events-auto">
           <input
             type="range"
             min={0}
@@ -126,7 +133,7 @@ export default function CustomVideoPlayer({ stream }: { stream: Stream | null })
                 videoRef.current.currentTime = Number(e.target.value);
               }
             }}
-            className="w-full accent-red-600 cursor-pointer"
+            className="w-full accent-blue-500 cursor-pointer"
           />
         </div>
       </div>
