@@ -6,21 +6,16 @@ import Hls from 'hls.js';
 interface VideoPlayerProps {
   streamUrl?: string;
   title?: string;
-  isEmbed?: boolean; // <-- Added here
 }
 
-export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmbed }: VideoPlayerProps) {
+export default function VideoPlayer({ streamUrl, title = 'Media Stream' }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const isIframe =
-    isEmbed ||
-    (streamUrl && (streamUrl.includes('/embed/') || streamUrl.includes('vidsrc')));
-
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !streamUrl || isIframe) return;
+    if (!video || !streamUrl) return;
 
     if (streamUrl.includes('.m3u8')) {
       if (Hls.isSupported()) {
@@ -33,7 +28,10 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
         });
 
         hls.on(Hls.Events.ERROR, (_, data) => {
-          if (data.fatal) setHasError(true);
+          if (data.fatal) {
+            console.error('HLS error:', data);
+            setHasError(true);
+          }
         });
 
         return () => hls.destroy();
@@ -41,21 +39,23 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
         video.src = streamUrl;
       }
     } else {
+      // Direct HTTP / MP4 file streams (e.g., Debrid/HTTP range requests)
       video.src = streamUrl;
     }
-  }, [streamUrl, isIframe]);
+  }, [streamUrl]);
 
-  if (!streamUrl || hasError || isIframe) {
+  if (!streamUrl || hasError) {
     return (
       <div className="w-full h-screen bg-black text-white flex flex-col items-center justify-center gap-2">
-        <p className="text-xl font-bold">Custom Player Error</p>
-        <p className="text-sm text-gray-400">Embedded players are disabled. Waiting for a valid direct .m3u8 stream...</p>
+        <p className="text-xl font-bold">Playback Error</p>
+        <p className="text-sm text-gray-400">Unable to load direct stream. Please try another source.</p>
       </div>
     );
   }
 
   return (
     <div className="relative w-full h-screen bg-black overflow-hidden group">
+      {/* Native HTML5 Video Element */}
       <video
         ref={videoRef}
         className="w-full h-full object-contain cursor-pointer"
@@ -68,7 +68,9 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
         }}
       />
 
+      {/* Custom Prime Video Overlay Controls */}
       <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/80 via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        {/* Top Header */}
         <div className="flex items-center justify-between text-white pointer-events-auto">
           <div className="flex items-center gap-3">
             <span className="font-bold text-xl">X-Ray</span>
@@ -77,6 +79,7 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
           <h1 className="text-xl font-semibold">{title}</h1>
         </div>
 
+        {/* Center Skip & Play Controls */}
         <div className="flex items-center justify-center gap-8 pointer-events-auto">
           <button
             onClick={() => { if (videoRef.current) videoRef.current.currentTime -= 10; }}
@@ -104,6 +107,7 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
           </button>
         </div>
 
+        {/* Bottom Timeline Control */}
         <div className="w-full flex items-center gap-4 text-white text-sm pointer-events-auto">
           <input
             type="range"
