@@ -75,18 +75,59 @@ export async function GET(request: NextRequest) {
             );
         }
 
-        // Convert TMDB ID to IMDb ID
+        // Try Stremio addons that provide HTTP streams (not torrents)
+        // Using various sources for better coverage
+        const addonEndpoints = [
+            // Popcorntime streams
+            `https://popcorntime.strem.fun/stream/movie/${cleanId}.json`,
+            // YIFY streams
+            `https://mediafusion.strem.fun/stream/movie/${cleanId}.json`,
+            // ElfHosted streams
+            `https://mflix.elfhosted.com/stream/movie/${cleanId}.json`,
+        ];
+
+        for (const addonUrl of addonEndpoints) {
+            try {
+                const res = await fetch(addonUrl, {
+                    headers: {
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                    },
+                    signal: AbortSignal.timeout(3000),
+                });
+
+                if (!res.ok) continue;
+
+                const data = await res.json() as any;
+
+                // Look for HTTP/HLS streams (not torrents)
+                const httpStreams = data.streams?.filter((s: any) =>
+                    s.url && (s.url.startsWith("http") || s.url.includes(".m3u8"))
+                ) || [];
+
+                if (httpStreams.length > 0) {
+                    const stream = httpStreams[0];
+                    return NextResponse.json({
+                        url: stream.url,
+                        type: stream.url.includes(".m3u8") ? "m3u8" : "mp4",
+                        provider: addonUrl.split("/")[2],
+                        title: stream.title,
+                        quality: stream.title?.match(/\d+p/)?.[0] || "auto",
+                    });
+                }
+            } catch {}
+        }
+
+        // Fallback: Try Torrentio with IMDb ID conversion
         const isSeries = contentType === "tv";
         const imdbId = await getTmdbExternalIds(cleanId, isSeries);
 
         if (!imdbId) {
             return NextResponse.json(
-                { error: "Could not find IMDb ID for this content" },
+                { error: "No streams available" },
                 { status: 404 }
             );
         }
 
-        // Torrentio addon endpoint (requires IMDb ID!)
         const torrentioUrl = contentType === "tv"
             ? `https://torrentio.strem.fun/stream/tv/${imdbId}/${season}/${episode}.json`
             : `https://torrentio.strem.fun/stream/movie/${imdbId}.json`;
@@ -100,25 +141,21 @@ export async function GET(request: NextRequest) {
 
         if (!res.ok) {
             return NextResponse.json(
-                { error: `Torrentio error: ${res.status}` },
+                { error: `No streams found` },
                 { status: 503 }
             );
         }
 
         const data = await res.json() as any;
 
-        // Check for torrent streams
         if (!data.streams || !Array.isArray(data.streams) || data.streams.length === 0) {
             return NextResponse.json(
-                { error: "No torrents found" },
+                { error: "No streams available" },
                 { status: 404 }
             );
         }
 
-        // Get best quality torrent
         const torrentStream = data.streams[0];
-
-        // Torrentio returns infoHash, convert to magnet link
         const infoHash = torrentStream.infoHash || torrentStream.url;
 
         if (!infoHash) {
@@ -210,7 +247,8 @@ export async function GET(request: NextRequest) {
             }
         } catch {}
 
-        // Last resort: return magnet link for manual download
+        // Fallback: return magnet link (torrent client required)
+        // To enable direct playback: integrate Real Debrid API (paid) or AllDebrid API (paid)
         return NextResponse.json({
             url: magnetUrl,
             type: "torrent",
