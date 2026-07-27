@@ -1,18 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Standard direct test streams for native player verification
-const TEST_STREAMS: Record<string, string> = {
-    // Direct HLS (.m3u8) stream
-    hls: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-    // Direct MP4 stream (Big Buck Bunny)
-    mp4: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-};
-
 export async function GET(request: NextRequest) {
     try {
         const { searchParams } = request.nextUrl;
         const rawTmdbId = searchParams.get("tmdb") || "";
-        const type = searchParams.get("type") || "movie";
+        const contentType = searchParams.get("type") || "movie";
         const season = searchParams.get("season") || "1";
         const episode = searchParams.get("episode") || "1";
 
@@ -27,86 +19,62 @@ export async function GET(request: NextRequest) {
 
         const errors: string[] = [];
 
-        // Providers to try in order - using AutoEmbed for reliable iframe embedding
-        const endpoints = [
-            // AutoEmbed (designed for embedding streaming content)
-            type === "tv"
-                ? `https://autoembed.cc/embed/tv/${cleanId}/${season}/${episode}`
-                : `https://autoembed.cc/embed/movie/${cleanId}`,
-            // 2Embed (alternative reliable source)
-            type === "tv"
-                ? `https://2embed.cc/embed/${cleanId}/s${season}e${episode}`
-                : `https://2embed.cc/embed/${cleanId}`,
-            // Smashystream fallback
-            type === "tv"
-                ? `https://embed.smashystream.com/playernew/tmdb/tv-${cleanId}-${season}-${episode}`
-                : `https://embed.smashystream.com/playernew/tmdb/movie-${cleanId}`,
+        // MovieStreamAPI - primary provider (multiple endpoints)
+        const moviestreamEndpoints = [
+            contentType === "tv"
+                ? `https://moviestreamapi.com/api/tv/${cleanId}/season/${season}/episode/${episode}`
+                : `https://moviestreamapi.com/api/movie/${cleanId}`,
+            contentType === "tv"
+                ? `https://api.moviestream.com/tv/${cleanId}/s${season}e${episode}`
+                : `https://api.moviestream.com/movie/${cleanId}`,
         ];
 
-        for (const url of endpoints) {
+        for (const endpoint of moviestreamEndpoints) {
             try {
-                const res = await fetch(url, {
+                const res = await fetch(endpoint, {
                     headers: {
-                        "User-Agent":
-                            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                        Referer: "https://autoembed.cc/",
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                        "Accept": "application/json",
                     },
                     signal: AbortSignal.timeout(5000),
                 });
 
-                if (!res.ok) {
-                    errors.push(`${url}: HTTP ${res.status}`);
-                    continue;
-                }
+                if (res.ok) {
+                    const data = await res.json() as any;
 
-                // Try parsing as JSON first
-                try {
-                    const data = await res.json();
+                    const streamUrl =
+                        data.url ||
+                        data.stream?.url ||
+                        data.sources?.[0]?.url ||
+                        data.link ||
+                        data.m3u8 ||
+                        data.hls?.url ||
+                        data.playback_url ||
+                        data.result?.url;
 
-                    // Stremio Addon Response Format (streams array)
-                    if (data?.streams && Array.isArray(data.streams)) {
-                        const directStream = data.streams.find(
-                            (s: any) =>
-                                s.url && (s.url.includes(".m3u8") || s.url.includes(".mp4"))
-                        ) || data.streams[0];
+                    if (streamUrl && typeof streamUrl === "string") {
+                        // Detect stream type from URL
+                        const streamType = streamUrl.includes(".m3u8") ? "m3u8" : "mp4";
 
-                        if (directStream?.url) {
-                            return NextResponse.json({ m3u8Url: directStream.url, provider: "stremio" });
-                        }
-                    }
-
-                    // Generic JSON response formats
-                    if (data?.url || data?.streamUrl || data?.link) {
                         return NextResponse.json({
-                            m3u8Url: data.url || data.streamUrl || data.link,
-                            provider: "api-json",
+                            url: streamUrl,
+                            type: streamType,
+                            provider: "moviestreamapi",
                         });
                     }
-
-                    errors.push(`${url}: No stream URL in JSON response`);
-                } catch (jsonErr) {
-                    // Response is HTML - iframe service is working (returns HTML page)
-                    // For AutoEmbed/2Embed/Smashystream, return the embed URL as the stream source
-                    // These services handle stream extraction internally when embedded
-                    return NextResponse.json({
-                        m3u8Url: url,
-                        isEmbedUrl: true,
-                        provider: url.includes("autoembed")
-                            ? "autoembed"
-                            : url.includes("2embed")
-                            ? "2embed"
-                            : "smashystream",
-                    });
                 }
+                errors.push(`MovieStream: HTTP ${res.status}`);
             } catch (err: any) {
-                errors.push(`${url}: ${err.message}`);
+                errors.push(`MovieStream: ${err.message}`);
             }
         }
 
-        // GUARANTEED FALLBACK: If public extractors return empty/fail, return working HLS stream
+        // Fallback to test stream
+        const testUrl = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8";
         return NextResponse.json({
-            m3u8Url: TEST_STREAMS.hls,
-            isFallback: true,
+            url: testUrl,
+            type: "m3u8",
+            provider: "test-fallback",
             errors: errors,
         });
     } catch (error: any) {
