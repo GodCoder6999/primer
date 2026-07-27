@@ -6,39 +6,26 @@ import Hls from 'hls.js';
 interface VideoPlayerProps {
   streamUrl?: string;
   title?: string;
+  isEmbed?: boolean; // <-- Added here
 }
 
-export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: VideoPlayerProps) {
+export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmbed }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
 
+  const isIframe =
+    isEmbed ||
+    (streamUrl && (streamUrl.includes('/embed/') || streamUrl.includes('vidsrc')));
+
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !streamUrl) return;
+    if (!video || !streamUrl || isIframe) return;
 
-    if (streamUrl.includes('/embed/') || streamUrl.includes('vidsrc')) {
-      setHasError(true);
-      return;
-    }
-
-    // Wrap the stream through our backend proxy to bypass browser CORS blocks (Error 232503)
-    const proxiedUrl = `/api/proxy?url=${encodeURIComponent(streamUrl)}&referer=${encodeURIComponent('https://vixsrc.to')}`;
-
-    if (streamUrl.includes('.m3u8') || proxiedUrl.includes('.m3u8')) {
+    if (streamUrl.includes('.m3u8')) {
       if (Hls.isSupported()) {
-        const hls = new Hls({ 
-          enableWorker: true, 
-          lowLatencyMode: true,
-          // Route segment requests through proxy if needed
-          xhrSetup: (xhr, url) => {
-            if (url.includes('.ts') || url.includes('.m3u8')) {
-              xhr.open('GET', `/api/proxy?url=${encodeURIComponent(url)}&referer=${encodeURIComponent('https://vixsrc.to')}`, true);
-            }
-          }
-        });
-
-        hls.loadSource(proxiedUrl);
+        const hls = new Hls({ enableWorker: true, lowLatencyMode: true });
+        hls.loadSource(streamUrl);
         hls.attachMedia(video);
         
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
@@ -46,26 +33,23 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: Vid
         });
 
         hls.on(Hls.Events.ERROR, (_, data) => {
-          if (data.fatal) {
-            console.error('HLS.js fatal error:', data);
-            setHasError(true);
-          }
+          if (data.fatal) setHasError(true);
         });
 
         return () => hls.destroy();
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = proxiedUrl;
+        video.src = streamUrl;
       }
     } else {
       video.src = streamUrl;
     }
-  }, [streamUrl]);
+  }, [streamUrl, isIframe]);
 
-  if (!streamUrl || hasError || streamUrl.includes('/embed/')) {
+  if (!streamUrl || hasError || isIframe) {
     return (
       <div className="w-full h-screen bg-black text-white flex flex-col items-center justify-center gap-2">
-        <p className="text-xl font-bold">Playback Failed (Error Code: 232503)</p>
-        <p className="text-sm text-gray-400">Stream blocked by CORS or unavailable. Try another title or episode.</p>
+        <p className="text-xl font-bold">Custom Player Error</p>
+        <p className="text-sm text-gray-400">Embedded players are disabled. Waiting for a valid direct .m3u8 stream...</p>
       </div>
     );
   }
