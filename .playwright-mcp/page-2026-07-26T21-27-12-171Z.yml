@@ -1,0 +1,5 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - 'heading "Playing ID: 550" [level=1] [ref=e3]'
+    - paragraph [ref=e6]: Resolving stream link...
+  - alert [ref=e7]
