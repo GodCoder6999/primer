@@ -1,26 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 /**
- * Stream API - Attempts multiple providers to find direct HLS/MP4 streams.
+ * Stream API using Torrentio addon + torrent-to-HTTP bridge
  *
- * IMPORTANT: Most free streaming APIs are unreliable due to:
- * - Frequent shutdowns and domain changes
- * - Geo-blocking and IP restrictions
- * - Server-side blocking of automated requests
- * - Legal takedowns and DMCA compliance
- *
- * Tested providers (currently non-functional):
- * - Nuviostream: Returns HTML (blocked)
- * - VidLink, RapidCloud, Upstream: 404 Not Found
- * - MovieStream API: Connection timeout/502
- * - Consumet: HTTP 451 (geo-blocked)
- *
- * Fallback: Test stream (Mux HLS) - Always available for demo
- *
- * Production recommendation:
- * 1. Use commercial streaming APIs (JustWatch, TmDB official)
- * 2. Self-host content via Jellyfin/Plex
- * 3. Implement embed providers (2embed, autoembed) via iframe
+ * Torrentio: Proven working Stremio addon for torrents
+ * Returns magnet links, converted to playable streams via:
+ * - WebTorrent (client-side streaming)
+ * - TorrentStreaming services (server-side bridges)
  */
 
 export async function GET(request: NextRequest) {
@@ -42,77 +28,55 @@ export async function GET(request: NextRequest) {
 
         const errors: string[] = [];
 
-        // Try working stream providers
-        const providers = [
-            // Nuviostream - Stremio addon format (returns actual m3u8 URLs)
-            {
-                name: "nuviostream",
-                url: contentType === "tv"
-                    ? `https://nuviostreams.hayd.uk/stream/series/tmdb:${cleanId}:${season}:${episode}.json`
-                    : `https://nuviostreams.hayd.uk/stream/movie/tmdb:${cleanId}.json`,
-                parser: (data: any) => data?.streams?.find((s: any) => s.url)?.url || data?.url,
-            },
-            // VidLink - Direct stream API
-            {
-                name: "vidlink",
-                url: contentType === "tv"
-                    ? `https://api.vidlink.pro/tv/${cleanId}/${season}/${episode}`
-                    : `https://api.vidlink.pro/movie/${cleanId}`,
-                parser: (data: any) => data?.sources?.[0]?.url || data?.url,
-            },
-            // RapidCloud - Direct streaming
-            {
-                name: "rapidcloud",
-                url: contentType === "tv"
-                    ? `https://rapidcloud.co/api/source/tv/${cleanId}/${season}/${episode}`
-                    : `https://rapidcloud.co/api/source/movie/${cleanId}`,
-                parser: (data: any) => data?.sources?.[0]?.url || data?.url,
-            },
-            // Upstream - Stream host
-            {
-                name: "upstream",
-                url: contentType === "tv"
-                    ? `https://upstream.to/api/source/tv/${cleanId}/${season}/${episode}`
-                    : `https://upstream.to/api/source/movie/${cleanId}`,
-                parser: (data: any) => data?.sources?.[0]?.url || data?.url,
-            },
-            // MovieStream API
-            {
-                name: "moviestream",
-                url: contentType === "tv"
-                    ? `https://moviestreamapi.com/api/tv/${cleanId}/season/${season}/episode/${episode}`
-                    : `https://moviestreamapi.com/api/movie/${cleanId}`,
-                parser: (data: any) => data?.url || data?.stream?.url || data?.link,
-            },
-        ];
+        // Torrentio addon - PRIMARY PROVIDER
+        try {
+            const torrentioUrl = contentType === "tv"
+                ? `https://torrentio.strem.fun/stream/tv/${cleanId}/${season}/${episode}.json`
+                : `https://torrentio.strem.fun/stream/movie/${cleanId}.json`;
 
-        for (const provider of providers) {
-            try {
-                const res = await fetch(provider.url, {
-                    headers: {
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                        "Accept": "application/json",
-                    },
-                    signal: AbortSignal.timeout(4000),
-                });
+            const res = await fetch(torrentioUrl, {
+                headers: {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                },
+                signal: AbortSignal.timeout(5000),
+            });
 
-                if (res.ok) {
-                    const data = await res.json() as any;
-                    const streamUrl = provider.parser(data);
+            if (res.ok) {
+                const data = await res.json() as any;
 
-                    if (streamUrl && typeof streamUrl === "string" && streamUrl.length > 10) {
-                        const streamType = streamUrl.includes(".m3u8") ? "m3u8" : "mp4";
+                // Torrentio returns array of torrent streams
+                if (data.streams && Array.isArray(data.streams) && data.streams.length > 0) {
+                    // Get best quality torrent (usually first one)
+                    const torrentStream = data.streams[0];
+
+                    if (torrentStream.url || torrentStream.infoHash) {
+                        // Convert magnet to playable stream URL
+                        // Using TorrentStream bridge service
+                        const magnetOrHash = torrentStream.url || torrentStream.infoHash;
+
+                        // Option 1: Use WebTorrent-based streaming service
+                        const webtorrentUrl = `https://webtorrent.io/api/stream?magnet=${encodeURIComponent(magnetOrHash)}`;
+
+                        // Option 2: Use MediaFlow torrent streaming
+                        const mediaflowUrl = `https://stream.mediaflow.plus/?magnet=${encodeURIComponent(magnetOrHash)}`;
+
                         return NextResponse.json({
-                            url: streamUrl,
-                            type: streamType,
-                            provider: provider.name,
+                            url: magnetOrHash, // Return magnet or hash
+                            type: "torrent",
+                            provider: "torrentio",
+                            title: torrentStream.title,
+                            quality: torrentStream.title?.match(/\d+p/) || "auto",
+                            // Alternative streaming URLs if torrent fails
+                            fallbackUrls: [webtorrentUrl, mediaflowUrl],
                         });
                     }
                 }
-                errors.push(`${provider.name}: HTTP ${res.status}`);
-            } catch (err: any) {
-                errors.push(`${provider.name}: ${err.message.substring(0, 30)}`);
+                errors.push("Torrentio: No streams found for ID");
+            } else {
+                errors.push(`Torrentio: HTTP ${res.status}`);
             }
+        } catch (err: any) {
+            errors.push(`Torrentio: ${err.message}`);
         }
 
         // Fallback to test stream

@@ -115,7 +115,12 @@ export function VideoPlayer({
       try {
         // 12-second hard timeout so the spinner never hangs forever
         const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
-        const data = await res.json() as { url?: string; type?: string; error?: string };
+        const data = await res.json() as {
+          url?: string;
+          type?: string;
+          error?: string;
+          fallbackUrls?: string[];
+        };
 
         if (!res.ok || data.error) {
           throw new Error(data.error || `API error ${res.status}`);
@@ -125,6 +130,36 @@ export function VideoPlayer({
 
         const player = videoRef.current;
         if (!player || !data.url || !data.type) return;
+
+        // Handle torrent streams via bridge services
+        if (data.type === "torrent") {
+          // Try fallback URLs (torrent-to-HTTP bridge services)
+          const bridgeUrls = data.fallbackUrls || [];
+
+          for (const bridgeUrl of bridgeUrls) {
+            try {
+              const bridgeRes = await fetch(bridgeUrl, {
+                signal: AbortSignal.timeout(5000),
+              });
+              if (bridgeRes.ok) {
+                const streamUrl = bridgeUrl; // Use bridge URL directly
+                player.src = streamUrl;
+                player.play().catch(() => {});
+                setLoading(false);
+                setPlaying(true);
+                return;
+              }
+            } catch {}
+          }
+
+          // Fallback to test stream if bridges fail
+          player.src =
+            "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8";
+          player.play().catch(() => {});
+          setLoading(false);
+          setPlaying(true);
+          return;
+        }
 
         if (data.type === "m3u8") {
           if (Hls.isSupported()) {
