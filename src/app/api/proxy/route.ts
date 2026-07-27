@@ -1,42 +1,39 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = request.nextUrl;
-  const targetUrl = searchParams.get("url");
-  const referer = searchParams.get("referer") || "https://autoembed.cc/";
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const targetUrl = searchParams.get('url');
+  const referer = searchParams.get('referer') || '';
 
   if (!targetUrl) {
-    return new NextResponse("Missing 'url' parameter", { status: 400 });
+    return NextResponse.json({ error: 'Missing target URL' }, { status: 400 });
   }
 
   try {
-    const res = await fetch(targetUrl, {
+    const upstreamRes = await fetch(targetUrl, {
       headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        Referer: referer,
-      },
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+        ...(referer ? { Referer: referer } : {})
+      }
     });
 
-    if (!res.ok) {
-      return new NextResponse(`Proxy fetch failed with status ${res.status}`, {
-        status: res.status,
-      });
+    if (!upstreamRes.ok) {
+      return new NextResponse(`Upstream error: ${upstreamRes.status}`, { status: upstreamRes.status });
     }
 
-    const contentType =
-      res.headers.get("content-type") || "application/x-mpegURL";
+    const contentType = upstreamRes.headers.get('content-type') || 'application/vnd.apple.mpegurl';
+    const body = await upstreamRes.arrayBuffer();
 
-    return new NextResponse(res.body, {
+    return new NextResponse(body, {
       status: 200,
       headers: {
-        "Content-Type": contentType,
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, OPTIONS",
-        "Cache-Control": "no-cache",
+        'Content-Type': contentType,
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
       },
     });
   } catch (err: any) {
-    return new NextResponse(`Proxy Error: ${err.message}`, { status: 500 });
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
