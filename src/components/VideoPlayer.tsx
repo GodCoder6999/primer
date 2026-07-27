@@ -68,6 +68,7 @@ export function VideoPlayer({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [magnetLink, setMagnetLink] = useState<string | null>(null);
+  const [embedUrl, setEmbedUrl] = useState<string | null>(null);
 
   const hideTimer = useRef<number | undefined>(undefined);
   const shellRef = useRef<HTMLDivElement>(null);
@@ -138,6 +139,15 @@ export function VideoPlayer({
           throw new Error(
             `Torrent available: ${data.url}\n\nOpen this magnet link in your torrent client (qBittorrent, Transmission, uTorrent, etc.) to download and play.`
           );
+        }
+
+        // Handle embed streams (iframe from apiplayer, superembed, etc.)
+        if (data.type === "embed") {
+          if (!cancelled) {
+            setEmbedUrl(data.url);
+            setLoading(false);
+          }
+          return;
         }
 
         if (data.type === "m3u8") {
@@ -268,23 +278,34 @@ export function VideoPlayer({
     >
       {/* ── Video surface ── */}
       <div className="absolute inset-0">
-        <video
-          ref={videoRef}
-          className="h-full w-full object-contain"
-          poster={title.heroImage ?? title.cardImage}
-          onTimeUpdate={() => {
-            if (videoRef.current) setElapsed(videoRef.current.currentTime);
-          }}
-          onLoadedMetadata={() => {
-            if (videoRef.current) setDuration(videoRef.current.duration);
-          }}
-          onEnded={() => setPlaying(false)}
-          onClick={(e) => {
-            e.stopPropagation();
-            setPlaying((p) => !p);
-            nudge();
-          }}
-        />
+        {embedUrl ? (
+          // Embed iframe for external providers
+          <iframe
+            src={embedUrl}
+            className="h-full w-full border-none"
+            allowFullScreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          />
+        ) : (
+          // Native video player
+          <video
+            ref={videoRef}
+            className="h-full w-full object-contain"
+            poster={title.heroImage ?? title.cardImage}
+            onTimeUpdate={() => {
+              if (videoRef.current) setElapsed(videoRef.current.currentTime);
+            }}
+            onLoadedMetadata={() => {
+              if (videoRef.current) setDuration(videoRef.current.duration);
+            }}
+            onEnded={() => setPlaying(false)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setPlaying((p) => !p);
+              nudge();
+            }}
+          />
+        )}
 
         {/* Loading spinner */}
         {loading && (
