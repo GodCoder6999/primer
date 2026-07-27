@@ -1,32 +1,40 @@
-import { fetchHtml } from '../utils/http.js';
-import { parseRegex, formatStream } from '../utils/extractor.js';
+import { fetchHtml } from '@/lib/streaming/utils/http';
+import { parseRegex, formatStream } from '@/lib/streaming/utils/extractor';
 
-export async function scrape({ type, tmdbId, season, episode }) {
+export async function scrape({ type = 'movie', tmdbId, season = '1', episode = '1' }) {
   const baseUrl = 'https://vixsrc.to';
   const targetUrl = type === 'movie' 
     ? `${baseUrl}/embed/movie/${tmdbId}`
-    : `${baseUrl}/embed/tv/${tmdbId}/${season || 1}/${episode || 1}`;
+    : `${baseUrl}/embed/tv/${tmdbId}/${season}/${episode}`;
 
   try {
     const html = await fetchHtml(targetUrl, { Referer: baseUrl });
-    
-    // Extract the raw .m3u8 source URL from the page script
     const masterPlaylist = parseRegex(html, /file:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i);
 
     if (masterPlaylist) {
-      // Ensure type is set to 'hls' when a direct .m3u8 link is found
-return [
-  {
-    provider: 'vixsrc',
-    name: 'Vixsrc Direct',
-    type: 'hls', // <-- Tells frontend to use <video> + hls.js + Your Custom UI
-    url: masterM3u8Url
-  }
-];
+      return [
+        formatStream({
+          providerName: 'vixsrc',
+          title: 'Vixsrc Direct HLS',
+          url: masterPlaylist,
+          quality: '1080p ABR',
+          type: 'hls',
+          headers: { Referer: baseUrl }
+        })
+      ];
     }
   } catch (err) {
-    console.error(`[Vixsrc Scrape Failed]: ${err.message}`);
+    console.warn(`[Vixsrc Scrape Failed]: ${err.message}`);
   }
 
-  return [];
+  // Fallback embed player
+  return [
+    formatStream({
+      providerName: 'vixsrc_embed',
+      title: 'Vixsrc Player Embed',
+      url: targetUrl,
+      quality: '1080p Auto',
+      type: 'embed'
+    })
+  ];
 }
