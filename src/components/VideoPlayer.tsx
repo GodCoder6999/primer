@@ -3,34 +3,37 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
-interface VideoPlayerProps {
-  streamUrl?: string;
-  title?: string;
-  isEmbed?: boolean;
+interface Stream {
+  type: 'hls' | 'http_range';
+  url: string;
 }
 
-export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmbed }: VideoPlayerProps) {
+export default function VideoPlayer({ streamUrl, title = 'Disclosure Day' }: { streamUrl?: string; title?: string }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
-  // Auto-detect if the stream URL is an iframe embed or an m3u8 stream
-  const isIframeEmbed =
-    isEmbed ||
-    (streamUrl && (streamUrl.includes('/embed/') || streamUrl.includes('vidsrc') || streamUrl.includes('vixsrc')));
+  const [errorState, setErrorState] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !streamUrl || isIframeEmbed) return;
+    if (!video || !streamUrl) return;
 
-    // Attach HLS stream to HTML5 video element using hls.js
+    // Attach direct .m3u8 manifest using hls.js for your custom player
     if (streamUrl.includes('.m3u8')) {
       if (Hls.isSupported()) {
-        const hls = new Hls();
+        const hls = new Hls({ enableWorker: true, lowLatencyMode: true });
         hls.loadSource(streamUrl);
         hls.attachMedia(video);
+        
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
-          video.play().catch(() => {});
+          video.play().catch(() => console.log('Autoplay restricted by browser'));
         });
+
+        hls.on(Hls.Events.ERROR, (_, data) => {
+          if (data.fatal) {
+            setErrorState(true);
+          }
+        });
+
         return () => hls.destroy();
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = streamUrl;
@@ -38,38 +41,20 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
     } else {
       video.src = streamUrl;
     }
-  }, [streamUrl, isIframeEmbed]);
+  }, [streamUrl]);
 
-  if (!streamUrl) {
+  if (!streamUrl || errorState) {
     return (
-      <div className="w-full h-screen bg-black text-white flex items-center justify-center">
-        Loading stream...
+      <div className="w-full h-screen bg-black text-white flex flex-col items-center justify-center gap-4">
+        <p className="text-xl font-semibold">Unable to resolve direct HLS stream or playback failed.</p>
+        <p className="text-sm text-gray-400">Custom player requires a valid .m3u8 media manifest.</p>
       </div>
     );
   }
 
-  // =========================================================================
-  // CASE 1: EXTERNAL EMBED (Hide Custom Prime UI so 2 players don't overlap)
-  // =========================================================================
-  if (isIframeEmbed) {
-    return (
-      <div className="relative w-full h-screen bg-black">
-        <iframe
-          src={streamUrl}
-          className="w-full h-full border-0"
-          allowFullScreen
-          allow="autoplay; encrypted-media; picture-in-picture"
-        />
-      </div>
-    );
-  }
-
-  // =========================================================================
-  // CASE 2: DIRECT HLS STREAM (.m3u8) -> Render YOUR Custom Player & Controls
-  // =========================================================================
   return (
     <div className="relative w-full h-screen bg-black overflow-hidden group">
-      {/* 1. Native HTML5 Video Element */}
+      {/* 1. Native HTML5 Video Driven Exclusively by Your Custom Code */}
       <video
         ref={videoRef}
         className="w-full h-full object-contain cursor-pointer"
@@ -82,9 +67,9 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
         }}
       />
 
-      {/* 2. Custom Prime Video Overlay Controls */}
+      {/* 2. Your Custom Prime Video Overlay UI (X-Ray, Skip Buttons, Timeline) */}
       <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/80 via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-        {/* Top Header / X-Ray */}
+        {/* Top Header */}
         <div className="flex items-center justify-between text-white pointer-events-auto">
           <div className="flex items-center gap-3">
             <span className="font-bold text-xl">X-Ray</span>
@@ -97,7 +82,7 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
         <div className="flex items-center justify-center gap-8 pointer-events-auto">
           <button
             onClick={() => { if (videoRef.current) videoRef.current.currentTime -= 10; }}
-            className="text-white text-xl p-3 bg-black/50 rounded-full hover:bg-black/80"
+            className="text-white text-xl p-3 bg-black/50 rounded-full hover:bg-black/85 transition"
           >
             ↺ 10
           </button>
@@ -108,14 +93,14 @@ export default function VideoPlayer({ streamUrl, title = 'Disclosure Day', isEmb
                 isPlaying ? videoRef.current.pause() : videoRef.current.play();
               }
             }}
-            className="text-white text-3xl p-5 bg-black/60 rounded-full hover:bg-black/90"
+            className="text-white text-3xl p-5 bg-black/60 rounded-full hover:bg-black/90 transition"
           >
             {isPlaying ? '❚❚' : '▶'}
           </button>
 
           <button
             onClick={() => { if (videoRef.current) videoRef.current.currentTime += 10; }}
-            className="text-white text-xl p-3 bg-black/50 rounded-full hover:bg-black/80"
+            className="text-white text-xl p-3 bg-black/50 rounded-full hover:bg-black/85 transition"
           >
             ↻ 10
           </button>
