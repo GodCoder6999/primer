@@ -25,27 +25,40 @@ export async function scrape({
     });
 
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-
     const html = await res.text();
-    
-    // Regex targeting the raw .m3u8 master playlist source inside hoster scripts
-    const match = html.match(/file:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i);
 
-    if (match && match[1]) {
+    // 1. Check standard file variable patterns
+    let m3u8Match = html.match(/file:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i) ||
+                    html.match(/source\s*:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i) ||
+                    html.match(/src:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i);
+
+    // 2. Check if packed/eval obfuscated payload exists and extract URL inside it
+    if (!m3u8Match && html.includes('eval(function(p,a,c,k,e,d)')) {
+      const packedMatch = html.match(/eval\(function\(p,a,c,k,e,d\).*?\(\)\)/s);
+      if (packedMatch) {
+        // Look for any .m3u8 string hidden within the script environment
+        const unpackedM3u8 = html.match(/(https?:\/\/[^\s"'#]+\.m3u8[^\s"'#]*)/i);
+        if (unpackedM3u8) {
+          m3u8Match = [unpackedM3u8[1], unpackedM3u8[1]];
+        }
+      }
+    }
+
+    if (m3u8Match && m3u8Match[1]) {
       return [
         {
           provider: 'vixsrc',
           name: 'Vixsrc Direct HLS',
           type: 'hls',
-          url: match[1],
+          url: m3u8Match[1],
           headers: { Referer: baseUrl },
         },
       ];
     }
   } catch (err: any) {
-    console.warn(`[Vixsrc Scrape Failed]: ${err.message}`);
+    console.warn(`[Vixsrc Deep Scrape Error]: ${err.message}`);
   }
 
-  // STRICT RULE: Return empty array instead of fallback embed iframe
+  // STRICT CONSTRAINT: Return empty array. DO NOT return an embed URL fallback.
   return [];
 }
