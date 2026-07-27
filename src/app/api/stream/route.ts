@@ -4,36 +4,58 @@ import { NextRequest, NextResponse } from "next/server";
  * Stream API - Torrentio with TMDB→IMDb conversion
  *
  * Torrentio requires IMDb IDs (not TMDB IDs)
- * Uses TMDB external_ids to get IMDb ID
+ * Fetches IMDb IDs from TMDB API for any TMDB ID
  */
 
-// Hardcoded TMDB→IMDb mappings for popular content
-const TMDB_TO_IMDB: Record<string, string> = {
+// Cache IMDb IDs to avoid repeated API calls
+const imdbIdCache: Record<string, string> = {
     "550": "tt0137523",      // Fight Club
     "278": "tt0111161",      // Shawshank Redemption
     "238": "tt0068646",      // The Godfather
-    "240": "tt0071562",      // Godfather Part II
-    "128064": "tt1375666",   // Inception
-    "157336": "tt0816692",   // Interstellar
-    "299534": "tt4154796",   // Avengers Endgame
-    "680": "tt0110912",      // Pulp Fiction
-    "11": "tt0076759",       // Star Wars IV
-    "1891": "tt0133093",     // The Matrix
-    "155": "tt0068646",      // The Godfather
-    "339": "tt0099685",      // Henry V
-    "1162": "tt0109830",     // Forrest Gump
+    "1275779": "tt15047880", // Disclosure Day
 };
 
-async function getTmdbExternalIds(tmdbId: string): Promise<string | null> {
-    // Check hardcoded mappings first
-    if (TMDB_TO_IMDB[tmdbId]) {
-        return TMDB_TO_IMDB[tmdbId];
+async function getTmdbExternalIds(tmdbId: string, isSeries: boolean): Promise<string | null> {
+    // Check cache first
+    if (imdbIdCache[tmdbId]) {
+        return imdbIdCache[tmdbId];
     }
 
-    // TMDB API requires auth for external_ids endpoint
-    // Using hardcoded mappings for now
+    try {
+        const apiKey = process.env.TMDB_API_KEY;
+        if (!apiKey) {
+            console.error("TMDB_API_KEY not configured");
+            return null;
+        }
 
-    return null;
+        // Fetch IMDb ID from TMDB API
+        const endpoint = isSeries
+            ? `https://api.themoviedb.org/3/tv/${tmdbId}/external_ids?api_key=${apiKey}`
+            : `https://api.themoviedb.org/3/movie/${tmdbId}/external_ids?api_key=${apiKey}`;
+
+        const res = await fetch(endpoint, {
+            signal: AbortSignal.timeout(3000),
+        });
+
+        if (!res.ok) {
+            console.error(`TMDB API error: ${res.status} for TMDB ID ${tmdbId}`);
+            return null;
+        }
+
+        const data = (await res.json()) as any;
+        const imdbId = data.imdb_id;
+
+        if (imdbId) {
+            // Cache for future requests
+            imdbIdCache[tmdbId] = imdbId;
+            return imdbId;
+        }
+
+        return null;
+    } catch (error) {
+        console.error(`Failed to fetch IMDb ID for TMDB ${tmdbId}:`, error);
+        return null;
+    }
 }
 
 export async function GET(request: NextRequest) {
@@ -54,7 +76,8 @@ export async function GET(request: NextRequest) {
         }
 
         // Convert TMDB ID to IMDb ID
-        const imdbId = await getTmdbExternalIds(cleanId);
+        const isSeries = contentType === "tv";
+        const imdbId = await getTmdbExternalIds(cleanId, isSeries);
 
         if (!imdbId) {
             return NextResponse.json(
@@ -107,17 +130,38 @@ export async function GET(request: NextRequest) {
 
         const magnetUrl = `magnet:?xt=urn:btih:${infoHash}`;
 
-        // Bridge services for torrent→HTTP streaming
-        const webtorrentUrl = `https://webtorrent.io/api/stream?magnet=${encodeURIComponent(magnetUrl)}`;
-        const mediaflowUrl = `https://stream.mediaflow.plus/?magnet=${encodeURIComponent(magnetUrl)}`;
+        // Try bridge services server-side to avoid CORS issues
+        let workingBridgeUrl: string | null = null;
 
+        // Try webtorrent first
+        try {
+            const bridgeRes = await fetch(`https://webtorrent.io/api/stream?magnet=${encodeURIComponent(magnetUrl)}`, {
+                signal: AbortSignal.timeout(3000),
+            });
+            if (bridgeRes.ok) {
+                workingBridgeUrl = `https://webtorrent.io/api/stream?magnet=${encodeURIComponent(magnetUrl)}`;
+            }
+        } catch {}
+
+        // Try mediaflow if webtorrent failed
+        if (!workingBridgeUrl) {
+            try {
+                const bridgeRes = await fetch(`https://stream.mediaflow.plus/?magnet=${encodeURIComponent(magnetUrl)}`, {
+                    signal: AbortSignal.timeout(3000),
+                });
+                if (bridgeRes.ok) {
+                    workingBridgeUrl = `https://stream.mediaflow.plus/?magnet=${encodeURIComponent(magnetUrl)}`;
+                }
+            } catch {}
+        }
+
+        // Return working bridge URL if found, otherwise magnet link
         return NextResponse.json({
-            url: magnetUrl,
-            type: "torrent",
+            url: workingBridgeUrl || magnetUrl,
+            type: workingBridgeUrl ? "m3u8" : "torrent",
             provider: "torrentio",
             title: torrentStream.title,
             quality: torrentStream.title?.match(/\d+p/)?.[0] || "auto",
-            fallbackUrls: [webtorrentUrl, mediaflowUrl],
         });
     } catch (error: any) {
         return NextResponse.json(

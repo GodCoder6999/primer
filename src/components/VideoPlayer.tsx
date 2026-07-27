@@ -131,29 +131,10 @@ export function VideoPlayer({
         const player = videoRef.current;
         if (!player || !data.url || !data.type) return;
 
-        // Handle torrent streams via bridge services
+        // Handle torrent streams (magnet links)
         if (data.type === "torrent") {
-          // Try fallback URLs (torrent-to-HTTP bridge services)
-          const bridgeUrls = data.fallbackUrls || [];
-
-          for (const bridgeUrl of bridgeUrls) {
-            try {
-              const bridgeRes = await fetch(bridgeUrl, {
-                signal: AbortSignal.timeout(5000),
-              });
-              if (bridgeRes.ok) {
-                player.src = bridgeUrl;
-                player.play().catch(() => {});
-                setLoading(false);
-                setPlaying(true);
-                return;
-              }
-            } catch {}
-          }
-
-          // No bridges available
           throw new Error(
-            "Torrent found but streaming bridge unavailable. Try again later."
+            `Torrent available but requires external client. Magnet link: ${data.url}`
           );
         }
 
