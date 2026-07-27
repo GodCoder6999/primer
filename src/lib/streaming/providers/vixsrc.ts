@@ -32,11 +32,10 @@ export async function scrape({
                     html.match(/source\s*:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i) ||
                     html.match(/src:\s*["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i);
 
-    // 2. Check if packed/eval obfuscated payload exists and extract URL inside it
+    // 2. Check if packed/eval obfuscated payload exists using [\s\S]*? (safe for all ES targets)
     if (!m3u8Match && html.includes('eval(function(p,a,c,k,e,d)')) {
-      const packedMatch = html.match(/eval\(function\(p,a,c,k,e,d\).*?\(\)\)/s);
+      const packedMatch = html.match(/eval\(function\(p,a,c,k,e,d\)[\s\S]*?\(\)\)/);
       if (packedMatch) {
-        // Look for any .m3u8 string hidden within the script environment
         const unpackedM3u8 = html.match(/(https?:\/\/[^\s"'#]+\.m3u8[^\s"'#]*)/i);
         if (unpackedM3u8) {
           m3u8Match = [unpackedM3u8[1], unpackedM3u8[1]];
@@ -59,6 +58,5 @@ export async function scrape({
     console.warn(`[Vixsrc Deep Scrape Error]: ${err.message}`);
   }
 
-  // STRICT CONSTRAINT: Return empty array. DO NOT return an embed URL fallback.
   return [];
 }
