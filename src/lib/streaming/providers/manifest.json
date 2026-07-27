@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "providers": [
+    {
+      "id": "vixsrc",
+      "name": "Vixsrc Direct HLS",
+      "supportedTypes": ["movie", "tv"],
+      "enabled": true
+    }
+  ]
+}
